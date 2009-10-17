@@ -9,6 +9,7 @@ En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación d
 Vamos a utilizar archetipos [http://maven.apache.org Maven] para familiarizarnos rápidamente tanto con Struts 2 como con JSF.
 
 Pasos:
+
 1. Nos descargamos la última versión de Apache Maven: http://maven.apache.org/download.html
 
 2. Descomprimimos el apache-maven-2.2.1-bin.zip en `C:\CEMi_J2EE\apache-maven-2.2.1`
