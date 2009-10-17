@@ -1,17 +1,16 @@
-#Framework MVC: Struts 2
+#summary One-sentence summary of this page.
 
-= Introducción =
+= Introduction =
 
 Add your content here.
 
 
-= Detalles =
+= Details =
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
-
 {{{
 mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-struts -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=es.cemi.samples -DartifactId=struts2app
 }}}
