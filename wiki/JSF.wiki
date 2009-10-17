@@ -4,13 +4,11 @@
 
 http://java.sun.com/javaee/javaserverfaces/
 
+= Ejemplo de aplicación JSF básica =
 
-= Details =
+Creamos una aplicación *jsfapp* a partir del archetipo Maven *JSF Basic*:
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Nos abrimos una consola de comandos y nos situamos en el directorio de nuestro workspace de Eclipse `C:\CEMi_J2EE`:
 
 {{{
 mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-jsf -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=es.cemi.samples -DartifactId=jsfapp
