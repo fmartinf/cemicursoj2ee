@@ -1,8 +1,8 @@
 #summary Guía introductoria a JavaServer Faces
 
-= Introduction =
+= Introducción =
 
-Add your content here.
+http://java.sun.com/javaee/javaserverfaces/
 
 
 = Details =
