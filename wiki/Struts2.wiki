@@ -18,5 +18,5 @@ C:\CEMi_J2EE> mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -Da
 Primera compilación:
 
 {{{
-C:\CEMi_J2EE\jsfapp> mvn clean install
+C:\CEMi_J2EE\struts2app> mvn clean install
 }}}
