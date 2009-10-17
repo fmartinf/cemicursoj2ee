@@ -13,3 +13,9 @@ Nos abrimos una consola de comandos y nos situamos en el directorio de nuestro w
 {{{
 C:\CEMi_J2EE> mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-jsf -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=es.cemi.samples -DartifactId=jsfapp
 }}}
+
+Primera compilación:
+
+{{{
+C:\CEMi_J2EE\jsfapp> mvn clean install
+}}}
