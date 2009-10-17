@@ -1,4 +1,4 @@
-#summary Guía instroductoria a JavaServer Faces
+#summary Guía introductoria a JavaServer Faces
 
 = Introduction =
 
