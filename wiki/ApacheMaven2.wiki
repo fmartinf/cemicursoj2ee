@@ -10,7 +10,11 @@ Vamos a utilizar archetipos [http://maven.apache.org Maven] para familiarizarnos
 
 Pasos:
 1. Nos descargamos la última versión de Apache Maven: http://maven.apache.org/download.html
+
 2. Descomprimimos el apache-maven-2.2.1-bin.zip en `C:\CEMi_J2EE\apache-maven-2.2.1`
+
 3. Creamos la _variable de entorno_ de *sistema* `M2_HOME=C:\CEMi_J2EE\apache-maven-2.2.1`
+
 4. Creamos las _variables de entorno_ de *usuario* `M2=%M2_HOME%\bin` y `MAVEN_OPTS=-Xms256m -Xmx512m`
+
 5. Nos abrimos una consola y ejecutamos: `$> mvn --version`
