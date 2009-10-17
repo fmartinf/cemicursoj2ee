@@ -1,0 +1,8 @@
+#summary Guía de instalación de Apache Maven 2
+
+= Introducción =
+En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación de nuestras aplicaciones de ejemplos
+
+
+= Instalación =
+en los ejemplos del curso vamos a utilizar Maven como mecanismo de creación de nuestras aplicaciones de ejempl
