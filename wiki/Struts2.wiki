@@ -5,12 +5,21 @@
 http://struts.apache.org/2.1.8/index.html
 
 
-= Details =
+= Ejemplo de aplicación Struts 2 básica =
+
+* Vamos a utilizar un archetipo [http://maven.apache.org Maven] de ejemplo para analizar rápidamente una aplicación Struts 2 funcionando:
+1. Nos descargamos la última versión de Apache Maven: http://maven.apache.org/download.html
+2. Descomprimimos el apache-maven-2.2.1-bin.zip en `C:\CEMi_J2EE\apache-maven-2.2.1`
+3. Creamos la _variable de entorno_ de *sistema* `M2_HOME=C:\CEMi_J2EE\apache-maven-2.2.1`
+4. Creamos las _variables de entorno_ de *usuario* `M2=%M2_HOME%\bin` y `MAVEN_OPTS=-Xms256m -Xmx512m`
+5. Nos abrimos una consola y ejecutamos: `$> mvn --version`
+
+
+{{{
+mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-struts -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=es.cemi.samples -DartifactId=struts2app
+}}}
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
-{{{
-mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-struts -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=es.cemi.samples -DartifactId=struts2app
-}}}
