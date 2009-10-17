@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Guía introductoria a Struts 2
 
 = Introduction =
 
