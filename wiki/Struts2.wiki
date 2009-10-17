@@ -1,8 +1,8 @@
 #summary Guía introductoria a Struts 2
 
-= Introduction =
+= Introducción =
 
-Add your content here.
+http://struts.apache.org/2.1.8/index.html
 
 
 = Details =
