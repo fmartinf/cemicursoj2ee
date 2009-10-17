@@ -5,7 +5,6 @@ En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación d
 
 
 = Instalación =
-
 Vamos a utilizar archetipos [http://maven.apache.org Maven] para familiarizarnos rápidamente tanto con Struts 2 como con JSF.
 
 Pasos:
@@ -19,3 +18,22 @@ Pasos:
 4. Creamos las _variables de entorno_ de *usuario* `M2=%M2_HOME%\bin` y `MAVEN_OPTS=-Xms256m -Xmx512m`
 
 5. Nos abrimos una consola y ejecutamos: `$> mvn --version`
+
+= Configuración =
+Toda la configuración de Maven corre a cargo del fichero `%M2_HOME%\conf\settings.xml`.
+
+En nuestro caso, queremos cambiar la ruta de nuestro repositorio de JARs 
+
+{{{
+<settings>
+  <localRepository>...</localRepository>
+</settings>
+}}}
+
+La marca _localRepository_ viene comentada por defecto, estableciendose así el directorio `C:\Document and settings\${current_user}\.m2\repository`. 
+
+Así que añadimos lo siguiente en dicho fichero, para unificar el emplazamiento del repositorio maven y evitar problemas con posibles nombres de usuario que contengan acentos.
+
+{{{
+<localRepository>C:\CEMi_J2EE\apache-maven-2.2.1\repository</localRepository>
+}}}
