@@ -22,7 +22,7 @@ Una vez tengamos todos los JARs, ya podemos proceder a realizar la primera compi
 C:\CEMi_J2EE\jsfapp> mvn clean install
 }}}
 
-Por último, importamos *struts2app* a nuestro _workspace_ de Eclipse. Para realizar esta operación, tenemos dos posibilidades:
+Por último, importamos *jsfapp* a nuestro _workspace_ de Eclipse. Para realizar esta operación, tenemos dos posibilidades:
 
 1. Utilizamos el plugin de Eclipse para Maven: [http://www.eclipse.org/iam/ Eclipse IAM]
 
