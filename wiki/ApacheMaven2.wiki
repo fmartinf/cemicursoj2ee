@@ -37,3 +37,18 @@ Así que añadimos lo siguiente en dicho fichero, para unificar el emplazamiento
 {{{
 <localRepository>C:\CEMi_J2EE\apache-maven-2.2.1\repository</localRepository>
 }}}
+
+= ¿Cómo convertir un proyecto Maven en un proyecto Eclipse? =
+
+Para generar los archivos _.project_, _.classpath_ y el directorio _.settings_ necesarios para generar el proyecto Eclipse de una aplicación Maven, procederemos de la siguiente forma:
+
+{{{
+C:\CEMi_J2EE\${app}> mvn eclipse:clean eclipse:eclipse -o
+}}}
+
+Cada vez que añadamos una nueva dependencia y queramos que Eclipse actualice este JAR en el classpath, deberemos ejecutar el comando anterior y hacer un refresh (F5) del proyecto.
+
+Una vez creado el proyecto, ya podremos importarlo a nuestro workspace de Eclipse.
+
+Arrancamos Eclipse y establecemos como workspace `C:\CEMi_J2EE`. Importaremos nuestro proyecto mediante: `File > Import > General > Existing projects into workspace`
+`C:\CEMi_J2EE\${app}`
