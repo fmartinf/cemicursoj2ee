@@ -22,5 +22,8 @@ Una vez tengamos todos los JARs, ya podemos proceder a realizar la primera compi
 C:\CEMi_J2EE\jsfapp> mvn clean install
 }}}
 
+Por último, importamos *struts2app* a nuestro _workspace_ de Eclipse. Para realizar esta operación, tenemos dos posibilidades:
 
-Por último, convertimos esta aplicación Maven un un proyecto Eclipse siguiendo las pautas del aptdo. _¿Cómo convertir un proyecto Maven en un proyecto Eclipse?_ del artículo de la WIKI ApacheMaven2
+1. Utilizamos el plugin de Eclipse para Maven: [http://www.eclipse.org/iam/ Eclipse IAM]
+
+2. Utilizamos el plugin de Maven [http://maven.apache.org/plugins/maven-eclipse-plugin/ Maven Eclipse Plugin], tal y como se explica en el aptdo. _¿Cómo convertir un proyecto Maven en un proyecto Eclipse?_ del artículo de la WIKI ApacheMaven2
