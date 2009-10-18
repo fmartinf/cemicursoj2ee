@@ -23,17 +23,4 @@ Una vez tengamos todos los JARs, ya podemos proceder a realizar la primera compi
 C:\CEMi_J2EE\struts2app> mvn clean install
 }}}
 
-= Generamos el proyecto Eclipse asociado a esta aplicación =
-
-Para generar los archivos _.project_, _.classpath_ y el directorio _.settings_ necesarios para generar el proyecto Eclipse de está aplicación Maven, procederemos de la siguiente forma:
-
-{{{
-C:\CEMi_J2EE\struts2app> mvn eclipse:clean eclipse:eclipse
-}}}
-
-Cada vez que añadamos una nueva dependencia y queramos que Eclipse actualice este JAR en el classpath, deberemos ejecutar el comando anterior y hacer un refresh (F5) del proyecto.
-
-Una vez creado el proyecto, ya podremos importarlo a nuestro workspace de Eclipse.
-
-Arrancamos Eclipse y establecemos como workspace `C:\CEMi_J2EE`. Importaremos nuestro proyecto mediante: `File > Import > General > Existing projects into workspace`
-`C:\CEMi_J2EE\struts2app`
+Por último, convertimos esta aplicación Maven un un proyecto Eclipse siguiendo las pautas del aptdo. ´¿Cómo convertir un proyecto Maven en un proyecto Eclipse?´ del artículo de la WIKI ApaceMaven2
