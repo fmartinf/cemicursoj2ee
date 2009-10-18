@@ -52,3 +52,10 @@ Una vez creado el proyecto, ya podremos importarlo a nuestro workspace de Eclips
 
 Arrancamos Eclipse y establecemos como workspace `C:\CEMi_J2EE`. Importaremos nuestro proyecto mediante: `File > Import > General > Existing projects into workspace`
 `C:\CEMi_J2EE\${app}`
+
+Una vez hemos importado nuestro proyecto al _workspace_ de Eclipse, deberemos crear la siguiente variable de classpath `M2_REPO`. Para ello, accedemos a `Window > Preferences > Java > Build Path > Classpath Variables` > New`:
+
+Name: `M2_REPO`
+Path: `C:\CEMi_J2EE\apache-maven-2.2.1\repository`
+
+De esta forma Eclipse encontrará las referencias que hay establecidas en el fichero `.classpath` del proyecto.
