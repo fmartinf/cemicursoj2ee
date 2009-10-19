@@ -5,6 +5,7 @@
 Curso Básico de programación en Java orientado a las futuras necesidades de software a implementar por el equipo técnico del Dpto. de Desarrollo de Soluciones del CEMi.
 
 *Tipo:* Presencial
+
 *Impartido por: `rsilva`*
 
 = Contenidos =
