@@ -10,74 +10,69 @@ Curso Básico de programación en Java orientado a las futuras necesidades de so
 
 == Parte I: J2SE (50h) ==
 
-   1. Introducción a la programación orientada a objetos.
-          * Clases, objetos, interfaces, herencia, polimorfismo, clases abstractas, etc...
-   2. IDE_CEMI como Entorno de Desarrollo.
-          * Actualmente se emplea Eclipse aunque se está planteando el uso de NetBeans
-   3. Configuración de entorno (JDK e IDE_CEMI)
-   4. Programación con JAVA (J2SE)
-          * Introducción
-          * Sintaxis de Java
-          * Excepciones
-          * Organización de clases
-   5. E/S y Manejo de ficheros
-   6. Log4j
-          * Concepto y ventajas de un Sistema de Trazas
-          * Niveles de Traza
-
-o   Niveles en función del entorno (Desarrollo, Certificación y Producción)
-
-          * Redirección de Trazas
-          * Formatos de Visualización
-          * Configuración de Ficheros
-   6. Empaquetado de componentes y aplicaciones (JAR)
-   7. JDBC. (Importancia del uso de "PreparedStatement")
-   8. Documentación y tutoriales online
-   9. Normas de programación y buenas prácticas (Epígrafe "FC09.- Estándares de programación" del documento "Requisitos_instalacion_app_J2EE.pdf")
-  10. Ejemplo práctico stand-alone (10h)
+ # Introducción a la programación orientada a objetos.
+   * Clases, objetos, interfaces, herencia, polimorfismo, clases abstractas, etc...
+ # IDE_CEMI como Entorno de Desarrollo.
+   * Actualmente se emplea Eclipse aunque se está planteando el uso de NetBeans
+ # Configuración de entorno (JDK e IDE_CEMI)
+ # Programación con JAVA (J2SE)
+   * Introducción
+   * Sintaxis de Java
+   * Excepciones
+   * Organización de clases
+ # E/S y Manejo de ficheros
+ # Log4j
+   * Concepto y ventajas de un Sistema de Trazas
+   * Niveles de Traza
+ # Niveles en función del entorno (Desarrollo, Certificación y Producción)
+   * Redirección de Trazas
+   * Formatos de Visualización
+   * Configuración de Ficheros
+ # Empaquetado de componentes y aplicaciones (JAR)
+ # JDBC. (Importancia del uso de "PreparedStatement")
+ # Documentación y tutoriales online
+ # Normas de programación y buenas prácticas (Epígrafe "FC09.- Estándares de programación" del documento "Requisitos_instalacion_app_J2EE.pdf")
+ # Ejemplo práctico stand-alone (10h)
 
 
 == Parte II: Java EE ==
 
-   1. Introducción:
-          * Escenario Web: agentes/elementos que intervienen (cliente, servidor, red, protocolo http)
-          * El contexto de J2EE. Concepto de aplicación Java EE
-          * Componentes y contenedores de una aplicación Java EE
-          * Arquitectura de una aplicación Java EE (introducción a la arquitectura MVC)
-   2. Servlet
-          * Lectura de datos enviados desde un formulario HTML
-          * Generación de resultados
-          * Envío de datos hacia el cliente
-          * Definición de URL’s personalizadas
-          * Depuración de Servlets,...
-   3. JSP
-          * Scriptlets
-          * Expresiones JSP
-          * Declaraciones JSP
-          * Variables predefinidas
-          * Estrategia de diseño de JSP
-          * Inclusión (jsp:include),...
-   4. IDE_CEMI
-          * Introducción, descarga e instalación
-          * Integración de Tomcat/GlassFish en IDE_CEMI
-          * Configuración
-          * Creación de aplicaciones Web
-          * Añadir código a un proyecto Web
-          * Arranque, verificación, parada de Servidor y despliegue de aplicaciones
-          * Verificación de aplicaciones desplegadas
-          * Empaquetado y despliegue de aplicaciones con IDE_CEMI
-   5. Java Beans
-   6. Taglib (JSTL, introducción a Struts Taglibs)
-   7. Acceso a Base de Datos
-
-·         JDBC (SQL y PLSQL)
-
-·         Pool de conexiones
-
-   8. Control de versiones con “Subversion”
-   9. Introducir (sólo citar) los siguientes conceptos complementarios: HTML, CSS y Javascript
-  10. Buenas Prácticas
-  11. Ejemplo práctico (10h)
+ # Introducción:
+   * Escenario Web: agentes/elementos que intervienen (cliente, servidor, red, protocolo http)
+   * El contexto de J2EE. Concepto de aplicación Java EE
+   * Componentes y contenedores de una aplicación Java EE
+   * Arquitectura de una aplicación Java EE (introducción a la arquitectura MVC)
+ # Servlet
+   * Lectura de datos enviados desde un formulario HTML
+   * Generación de resultados
+   * Envío de datos hacia el cliente
+   * Definición de URL’s personalizadas
+   * Depuración de Servlets,...
+ # JSP
+   * Scriptlets
+   * Expresiones JSP
+   * Declaraciones JSP
+   * Variables predefinidas
+   * Estrategia de diseño de JSP
+   * Inclusión (jsp:include),...
+ # IDE_CEMI
+   * Introducción, descarga e instalación
+   * Integración de Tomcat/GlassFish en IDE_CEMI
+   * Configuración
+   * Creación de aplicaciones Web
+   * Añadir código a un proyecto Web
+   * Arranque, verificación, parada de Servidor y despliegue de aplicaciones
+   * Verificación de aplicaciones desplegadas
+   * Empaquetado y despliegue de aplicaciones con IDE_CEMI
+ # Java Beans
+ # Taglib (JSTL, introducción a Struts Taglibs)
+ # Acceso a Base de Datos
+   * JDBC (SQL y PLSQL)
+   * Pool de conexiones
+ # Control de versiones con “Subversion”
+ # Introducir (sólo citar) los siguientes conceptos complementarios: HTML, CSS y Javascript
+ # Buenas Prácticas
+ # Ejemplo práctico (10h)
 
 *Destinatarios:* Equipo Técnico del Dpto. de Desarrollo de Soluciones del CEMi
 
