@@ -80,6 +80,7 @@ o   Niveles en función del entorno (Desarrollo, Certificación y Producción)
   11. Ejemplo práctico (10h)
 
 *Destinatarios:* Equipo Técnico del Dpto. de Desarrollo de Soluciones del CEMi
+
 *Duración aproximada:* 100h
 
 *Planificación:* Del 28-09-09 al 26-10-09. De 9.00h a 14.00h de lunes a viernes
