@@ -11,7 +11,7 @@ Curso Avanzado de programación en Java orientado a las futuras necesidades de s
 
 == Parte I: J2SE (50h) ==
 
-*Impartido por:* `rafael`
+*Impartido por:* `teresa`
 
  # Colecciones
  # Acceso a rutinas natural desde Java
