@@ -38,6 +38,8 @@ Curso Avanzado de programación en Java orientado a las futuras necesidades de s
 
 == Parte II: Java EE (75h) ==
 
+*Impartido por:* `teresa`, `carlos`
+
  # Arquitectura / Patrón MVC [`carlos`]
  # Frameworks MVC [`carlos`]
    * Concepto de framework MVC
