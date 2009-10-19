@@ -1,0 +1,127 @@
+#summary Programación en Java/J2EE. Curso Avanzado
+
+= Introducción =
+
+Curso Avanzado de programación en Java orientado a las futuras necesidades de software a implementar por el equipo técnico del Dpto. de Desarrollo de Soluciones del CEMi.
+
+
+*Tipo:* Presencial
+
+= Contenidos =
+
+== Parte I: J2SE (50h) ==
+
+   1. Colecciones
+   2. Acceso a rutinas natural desde Java
+
+·         Mediante EntireX
+
+·         Vía conector de JCAPS para Natural/Adabas
+
+   3. i18n
+   4. JavaMail
+   5. XML (Schema, DTD) y JAXP (DOM y SAX)
+   6. Documentación de código (javadoc)
+   7. Pruebas: JUnit, JMeter,...
+   8. Introducción a los siguientes conceptos
+
+·         Applets
+
+·         Concurrencia
+
+·         Networking
+
+·         Swing
+
+·         RMI
+
+·         Serialización y reflexión
+
+·         XSLT y XPath
+
+·         Ajax
+
+   9. Documentación y tutoriales online
+  10. Buenas prácticas
+  11. Ejemplo práctico (10h)
+
+ 
+
+== Parte II: Java EE (75h) ==
+
+   1. Arquitectura / Patrón MVC
+   2. Frameworks MVC
+
+·         Concepto de framework MVC
+
+·         Ventajas
+
+·         Citar los frameworks más utilizados: Struts, Struts 2, JSF, Spring
+
+   3. Struts II
+
+          * Concepto de Struts
+          * Componentes estándares de Struts
+          * Flujo de Control en Struts
+          * Procesamiento de Peticiones
+          * Control de Errores
+          * Manejo de Formularios
+          * Librerías de Etiquetas
+          * Internacionalización
+          * Mejoras y ventajas respecto a la versión Struts 1.3. (versión utilizada actualmente en el CEMi)
+
+   4. JSF
+
+          * Concepto, arquitectura, configuración y flujo de control
+          * Implementaciones más utilizadas
+          * IceFaces
+
+   5. Persistencia de datos
+
+          * Concepto y ubicación en la lógica de negocio
+          * Hibernate
+          * EJB3, JPA
+
+   6. Hibernate
+
+          * Motores de Persistencia
+          * Mapeo del Diseño Relacional al Diseño Orientado a Objetos
+          * El archivo de propiedades de Hibernate / Configuración de Hibernate (sobre múltiples Bases de datos)
+          * El API de Hibernate
+          * Mapeo entre propiedades y campos
+          * Mapeo de relaciones entre tablas
+          * El lenguaje HQL
+
+   7. Web Services
+
+          * Concepto de Servicio Web
+          * Protocolos estándares para Servicios Web
+          * SOAP
+          * WSDL
+          * UDDI
+          * Desarrollo de Servicios Web mediante Axis2
+
+   8. Seguridad
+
+          * En aplicaciones J2EE
+          * En la infraestructura de Servicios Web (la que implique a desarrollo)
+
+   9. Herramientas (empaquetado y despliegue,…)
+
+          * ANT
+          * MAVEN
+
+  10. Buenas prácticas
+  11. Ejemplo práctico (15h)
+
+*Destinatarios:* Equipo Técnico del Dpto. de Desarrollo de Soluciones del CEMi
+
+*Duración aproximada:* 125h
+
+*Planificación:* Del 27-10-09 al 01-12-09. De 9.00h a 14.00h de lunes a viernes
+
+*Lugar de impartición:* Sala de formación del CEMi
+
+*Requisitos:* Conocimientos básicos de programación en java
+
+*Observaciones:* Este curso está orientado principalmente a usuarios programadores con conocimiento básico en el lenguaje de programación java, o bien a aquellos que teniendo un conocimiento avanzado del lenguaje necesiten de un curso de reciclaje.
