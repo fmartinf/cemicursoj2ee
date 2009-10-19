@@ -13,6 +13,7 @@ Curso Avanzado de programación en Java orientado a las futuras necesidades de s
 
    1. Colecciones
    2. Acceso a rutinas natural desde Java
+
       - Mediante EntireX
       - Vía conector de JCAPS para Natural/Adabas
 
@@ -22,6 +23,7 @@ Curso Avanzado de programación en Java orientado a las futuras necesidades de s
    6. Documentación de código (javadoc)
    7. Pruebas: JUnit, JMeter,...
    8. Introducción a los siguientes conceptos
+
       - Applets
 
       - Concurrencia
