@@ -6,7 +6,7 @@ Curso Básico de programación en Java orientado a las futuras necesidades de so
 
 *Tipo:* Presencial
 
-*Impartido por: `rsilva`*
+*Impartido por*: `rsilva`
 
 = Contenidos =
 
