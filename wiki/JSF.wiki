@@ -27,3 +27,11 @@ Por último, importamos *jsfapp* a nuestro _workspace_ de Eclipse. Para realizar
 1. Utilizamos el plugin de Eclipse para Maven: [http://www.eclipse.org/iam/ Eclipse IAM]
 
 2. Utilizamos el plugin de Maven [http://maven.apache.org/plugins/maven-eclipse-plugin/ Maven Eclipse Plugin], tal y como se explica en el aptdo. _¿Cómo convertir un proyecto Maven en un proyecto Eclipse?_ del artículo de la WIKI ApacheMaven2
+
+= Enlaces de interés =
+
+* Útil maquetando HTML: http://www.exadel.com/tutorial/jsf/jsftags-guide.html
+* MADEJA JSF: http://www.juntadeandalucia.es/xwiki/bin/view/MADEJA/JSF
+* MyFaces Tomahawk for JSF 1.2 - tags doc: http://myfaces.apache.org/tomahawk-project/tomahawk12/tagdoc.html
+* MyFaces Tomahawk WIKI: http://wiki.apache.org/myfaces/Tomahawk
+: Primefaces: http://primefaces.prime.com.tr/en/
