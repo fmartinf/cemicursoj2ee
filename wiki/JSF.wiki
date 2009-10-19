@@ -31,7 +31,11 @@ Por último, importamos *jsfapp* a nuestro _workspace_ de Eclipse. Para realizar
 = Enlaces de interés =
 
 * Útil maquetando HTML: http://www.exadel.com/tutorial/jsf/jsftags-guide.html
+
 * MADEJA JSF: http://www.juntadeandalucia.es/xwiki/bin/view/MADEJA/JSF
+
 * MyFaces Tomahawk for JSF 1.2 - tags doc: http://myfaces.apache.org/tomahawk-project/tomahawk12/tagdoc.html
+
 * MyFaces Tomahawk WIKI: http://wiki.apache.org/myfaces/Tomahawk
-: Primefaces: http://primefaces.prime.com.tr/en/
+
+* Primefaces: http://primefaces.prime.com.tr/en/
