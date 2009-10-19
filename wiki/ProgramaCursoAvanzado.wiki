@@ -85,7 +85,7 @@ Curso Avanzado de programación en Java orientado a las futuras necesidades de s
    * ANT [`teresa`]
    * MAVEN [`carlos`]
  # Buenas prácticas [`teresa`]
- # Ejemplo práctico (15h) [`teresa`]
+ # Ejemplo práctico (15h) [`teresa`, `carlos`]
 
 *Destinatarios:* Equipo Técnico del Dpto. de Desarrollo de Soluciones del CEMi
 
