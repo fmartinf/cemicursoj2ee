@@ -18,7 +18,7 @@ Struts 2 Data Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Strut
 
 Struts 2 Bean Tag Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example12/ Struts2Example12]
 
-Struts 2 Control Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
+Struts 2 Control Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example10/ Struts2Example10]
 
 Struts 2 OGNL Expression Language Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
 
