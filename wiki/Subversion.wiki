@@ -48,6 +48,9 @@ http://subclipse.tigris.org/images/menu-ss.png
 http://subclipse.tigris.org/images/sync-ss.png
 
 Posibilidades:
+
 - azul: versión local es anterior a la del servidor. Precisa _update_
+
 - gris: versión local coincidente con la del servidor y el fichero local se encuentra modificado. Precisa _commit_
+
 - rojo: la versión local es anterior a la remota y dicho fichero se encuentra modificado. Precisa _merge_ o _revert_.
