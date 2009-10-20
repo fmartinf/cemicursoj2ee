@@ -1,5 +1,7 @@
 #summary Guía de utilización del control de versiones Subversion
 
+http://www.sdtimes.com/blog/image.axd?picture=2009%2F3%2Fsubversion_logo-384x332.png
+
 = Introducción =
 
 http://subclipse.tigris.org/
