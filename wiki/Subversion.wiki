@@ -1,6 +1,6 @@
 #summary Guía de utilización del control de versiones Subversion
 
-http://www.sdtimes.com/blog/image.axd?picture=2009%2F3%2Fsubversion_logo-384x332.png
+http://subversion.tigris.org/images/subversion_logo_hor-468x64.png
 
 = Introducción =
 
