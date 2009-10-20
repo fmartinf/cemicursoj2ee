@@ -31,6 +31,8 @@ Si en SVN se encuentra el fichero _.project_, se definirá el nombre del proyect
 
 = Operaciones básicas con SVN desde Eclipse =
 
+http://subclipse.tigris.org/images/menu-ss.png
+
 * Actualizar: `Click-dcho > Team > Update`
 
 * Publicar: `Click-dcho > Team > Commit`
@@ -42,6 +44,8 @@ Si en SVN se encuentra el fichero _.project_, se definirá el nombre del proyect
 * Ignorando control de versiones: `Click-dcho > Team > Add to svn:ignore`
 
 * Resolviendo conflictos: `Click-dcho > Team > Synchronize with repository`
+
+http://subclipse.tigris.org/images/sync-ss.png
 
 Posibilidades:
 - azul: versión local es anterior a la del servidor. Precisa _update_
