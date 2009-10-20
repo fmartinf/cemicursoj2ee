@@ -4,6 +4,7 @@
 
 http://subclipse.tigris.org/
 
+Documentación oficial: [http://subclipse.tigris.org/files/documents/906/8847/file_8847.dat/subclipse%20-%20install%2c%20use%20and%20compile.pdf subclipse%20-%20install%2c%20use%20and%20compile.pdf]
 
 = Instalación del plugin de SVN para Eclipse _Subclipse_ =
 
@@ -14,3 +15,35 @@ http://subclipse.tigris.org/
 Seleccionamos los tres componentes y pulsamos `Next` y continuamos con la instalación hasta el final.
 
 Cuando finalice la instalación, deberemos reiniciar Eclipse.
+
+
+= Importando un proyecto Eclipse existente en SVN =
+
+`Eclipse > File > Import > SVN > Checkout Projects from SVN`
+
+En este paso deberemos indicarle la ruta del repositorio. En nuestro caso: https://cemicursoj2ee.googlecode.com/svn/trunk/
+
+A continuación deberemos introducir nuestras credenciales de usuario. En nuestro caso, _Usuario:_ usuario@gmail.com
+_Contraseña:_ [http://code.google.com/hosting/settings googleCode.com password]
+
+Si en SVN se encuentra el fichero _.project_, se definirá el nombre del proyecto especificado en dicho fichero, sino deberemos establecerlo nosotros.
+
+
+= Operaciones básicas con SVN desde Eclipse =
+
+* Actualizar: `Click-dcho > Team > Update`
+
+* Publicar: `Click-dcho > Team > Commit`
+
+* Deshacer cambios: `Click-dcho > Team > Revert`
+
+* Añadir al control de versiones: `Click-dcho > Team > Add to version control`.
+
+* Ignorando control de versiones: `Click-dcho > Team > Add to svn:ignore`
+
+* Resolviendo conflictos: `Click-dcho > Team > Synchronize with repository`
+
+Posibilidades:
+- azul: versión local es anterior a la del servidor. Precisa _update_
+- gris: versión local coincidente con la del servidor y el fichero local se encuentra modificado. Precisa _commit_
+- rojo: la versión local es anterior a la remota y dicho fichero se encuentra modificado. Precisa _merge_ o _revert_.
