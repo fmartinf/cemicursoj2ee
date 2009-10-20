@@ -1,0 +1,16 @@
+#summary Guía de utilización del control de versiones Subversion
+
+= Introducción =
+
+http://subclipse.tigris.org/
+
+
+= Instalación del plugin de SVN para Eclipse _Subclipse_ =
+
+`Eclipse > Help > Install new software`
+
+`Work with:` http://subclipse.tigris.org/update_1.6.x
+
+Seleccionamos los tres componentes y pulsamos `Next` y continuamos con la instalación hasta el final.
+
+Cuando finalice la instalación, deberemos reiniciar Eclipse.
