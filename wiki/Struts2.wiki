@@ -1,5 +1,7 @@
 #summary Guía introductoria a Struts 2
 
+http://struts.apache.org/2.1.8/images/struts2.png
+
 = Introducción =
 
 http://struts.apache.org/2.1.8/index.html
