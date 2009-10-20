@@ -4,7 +4,7 @@
 
 http://subclipse.tigris.org/
 
-Documentación oficial: [http://subclipse.tigris.org/files/documents/906/8847/file_8847.dat/subclipse%20-%20install%2c%20use%20and%20compile.pdf subclipse%20-%20install%2c%20use%20and%20compile.pdf]
+Documentación oficial: [http://subclipse.tigris.org/files/documents/906/8847/file_8847.dat/subclipse%20-%20install%2c%20use%20and%20compile.pdf subclipse install use and compile.pdf]
 
 = Instalación del plugin de SVN para Eclipse _Subclipse_ =
 
