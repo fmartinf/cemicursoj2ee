@@ -8,6 +8,8 @@ http://subclipse.tigris.org/
 
 Documentación oficial: [http://subclipse.tigris.org/files/documents/906/8847/file_8847.dat/subclipse%20-%20install%2c%20use%20and%20compile.pdf subclipse install use and compile.pdf]
 
+Libro oficial _online_: http://svnbook.red-bean.com/
+
 = Instalación del plugin de SVN para Eclipse _Subclipse_ =
 
 `Eclipse > Help > Install new software`
@@ -32,6 +34,10 @@ Si en SVN se encuentra el fichero _.project_, se definirá el nombre del proyect
 
 
 = Operaciones básicas con SVN desde Eclipse =
+
+Estados de un fichero:
+
+http://tortoisesvn.tigris.org/images/Overlays.png
 
 http://subclipse.tigris.org/images/menu-ss.png
 
