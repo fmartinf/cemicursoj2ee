@@ -17,8 +17,12 @@ Extraído de `struts-2.1.8\src\core\pom.xml`
 </dependency>
 }}}
 
-Obtengo los fuentes para incluir en el debugger: 
+_Obtengo los fuentes tanto de [http://svn.opensymphony.com/svn/webwork/tags/webwork_2-1-6 OpenSymphony Webwork 2.1.6], como de [http://struts.apache.org/download.cgi#struts218 Apache Struts 2.1.8] para incluirlos en el debugger de Eclipse_
+
+Obtengo los fuentes de OpenSymphony Webwork 2.1.6 para incluir en el debugger: 
 http://svn.opensymphony.com/svn/webwork/tags/webwork_2-1-6/
+
+Obtengo los fuentes de Apache Struts 2.1.8 para 
 
 Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.html
 
