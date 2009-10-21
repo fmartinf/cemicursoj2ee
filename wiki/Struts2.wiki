@@ -6,6 +6,8 @@ http://struts.apache.org/2.1.8/images/struts2.png
 
 http://struts.apache.org/2.1.8/index.html
 
+http://www.vaannila.com/images/struts2/Interceptor1Pic1.gif
+
 = Ejemplos introductorios =
 
 Struts 2 Annotation Tutorial 1 [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example1/ Struts2Example1]
