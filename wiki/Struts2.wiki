@@ -20,19 +20,19 @@ Struts 2 UI Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2
 
 Struts 2 Data Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example11/ Struts2ExampleDataTags]
 
-Struts 2 Bean Tag Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example12/ Struts2Example12]
+Struts 2 Bean Tag Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example12/ Struts2ExampleBeanTag]
 
-Struts 2 Control Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example10/ Struts2Example10]
+Struts 2 Control Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example10/ Struts2ExampleControlTags]
 
 Struts 2 OGNL Expression Language Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleOGNL/ Struts2ExampleOGNL]
 
-Struts 2 Interceptors Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
+Struts 2 Interceptors Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleInterceptor1/ Struts2ExampleInterceptor1]
 
-Struts 2 Interceptors Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
+Struts 2 Interceptors Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleInterceptor2/ Struts2ExampleInterceptor2]
 
-DispatchAction Functionality in Struts 2 Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
+DispatchAction Functionality in Struts 2 Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDispatchAction1/ Struts2ExampleDispatchAction1]
 
-Dynamic Method Invocation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Examplex/ Struts2Examplex]
+Dynamic Method Invocation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDynamicMethodInvocation/ Struts2ExampleDynamicMethodInvocation]
 
 Struts 2 Validation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
  
