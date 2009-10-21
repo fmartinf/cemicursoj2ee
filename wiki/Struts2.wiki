@@ -1,10 +1,10 @@
 #summary Guía introductoria a Struts 2
 
-http://struts.apache.org/2.1.8/images/struts2.png
+[http://struts.apache.org/2.1.8/index.html http://struts.apache.org/2.1.8/images/struts2.png]
 
 = Introducción =
 
-http://struts.apache.org/2.1.8/index.html
+TEXTO
 
 http://www.vaannila.com/images/struts2/Interceptor1Pic1.gif
 
