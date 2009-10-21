@@ -18,7 +18,7 @@ Struts 2 Hello World Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Str
 
 Struts 2 UI Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example7/ Struts2ExampleUITags]
 
-Struts 2 Data Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example11/ Struts2Example11]
+Struts 2 Data Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example11/ Struts2ExampleDataTags]
 
 Struts 2 Bean Tag Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example12/ Struts2Example12]
 
