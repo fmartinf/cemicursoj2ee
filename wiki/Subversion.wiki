@@ -1,10 +1,11 @@
 #summary Guía de utilización del control de versiones Subversion
 
-http://subversion.tigris.org/images/subversion_logo_hor-468x64.png
+[http://subclipse.tigris.org/ http://subversion.tigris.org/images/subversion_logo_hor-468x64.png]
+http://subclipse.tigris.org/
 
 = Introducción =
 
-http://subclipse.tigris.org/
+Sitio: http://subclipse.tigris.org/
 
 Documentación oficial: [http://subclipse.tigris.org/files/documents/906/8847/file_8847.dat/subclipse%20-%20install%2c%20use%20and%20compile.pdf subclipse install use and compile.pdf]
 
