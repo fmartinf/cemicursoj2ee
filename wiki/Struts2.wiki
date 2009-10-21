@@ -17,6 +17,9 @@ Extraído de `struts-2.1.8\src\core\pom.xml`
 </dependency>
 }}}
 
+Obtengo los fuentes para incluir en el debugger: 
+http://svn.opensymphony.com/svn/webwork/tags/webwork_2-1-6/
+
 Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.html
 
 [http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.html http://www.vaannila.com/images/struts2/Interceptor1Pic1.gif]
