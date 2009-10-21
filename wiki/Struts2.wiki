@@ -8,7 +8,8 @@ Sitio: http://struts.apache.org/2.1.8/index.html
 
 [http://www.opensymphony.com/webwork/ http://struts.apache.org/2.1.8/images/struts2-merger2.png]
 
-http://www.vaannila.com/images/struts2/Interceptor1Pic1.gif
+[http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.html http://www.vaannila.com/images/struts2/Interceptor1Pic1.gif]
+http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.html
 
 = Ejemplos introductorios =
 
