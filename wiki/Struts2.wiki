@@ -6,6 +6,8 @@
 
 Sitio: http://struts.apache.org/2.1.8/index.html
 
+http://struts.apache.org/2.1.8/images/struts2-merger2.png
+
 http://www.vaannila.com/images/struts2/Interceptor1Pic1.gif
 
 = Ejemplos introductorios =
