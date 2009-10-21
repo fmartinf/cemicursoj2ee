@@ -49,7 +49,7 @@ DispatchAction Functionality in Struts 2 Tutorial [http://cemicursoj2ee.googleco
 
 Dynamic Method Invocation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDynamicMethodInvocation/ Struts2ExampleDynamicMethodInvocation]
 
-Struts 2 Validation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
+Struts 2 Validation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleValidation1/ Struts2ExampleValidation1]
 
 Struts 2 Validation Using XML File Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
 
