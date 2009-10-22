@@ -19,6 +19,7 @@ public class UserAction extends ActionSupport{
     public UserAction() {
     }
 
+    @Override
     public String execute() {
         return SUCCESS;
     }
