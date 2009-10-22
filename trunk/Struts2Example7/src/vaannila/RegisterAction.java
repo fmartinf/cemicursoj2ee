@@ -42,6 +42,7 @@ public class RegisterAction extends ActionSupport {
 		return "populate";
 	}
 
+	@Override
 	public String execute() {
 		return SUCCESS;
 	}
