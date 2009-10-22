@@ -76,6 +76,17 @@ Una vez tengamos todos los JARs, ya podemos proceder a realizar la primera compi
 C:\CEMi_J2EE\struts2app> mvn clean install
 }}}
 
+{{{
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESSFUL
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 8 minutes 1 second
+[INFO] Finished at: Thu Oct 22 21:32:14 CEST 2009
+[INFO] Final Memory: 65M/254M
+[INFO] ------------------------------------------------------------------------
+C:\CEMi_J2EE\struts2app>
+}}}
+
 Por último, importamos *struts2app* a nuestro _workspace_ de Eclipse. Para realizar esta operación, tenemos dos posibilidades:
 
 1. Utilizamos el plugin de Eclipse para Maven: [http://www.eclipse.org/iam/ Eclipse IAM]
