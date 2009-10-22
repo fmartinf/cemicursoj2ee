@@ -18,6 +18,7 @@ public class Login extends ActionSupport {
     public Login() {
     }
 
+    @Override
     public String execute() {
         return SUCCESS;
     }
