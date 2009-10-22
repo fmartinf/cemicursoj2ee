@@ -39,7 +39,7 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
  # * Dynamic Method Invocation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDynamicMethodInvocation/ Struts2ExampleDynamicMethodInvocation]
  # * Struts 2 Validation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleValidation1/ Struts2ExampleValidation1]
  # * Struts 2 Validation Using XML File Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleValidation2/ Struts2ExampleValidation2]
-_XWork Validation Framework: http://www.opensymphony.com/xwork/wikidocs/Validation%20Framework.html_
+ * _XWork Validation Framework: http://www.opensymphony.com/xwork/wikidocs/Validation%20Framework.html_
  # * Domain Object as JavaBeans Property Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
  # * Struts 2 ModelDriven Action Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
  # * Struts 2 File Upload Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
