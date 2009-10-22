@@ -18,11 +18,13 @@ public class Login extends ActionSupport {
     public Login() {
     }
 
+    @Override
     public String execute() {
     	System.out.println("executing..");
         return SUCCESS;
     }
 
+    @Override
     public void validate() {
         if (getUserName().length() == 0) {
             addFieldError("userName", "User Name is required");
