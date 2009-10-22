@@ -36,7 +36,7 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
    * OGNL: http://www.opensymphony.com/ognl/
  # Struts 2 Interceptors Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleInterceptor1/ Struts2ExampleInterceptor1]
  # Struts 2 Interceptors Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleInterceptor2/ Struts2ExampleInterceptor2]
-   * Opensymphony XWork Default Interceptors: http://www.opensymphony.com/xwork/wikidocs/XWork%20Interceptors.html
+   * XWork Default Interceptors: http://www.opensymphony.com/xwork/wikidocs/XWork%20Interceptors.html
  # DispatchAction Functionality in Struts 2 Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDispatchAction1/ Struts2ExampleDispatchAction1]
  # Dynamic Method Invocation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDynamicMethodInvocation/ Struts2ExampleDynamicMethodInvocation]
  # Struts 2 Validation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleValidation1/ Struts2ExampleValidation1]
