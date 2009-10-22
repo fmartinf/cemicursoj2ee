@@ -83,4 +83,6 @@ En este caso, el `.classpath` no cuenta con este nuevo JAR en el _classpath_ del
 C:\CEMi_J2EE\${app}> mvn eclipse:clean eclipse:eclipse -o
 }}}
 
+_El parámetro `-o` sirve para ejecutar Maven en modo offline. Este modo es conveniente utilizarlo siempre que que sea posible.__
+
 Si ya teníamos importado el proyecto y se ha regenerado el proyecto "en caliente" (con el Eclipse abierto), bastará con hacer un _Refresh_ (F5) de dicho proyecto. Si no comienza a compilar automaticamente, deberemos forzar la compilación mediante `Projec > Clean..`
