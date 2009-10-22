@@ -26,7 +26,7 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
 = Ejemplos introductorios =
 
  # Struts 2 Annotation Tutorial 1 [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example1/ Struts2Example1]
- # Struts 2 Annotation Tutorial 2 [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example2/ Struts2Example2]
+ # Struts 2 Annotation Tutorial 2 [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example2/ Struts2ExampleAnnotations]
  # Struts 2 Hello World Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2HelloWorld1/ Struts2HelloWorld1]
  # Struts 2 UI Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example7/ Struts2ExampleUITags]
  # Struts 2 Data Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example11/ Struts2ExampleDataTags]
