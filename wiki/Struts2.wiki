@@ -27,6 +27,7 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
 
  # Struts 2 Annotation Tutorial 1 [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example1/ Struts2Example1]
  # Struts 2 Annotation Tutorial 2 [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example2/ Struts2ExampleAnnotations]
+   * http://struts.apache.org/2.0.11.1/docs/annotations.html
  # Struts 2 Hello World Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2HelloWorld1/ Struts2HelloWorld1]
  # Struts 2 UI Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example7/ Struts2ExampleUITags]
  # Struts 2 Data Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example11/ Struts2ExampleDataTags]
@@ -37,11 +38,13 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
  # Struts 2 Interceptors Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleInterceptor1/ Struts2ExampleInterceptor1]
  # Struts 2 Interceptors Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleInterceptor2/ Struts2ExampleInterceptor2]
    * _XWork Default Interceptors:_ http://www.opensymphony.com/xwork/wikidocs/XWork%20Interceptors.html
+   * http://struts.apache.org/2.0.11.1/docs/interceptors.html
  # DispatchAction Functionality in Struts 2 Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDispatchAction1/ Struts2ExampleDispatchAction1]
  # Dynamic Method Invocation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDynamicMethodInvocation/ Struts2ExampleDynamicMethodInvocation]
  # Struts 2 Validation Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleValidation1/ Struts2ExampleValidation1]
  # Struts 2 Validation Using XML File Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleValidation2/ Struts2ExampleValidation2]
    * _XWork Validation Framework:_ http://www.opensymphony.com/xwork/wikidocs/Validation%20Framework.html 
+   * http://struts.apache.org/2.0.11.1/docs/validation.html
  # Domain Object as JavaBeans Property Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDomainObject/ Struts2ExampleDomainObject]
  # Struts 2 ModelDriven Action Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleModelDriven/ Struts2ExampleModelDriven]
  # Struts 2 File Upload Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
