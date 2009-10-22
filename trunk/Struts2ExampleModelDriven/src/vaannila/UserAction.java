@@ -22,6 +22,7 @@ public class UserAction extends ActionSupport implements ModelDriven {
         return user;
     }
 
+    @Override
     public String execute() {
         return SUCCESS;
     }
