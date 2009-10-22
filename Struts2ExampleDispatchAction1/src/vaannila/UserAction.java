@@ -6,6 +6,7 @@ public class UserAction extends ActionSupport{
 
 	private String message;
 	
+	@Override
 	public String execute()
 	{
 		message = "Inside execute method";
