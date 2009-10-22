@@ -6,6 +6,7 @@ public class SampleAction extends ActionSupport{
 
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	public void validate()
 	{
 		System.out.println("validate() method called");
@@ -17,6 +18,7 @@ public class SampleAction extends ActionSupport{
 		return "populate";
 	}
 	
+	@Override
 	public String execute()
 	{
 		System.out.println("execute() method called");
