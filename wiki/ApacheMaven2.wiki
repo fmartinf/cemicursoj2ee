@@ -25,7 +25,7 @@ Pasos:
 {{{
 Apache Maven 2.2.1 (r801777; 2009-08-06 21:16:01+0200)
 Java version: 1.5.0_11
-Java home: C:\00-FACTORIA\jdk1.5.0_11\jre
+Java home: C:\CEMi_J2EE\jdk1.5.0_11\jre
 Default locale: es_ES, platform encoding: Cp1252
 OS name: "windows xp" version: "5.1" arch: "x86" Family: "windows"
 }}}
