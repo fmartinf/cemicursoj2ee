@@ -1,4 +1,4 @@
-#summary Guía de instalación de My*SQL.
+#summary Guía de instalación de MySQL.
 
 [http://dev.mysql.com/ http://dev.mysql.com/common/logos/logo_mysql_sun_a.gif]
 
