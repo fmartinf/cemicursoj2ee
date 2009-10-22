@@ -6,6 +6,7 @@ public class WelcomeUser extends ActionSupport{
 	private String userName;
 	private String message;
 
+	@Override
 	public String execute() {
 		message = "Welcome " + userName;
 		return SUCCESS;
