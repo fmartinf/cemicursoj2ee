@@ -486,7 +486,7 @@ $> mvn site
  * Personalización del empaquetado (assembly)
  * Construir sus propios arquetipos
 
-= ¿Cómo convertir un proyecto Maven en un proyecto Eclipse? =
+= Convertir un proyecto Maven a Eclipse =
 
 Para generar los archivos _.project_, _.classpath_ y el directorio _.settings_ necesarios para generar el proyecto Eclipse de una aplicación Maven, procederemos de la siguiente forma:
 

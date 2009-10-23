@@ -1,6 +1,6 @@
- * [ApacheMaven2#Introducci&oacute;n]
- * [ApacheMaven2#Instalaci&oacute;n]
- * [ApacheMaven2#Configuraci&oacute;n]
+ * Introducción
+ * Instalación
+ * Configuración
  * [ApacheMaven2#Control_del_ciclo_de_desarrollo Control del ciclo de desarrollo]
  * [ApacheMaven2#Comprendiendo_el_POM_(Project_Object_Model) Comprendiendo el POM]
  * [ApacheMaven2#Gesti&oacute;n_autom&aacute;tica_de_dependencias Gestión automática de dependencias]
@@ -17,5 +17,5 @@
  * [ApacheMaven2#Preparando_una_release Preparando una release]
  * [ApacheMaven2#Generando_informes_autom&aacute;ticos Generando informes automáticos]
  * [ApacheMaven2#Otros_temas Otros temas]
- * [ApacheMaven2#¿C&oacute;mo_convertir_un_proyecto_Maven_en_un_proyecto_Eclipse? Convertir un proyecto Maven a Eclipse]
+ * Convertir un proyecto Maven a Eclipse
  * [ApacheMaven2#Sincronizaci&oacute;n_manual_de_dependencias_Eclipse-Maven Sincronización manual de dependencias Eclipse-Maven]
