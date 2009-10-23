@@ -1,4 +1,5 @@
 #summary Programación en Java/J2EE. Curso Avanzado
+#sidebar TableOfContents
 
 = Introducción =
 

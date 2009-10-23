@@ -1,4 +1,5 @@
 #summary Guía introductoria a JavaServer Faces
+#sidebar TableOfContents
 
 = Introducción =
 

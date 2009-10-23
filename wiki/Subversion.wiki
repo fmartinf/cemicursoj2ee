@@ -1,4 +1,5 @@
 #summary Guía de utilización del control de versiones Subversion
+#sidebar TableOfContents
 
 [http://subclipse.tigris.org/ http://subversion.tigris.org/images/subversion_logo_hor-468x64.png]
 http://subclipse.tigris.org/

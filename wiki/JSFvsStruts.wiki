@@ -1,4 +1,5 @@
 #summary Comparativa entre ambos frameworks MVC
+#sidebar TableOfContents
 
 = Introduction =
 
