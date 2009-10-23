@@ -131,11 +131,94 @@ Por último, importamos *struts2app* a nuestro _workspace_ de Eclipse. Para real
  # Utilizamos el plugin de Eclipse para Maven: [http://www.eclipse.org/iam/ Eclipse IAM]
  # Utilizamos el plugin de Maven [http://maven.apache.org/plugins/maven-eclipse-plugin/ Maven Eclipse Plugin], tal y como se explica en [ApacheMaven2#Convertir_un_proyecto_Maven_a_Eclipse Convertir un proyecto Maven a Eclipse]
 
-== Incluyendo en nuestro proyecto las dependencias de tipo war de AppFuse ==
+== Creamos una nueva Entidad ==
 
-Incluímos en nuestro proyecto las dependencias de tipo `warpath` 
+Creamos una Entidad `Person` con anotaciones JPA:
 
+`es.cemi.samples.model.Person`
 {{{
-C:\CEMi_J2EE\struts2app> mvn war:inplace
+import org.appfuse.model.BaseObject;
+
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Column;
+
+@Entity
+public class Person extends BaseObject {
+  private Long id;
+  private String firstName;
+  private String lastName;
+  
+  // Eclipse > Source > Generate getter & setters
+  ..
+  @Id @GeneratedValue(strategy = GenerationType.AUTO) 
+  public Long getId() {
+  ..
+  @Column(name="first_name", length=50)
+  public String getFirstName() {
+  ..
+  @Column(name="last_name", length=50)
+  public String getLastName() {
+  ..
+}
 }}}
 
+Invocamos al plugin de AppFuse para la generación de todo el esqueleto de código asociado a dicha entidad:
+
+{{{
+C:\CEMi_J2EE\struts2app>mvn appfuse:gen -Dentity=Person
+}}}
+
+Esta acción genera los siguientes archivos:
+ * src/main/java/es/cemi/samples/webapp/action/PersonAction.java
+ * src/main/resources/es/cemi/samples/model/Person-validation.xml
+ * src/main/resources/es/cemi/samples/webapp/action/PersonAction-validation.xml
+ * src/main/webapp/WEB-INF/pages/personForm.jsp
+ * src/main/webapp/WEB-INF/pages/personList.jsp
+ * src/test/java/es/cemi/samples/webapp/action/PersonActionTest.java
+
+Y modifica los siguientes:
+ * src/main/resources/ApplicationResources.properties
+ * src/main/resources/hibernate.cfg.xml
+   * Mapeamos la nueva entidad en Hibernate:
+   {{{
+   <mapping class="es.cemi.samples.model.Person"/>
+   }}}
+ * src/main/resources/struts.xml
+   * Declaramos en Struts2 las instancias que vamos a utilizar en las JSPs para esta entidad Person
+   {{{
+   <action name="persons" class="es.cemi.samples.webapp.action.PersonAction" method="list">
+     <result>/WEB-INF/pages/personList.jsp</result>
+   </action>
+   
+   <action name="editPerson" class="es.cemi.samples.webapp.action.PersonAction" method="edit">
+     <result>/WEB-INF/pages/personForm.jsp</result>
+     <result name="error">/WEB-INF/pages/personList.jsp</result>
+   </action>
+   
+   <action name="savePerson" class="es.cemi.samples.webapp.action.PersonAction" method="save">
+     <result name="input">/WEB-INF/pages/personForm.jsp</result>
+     <result name="cancel" type="redirect-action">persons</result>
+     <result name="delete" type="redirect-action">persons</result>
+     <result name="success" type="redirect-action">persons</result>
+   </action>
+   }}}
+ * src/main/webapp/common/menu.jsp
+ * src/main/webapp/WEB-INF/applicationContext.xml
+   * Creamos una instancia nueva de DAO genérico y Manager genérico para esta nueva entidad en el contexto de Spring
+   {{{
+   <bean id="personManager" class="org.appfuse.service.impl.GenericManagerImpl">
+     <constructor-arg>
+       <bean class="org.appfuse.dao.hibernate.GenericDaoHibernate">
+         <constructor-arg value="es.cemi.samples.model.Person"/>
+         <property name="sessionFactory" ref="sessionFactory"/>
+        </bean>
+      </constructor-arg>
+    </bean>
+    }}}
+ * src/main/webapp/WEB-INF/menu-config.xml
+ * src/test/resources/sample-data.xml
+ * src/test/resources/web-tests.xml
+ 
