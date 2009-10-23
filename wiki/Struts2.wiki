@@ -3,6 +3,17 @@
 
 [http://struts.apache.org/2.1.8/index.html http://struts.apache.org/2.1.8/images/struts2.png]
 
+ * [Struts2#Introducci&oacute;n Introducción]
+ * [Struts2#Ejemplos_introductorios Ejemplos introductorios]
+ * [Struts2#Ejemplo_de_aplicaci&oacute;n_Struts_2_b&aacute;sica_de_CRUDs_de_entidades Ejemplo de aplicación Struts 2 básica de CRUDs de entidades]
+   * [Struts2#Creamos_la_estructura_a_partir_de_un_archetipo_Maven Creamos la estructura a partir de un archetipo Maven]
+   * [Struts2#Compilamos_el_proyecto_Maven Compilamos el proyecto Maven]
+   * [Struts2#Desplegamos_la_aplicaci&oacute;n_en_un_Servidor Desplegamos la aplicación en un Servidor]
+   * [Struts2#Ejecutamos_la_aplicaci&oacute;n Ejecutamos la aplicación]
+   * [Struts2#Importamos_a_Eclipse_el_proyecto_Maven Importamos a Eclipse el proyecto Maven]
+   * [Struts2#Creamos_una_nueva_Entidad Creamos una nueva Entidad]
+   * [Struts2#Creamos_una_nueva_Entidad Creamos una nueva Entidad]
+
 = Introducción =
 
 Sitio: http://struts.apache.org/2.1.8/index.html
@@ -56,10 +67,9 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
    * http://struts.apache.org/2.1.8/docs/model-driven.html
  # Struts 2 File Upload Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleFileUpload/ Struts2ExampleFileUpload]
  # Struts 2 Tiles Integration Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleTiles/ Struts2ExampleTiles]
- # Struts 2 CRUD Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleX/ Struts2ExampleX]
- 
 
-= Ejemplo de aplicación Struts 2 básica =
+
+= Ejemplo de aplicación Struts 2 básica de CRUDs de entidades =
 
 _NOTA: Para poder probar este ejemplo deberemos instalarnos ApacheMaven2 y MySQL 5.0_
 
@@ -221,4 +231,8 @@ Y modifica los siguientes:
  * src/main/webapp/WEB-INF/menu-config.xml
  * src/test/resources/sample-data.xml
  * src/test/resources/web-tests.xml
+ 
+Recompilamos la aplicación. Ver Struts2#Compilamos_el_proyecto_Maven
+
+Y volvemos a desplegar la aplicación a Tomcat. Ver Struts2#Desplegamos_la_aplicaci&oacute;n_en_un_Servidor
  
