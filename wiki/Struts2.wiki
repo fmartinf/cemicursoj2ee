@@ -231,7 +231,7 @@ Y modifica los siguientes:
  * src/test/resources/sample-data.xml
  * src/test/resources/web-tests.xml
  
-Recompilamos la aplicación. Ver Struts2#Compilamos_el_proyecto_Maven
+Recompilamos la aplicación. Ver [Struts2#Compilamos_el_proyecto_Maven Compilamos el proyecto Maven]
 
-Y volvemos a desplegar la aplicación a Tomcat. Ver Struts2#Desplegamos_la_aplicaci&oacute;n_en_un_Servidor
+Y volvemos a desplegar la aplicación a Tomcat. Ver [Struts2#Desplegamos_la_aplicaci&oacute;n_en_un_Servidor Desplegamos la aplicación en un Servidor]
  
