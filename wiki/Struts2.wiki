@@ -12,7 +12,6 @@
    * [Struts2#Ejecutamos_la_aplicaci&oacute;n Ejecutamos la aplicación]
    * [Struts2#Importamos_a_Eclipse_el_proyecto_Maven Importamos a Eclipse el proyecto Maven]
    * [Struts2#Creamos_una_nueva_Entidad Creamos una nueva Entidad]
-   * [Struts2#Creamos_una_nueva_Entidad Creamos una nueva Entidad]
 
 = Introducción =
 
