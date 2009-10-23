@@ -4,7 +4,7 @@
 [http://maven.apache.org http://maven.apache.org/images/maven-logo-2.gif]
 
 = Introducción =
-En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación de nuestras aplicaciones de ejemplos
+En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación de nuestras aplicaciones de ejemplo
 
  * Libro _online_ *Better Builds with Maven*: http://www.maestrodev.com/better-build-maven
  
