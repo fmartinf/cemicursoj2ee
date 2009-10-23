@@ -61,6 +61,10 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
 
 = Ejemplo de aplicación Struts 2 básica =
 
+_NOTA: Para poder probar este ejemplo deberemos instalarnos ApacheMaven2 y MySQL 5.0_
+
+== Creamos la estructura a partir de un archetipo Maven ==
+
 Creamos una aplicación *struts2app* a partir del archetipo Maven *Struts 2 Basic*:
 
 Nos abrimos una consola de comandos y nos situamos en el directorio de nuestro workspace de Eclipse `C:\CEMi_J2EE`:
@@ -68,6 +72,8 @@ Nos abrimos una consola de comandos y nos situamos en el directorio de nuestro w
 {{{
 C:\CEMi_J2EE> mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-struts -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=es.cemi.samples -DartifactId=struts2app
 }}}
+
+== Compilamos el proyecto Maven == 
 
 A continuación realizamos la primera compilación del ejemplo. Dicha compilación con Maven tiene asociada una descarga importante de JARs que puede tardar mucho tiempo. Para acelerar este proceso, contamos en el aptdo. de descargas con un *repository.rar* que podremos descomprimir en nuestro repositorio Maven: `%M2_HOME%\repository`
 
@@ -89,8 +95,40 @@ C:\CEMi_J2EE\struts2app> mvn clean install
 C:\CEMi_J2EE\struts2app>
 }}}
 
+== Desplegamos la aplicación en un Servidor ==
+
+Arrancamos la aplicación mediante el [http://mojo.codehaus.org/tomcat-maven-plugin/ Tomcat Maven Plugin]:
+
+{{{
+C:\CEMi_J2EE\struts2app> mvn tomcat:run-war
+}}} 
+
+{{{
+[INFO] [war:war {execution: default-war}]
+...
+[INFO] Generating war C:\00-FACTORIA\Proyectos\CEMi_J2EE\struts2app\target\struts2app-1.0-SNAPSHOT.war
+[INFO] Building war: C:\00-FACTORIA\Proyectos\CEMi_J2EE\struts2app\target\struts2app-1.0-SNAPSHOT.war
+[INFO] [tomcat:run-war {execution: default-cli}]
+[INFO] Running war on http://localhost:8080/struts2app
+...
+INFO: Initializing Spring root WebApplicationContext
+[struts2app] WARN [main] Settings.getLocale(143) | Settings: Could not parse struts.locale setting, substituting default VM locale
+23-oct-2009 16:01:07 org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-8080
+23-oct-2009 16:01:07 org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-8080
+}}}
+
+== Ejecutamos la aplicación ==
+
+Accedemos a la aplicación desde un navegador: http://localhost:8080/struts2app
+
+Introducimos las credenciales: `admin`/`admin`
+
+== Importamos a Eclipse el proyecto Maven ==
+
 Por último, importamos *struts2app* a nuestro _workspace_ de Eclipse. Para realizar esta operación, tenemos dos posibilidades:
 
 1. Utilizamos el plugin de Eclipse para Maven: [http://www.eclipse.org/iam/ Eclipse IAM]
 
-2. Utilizamos el plugin de Maven [http://maven.apache.org/plugins/maven-eclipse-plugin/ Maven Eclipse Plugin], tal y como se explica en el aptdo. _¿Cómo convertir un proyecto Maven en un proyecto Eclipse?_ del artículo de la WIKI ApacheMaven2
+2. Utilizamos el plugin de Maven [http://maven.apache.org/plugins/maven-eclipse-plugin/ Maven Eclipse Plugin], tal y como se explica en [ApacheMaven2#Convertir_un_proyecto_Maven_a_Eclipse Convertir un proyecto Maven a Eclipse]
