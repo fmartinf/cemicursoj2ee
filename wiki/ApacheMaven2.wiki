@@ -57,8 +57,9 @@ Default locale: es_ES, platform encoding: Cp1252
 OS name: "windows xp" version: "5.1" arch: "x86" Family: "windows"
 }}}
 
-_Recomendación para entornos Windows: Ya que la consola de comandos de Windows no cuenta con pestañas, se recomienda la utilización de *Console2*_ http://sourceforge.net/projects/console/
+_Recomendación para entornos Windows: Ya que la consola de comandos de Windows no cuenta con pestañas, se recomienda la utilización de *Console2*_ http://sourceforge.net/projects/console
  
+
 http://garbageburrito.com/media/AA/AA/ben/images/379/main/console.jpg?1204641919
 
 = Configuración =
