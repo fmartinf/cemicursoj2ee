@@ -1,20 +1,21 @@
- * [Introducción]
- * [Instalación]
- * [Control del ciclo de desarrollo]
- * [Comprendiendo el POM (Project Object Model)]
- * [Gestión automática de dependencias]
- * [El repositorio de Maven]
-   * [Comprendiendo el concepto de repositorio]
-   * [Repositorios oficiales]
-   * [¿Como encontrar la dependencia asociada a un JAR concreto?]
-   * [Añadir repositorios]
-   * [¿Y si... mi empresa tuviese su propio repositorio?]
- * [Compilando y empaquetando]
- * [Gestionando varios proyectos a la vez]
-   * [Dependency Management]
-   * [Eclipse IAM]
- * [Preparando una release]
- * [Generando informes automáticos]
- * [Otros temas]
- * [¿Cómo convertir un proyecto Maven en un proyecto Eclipse?]
- * [¿Cómo refrescar el build path de un proyecto Eclipse, despues de añadir una dependencia nueva en el `pom.xml`?]
+ * Introducción
+ * Instalación
+ * Configuración
+ * Control del ciclo de desarrollo
+ * Comprendiendo el POM (Project Object Model)
+ * Gestión automática de dependencias
+ * El repositorio de Maven
+   * Comprendiendo el concepto de repositorio
+   * Repositorios oficiales
+   * ¿Como encontrar la dependencia asociada a un JAR concreto?
+   * Añadir repositorios
+   * ¿Y si... mi empresa tuviese su propio repositorio?
+ * Compilando y empaquetando
+ * Gestionando varios proyectos a la vez
+   * Dependency Management
+   * Eclipse IAM
+ * Preparando una release
+ * Generando informes automáticos
+ * Otros temas
+ * ¿Cómo convertir un proyecto Maven en un proyecto Eclipse?
+ * ¿Cómo refrescar el build path de un proyecto Eclipse, despues de añadir una dependencia nueva en el `pom.xml`?
