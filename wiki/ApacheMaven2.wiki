@@ -1,9 +1,6 @@
 #summary Guía de instalación de Apache Maven 2
 #sidebar TableOfContentsApacheMaven2
 
-TableOfContents
-
-
 [http://maven.apache.org http://maven.apache.org/images/maven-logo-2.gif]
 
 = Introducción =
