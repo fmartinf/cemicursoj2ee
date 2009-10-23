@@ -1,5 +1,5 @@
 #summary Guía de instalación de Apache Maven 2
-#sidebar TableOfContents
+#sidebar ApacheMaven2
 
 [http://maven.apache.org http://maven.apache.org/images/maven-logo-2.gif]
 
@@ -94,22 +94,22 @@ $ mvn archetype:create -DgroupId=es.cemi.app \
 -DarchetypeArtifactId=maven-archetype-webapp
 }}}
  * La estructura de directorios estándar de Maven:
-   * src/main/java Fuentes de la Aplicación/Librería
-   * src/main/resources Recursos de la Aplicación/Librería
-   * src/main/filters Ficheros de filtros
-   * src/main/assembly Descriptores del Assembly
-   * src/main/config Ficheros de configuración
-   * src/main/webapp Fuentes de la aplicación Web
-   * src/main/sql Scripts de bbdd
-   * src/test/java Fuentes de los Test
-   * src/test/resources Recursos de los Test
-   * src/test/filters Ficheros de filtros para los Test
-   * src/site Documentación “apt” sobre el proyecto
-   * target Directorio donde Maven deja los resultados
-   * target/classes Resultado de la compilación.
-   * LICENSE.txt Licencia del Proyecto
-   * README.txt Readme del Proyecto
-   * pom.xml Descriptor Maven del proyecto
+   * `src/main/java` Fuentes de la Aplicación/Librería
+   * `src/main/resources` Recursos de la Aplicación/Librería
+   * `src/main/filters` Ficheros de filtros
+   * `src/main/assembly` Descriptores del Assembly
+   * `src/main/config` Ficheros de configuración
+   * `src/main/webapp` Fuentes de la aplicación Web
+   * `src/main/sql` Scripts de bbdd
+   * `src/test/java` Fuentes de los Test
+   * `src/test/resources` Recursos de los Test
+   * `src/test/filters` Ficheros de filtros para los Test
+   * `src/site` Documentación “apt” sobre el proyecto
+   * `target` Directorio donde Maven deja los resultados
+   * `target/classes` Resultado de la compilación.
+   * `LICENSE.txt` Licencia del Proyecto
+   * `README.txt` Readme del Proyecto
+   * `pom.xml` Descriptor Maven del proyecto
  * El pom.xml resultado del arquetipo:
 {{{
 <project xmlns="http://maven.apache.org/POM/4.0.0"
