@@ -11,5 +11,5 @@
    * `Detailed Configuration > Developer Machine > Multifunctional Database > Decision Support > port 3306 > Encoding UTF-8`
    * `Install as Windows Service > MySQL`
    * `Include BIN directory in Windows Path`
-   * Deshabilitamos: `Modify root settings` para que el usuario `root` no tenga contraseña.
+   * Deshabilitamos `Modify root settings` para que el usuario `root` no tenga contraseña.
  # Instalamos *Navicat MySQL client*

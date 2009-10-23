@@ -128,7 +128,14 @@ Introducimos las credenciales: `admin`/`admin`
 == Importamos a Eclipse el proyecto Maven ==
 
 Por último, importamos *struts2app* a nuestro _workspace_ de Eclipse. Para realizar esta operación, tenemos dos posibilidades:
+ # Utilizamos el plugin de Eclipse para Maven: [http://www.eclipse.org/iam/ Eclipse IAM]
+ # Utilizamos el plugin de Maven [http://maven.apache.org/plugins/maven-eclipse-plugin/ Maven Eclipse Plugin], tal y como se explica en [ApacheMaven2#Convertir_un_proyecto_Maven_a_Eclipse Convertir un proyecto Maven a Eclipse]
 
-1. Utilizamos el plugin de Eclipse para Maven: [http://www.eclipse.org/iam/ Eclipse IAM]
+== Incluyendo en nuestro proyecto las dependencias de tipo war de AppFuse ==
 
-2. Utilizamos el plugin de Maven [http://maven.apache.org/plugins/maven-eclipse-plugin/ Maven Eclipse Plugin], tal y como se explica en [ApacheMaven2#Convertir_un_proyecto_Maven_a_Eclipse Convertir un proyecto Maven a Eclipse]
+Incluímos en nuestro proyecto las dependencias de tipo `warpath` 
+
+{{{
+C:\CEMi_J2EE\struts2app> mvn war:inplace
+}}}
+
