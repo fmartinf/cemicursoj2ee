@@ -26,7 +26,7 @@
  * Convertir un proyecto Maven a Eclipse
  * [ApacheMaven2#Sincronizaci&oacute;n_manual_de_dependencias_Eclipse-Maven Sincronización manual de dependencias Eclipse-Maven]
  * [ApacheMaven2#Par&aacute;metros_Adicionales Parámetros Adicionales]
- * [ApacheMaven2#EnlacesInteresantes Enlaces Interesantes]
+ * [ApacheMaven2#Enlaces_Interesantes Enlaces Interesantes]
 
 = Introducción =
 En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación de nuestras aplicaciones de ejemplo
