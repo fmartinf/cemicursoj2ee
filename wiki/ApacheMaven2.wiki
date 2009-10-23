@@ -5,8 +5,9 @@
 = Introducción =
 En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación de nuestras aplicaciones de ejemplos
 
-Libro _online_ *Better Builds with Maven*: http://www.maestrodev.com/better-build-maven
-Tutorial *Maven in 5 Minutes*: http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+ * Libro _online_ *Better Builds with Maven*: http://www.maestrodev.com/better-build-maven
+ 
+ * Tutorial *Maven in 5 Minutes*: http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
 = Instalación =
 Vamos a utilizar archetipos [http://maven.apache.org Maven] para familiarizarnos rápidamente tanto con Struts 2 como con JSF.
@@ -56,15 +57,15 @@ Así que añadimos lo siguiente en dicho fichero, para unificar el emplazamiento
 = Control del ciclo de desarrollo =
 
  * Hasta ahora muchas fases de un proyecto Software eran gestionadas de una forma "pseudo-manual":
-– Compilación
-– Empaquetado
-– Versionado
-– Control de dependencias
-– Generación de documentación
-– ...
+   * Compilación
+   * Empaquetado
+   * Versionado
+   * Control de dependencias
+   * Generación de documentación
+   * ...
  * Maven es una herramienta que facilita la automatización de todas estas tareas.
  * Maven se involucra totalmente en la *Gestión de la Configuración*. Según la Wikipedia, se entiende por "Gestión de la Configuración" a ..
-<p>
+<span>
 Se denomina Gestión de la Configuración al conjunto de
 procesos destinados a asegurar la validez de todo producto
 obtenido durante cualquiera de las etapas del desarrollo de un
@@ -72,7 +73,7 @@ Sistema de Información (S.I.), a través del estricto control de
 los cambios realizados sobre los mismos y de la disponibilidad
 constante de una versión estable de cada elemento para toda
 persona involucrada en el citado desarrollo.
-</p>
+</span>
 
 = Comprendiendo el POM (Project Object Model). =
 
