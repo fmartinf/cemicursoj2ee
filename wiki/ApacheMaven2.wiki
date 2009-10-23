@@ -189,7 +189,7 @@ gestión automática de las dependencias:
    * Indirectas: Otros .jar que son dependencias de las dependencias (y así sucesivamente)
  * Maven busca de forma automática todas las dependencias de nuestro proyecto en los repositorios que tenemos dados de alta.
  * La resolución de dependencias es un proceso recursivo.
- * Para declarar las dependencias de un proyecto usamos el elemento `<dependencies>
+ * Para declarar las dependencias de un proyecto usamos el elemento `<dependencies>`
    * http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
    * Una depedencia tiene los siguientes _scopes_ posibles:
      * _compile_
