@@ -77,20 +77,413 @@ _Se denomina *Gestión de la Configuración* al conjunto de procesos destinados 
    * ...
  * Esta es la principal diferencia frente a otros sistemas de automatización de tareas como Ant:
    * Muchos proyectos con diferentes scripts Ant, donde todos hacen básicamente lo mismo.
+ * Podemos crear un proyecto de Maven usando los “arquetipos”.
+ * Para Maven un “arquetipo” es una plantilla de proyecto.
+ * Gracias a los arquetipos perdemos el miedo al folio en blanco:
+   * Para crear un proyecto java:
+{{{
+$ mvn archetype:create \
+-DgroupId=es.cemi.app \
+-DartifactId=autentia-model
+}}}
+   * Para crear un proyecto web:
+{{{
+$ mvn archetype:create -DgroupId=es.cemi.app \
+-DartifactId=autentia-web \
+-DarchetypeArtifactId=maven-archetype-webapp
+}}}
+ * La estructura de directorios estándar de Maven:
+   * src/main/java Fuentes de la Aplicación/Librería
+   * src/main/resources Recursos de la Aplicación/Librería
+   * src/main/filters Ficheros de filtros
+   * src/main/assembly Descriptores del Assembly
+   * src/main/config Ficheros de configuración
+   * src/main/webapp Fuentes de la aplicación Web
+   * src/main/sql Scripts de bbdd
+   * src/test/java Fuentes de los Test
+   * src/test/resources Recursos de los Test
+   * src/test/filters Ficheros de filtros para los Test
+   * src/site Documentación “apt” sobre el proyecto
+   * target Directorio donde Maven deja los resultados
+   * target/classes Resultado de la compilación.
+   * LICENSE.txt Licencia del Proyecto
+   * README.txt Readme del Proyecto
+   * pom.xml Descriptor Maven del proyecto
+ * El pom.xml resultado del arquetipo:
+{{{
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/mavenv4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>es.cemi.app</groupId>
+  <artifactId>cemi-model</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>cemi-model</name>
+  <url>http://maven.apache.org</url>
+  
+  <build>
+  
+    <!-- listado de plugins declarados para ejecución automatizada o redefinidos para la utilización del usuario -->
+    <plugins>
+  	  <!-- plugin que se ejecutará automáticamente en la phase 'test-compile' -->
+  	  <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+          	<id>attach-sources</id>
+          	<phase>test-compile</phase>            
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+            
+      <!-- en el caso de que se lance el comando '$> mvn deploy -Dmodel.skip.deploy=false' se ejecutará el plugin deploy -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>${deploy.maven.version}</version>
+        <configuration>
+          <skip>${model.skip.deploy}</skip>
+        </configuration>
+      </plugin>  	  
+    </plugins>
+  
+  </build>
+  
+  <!-- listado de dependencias: JARs -->
+  <dependencies>
+    <dependency>
+      <groupId>com.opensymphony</groupId>
+      <artifactId>xwork-core</artifactId>
+      <version>${xwork-core.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <properties>
+  	<xwork-core.version>2.1.6</xwork-core.version>
+  </properties>
+</project>
+}}}
 
 = Gestión automática de dependencias. =
 
+ * ¿Cuantas veces no nos funciona un proyecto porque nos falta algún .jar?
+ * ¿En cuantas ocasiones desconozco las versiones de mis dependencias?
+ * ¿Cuantas veces tengo un .jar copiado en una carpeta, y no sé porque lo tengo?
+ * Una de las principales y mas potentes características de Maven es la gestión de dependencias.
+ * Después de usar la gestión de dependencias de Maven ya no querrá usar otra herramienta para construir sus aplicaciones.
+ * ¿Para que sirven realmente los repositorios?
+ * Los repositorios son el medio para conseguir una
+gestión automática de las dependencias:
+   * Directas: .jar de los que depende nuestro proyecto.
+   * Indirectas: Otros .jar que son dependencias de las dependencias (y así sucesivamente)
+ * Maven busca de forma automática todas las dependencias de nuestro proyecto en los repositorios que tenemos dados de alta.
+ * La resolución de dependencias es un proceso recursivo.
+ * Para declarar las dependencias de un proyecto usamos el elemento `<dependencies>
+   * http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
+   * Una depedencia tiene los siguientes _scopes_ posibles:
+     * _compile_
+     * _provided_
+     * _runtime_
+     * _test_
+     * _system_
+{{{
+<project>
+  ...
+  <dependencies>
+    ...
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.0.3</version>
+      <scope>runtime</scope>
+    </dependency>
+    ...
+  </dependencies>
+  ...
+</project>
+}}}
+
 = El repositorio de Maven. =
 
+== Comprendiendo el concepto de repositorio
+ * ¿Por que tenemos que gestionar manualmente las dependencias de los proyectos, si hay muchas que se repiten constantemente?
+   * commons-logging, log4j
+   * Hibernate
+   * Struts
+   * Spring
+   * ...
+ * Incluso dependencias entre nuestros propios proyectos
+ * El repositorio es el sitio donde se almacenan todos los proyectos (internos o externos) para que sean accesibles desde cualquier otro proyecto.
+ 
+== Repositorios oficiales ==
+ * Maven tiene publicado un repositorio en Internet donde podemos encontrar gran cantidad de proyectos (dependencias en casi todos nuestros desarrollos).
+ * Este repositorio lo podemos encontrar en: http://www.ibiblio.org/maven2
+
+== ¿Como encontrar la dependencia asociada a un JAR concreto? ==
+ * El repositorio de Maven es muy extenso y a menudo cuesta encontrar el proyecto que nos interesa.
+ * Para buscar en el repositorio nos podemos valer de Google, y algunos sitios especializados:
+   * {{{$> site:www.ibiblio.org maven2 log4j}}}
+   * MVN Repository - Search/Browse/Explore: http://mvnrepository.com
+   * Sonatype Nexus™ Professional Edition: http://repository.sonatype.org/index.html#welcome
+
+== Añadir repositorios ==
+ * Generalmente nos interesa añadir repositorios para encontrar dependencias que no existen en el repositorio por defecto:
+{{{
+<repositories>
+  <repository>
+    <id>repository.jboss.org</id>
+    <url>http://repository.jboss.org/maven2</url>
+    <snapshots>
+      <enabled>false</enabled>
+      <updatePolicy>daily</updatePolicy>
+      <checksumPolicy>warn</checksumPolicy>
+    </snapshots>
+    <releases>
+      <enabled>true</enabled>
+      <updatePolicy>daily</updatePolicy>
+      <checksumPolicy>ignore</checksumPolicy>
+    </releases>
+  </repository>
+</repositories>
+}}}
+
+== ¿Y si... mi empresa tuviese su propio repositorio? ==
+ * En proyectos grandes en los que coexisten varios desarrolladores, es interesante la utilización de un repositorio común.
+   * Apache Archiva: http://archiva.apache.org/
+
 = Compilando y empaquetando. =
+ * A estas alturas ya hemos declarado suficientemente el
+proyecto como para poder compilar.
+ * Maven define un ciclo de vida estándar para la construcción de los proyectos:
+   * http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+ * Las fases más comunes son:
+   * *compile* compila el código
+   * *test* ejecuta los test unitarios (JUnit)
+   * *package* empaqueta el proyecto
+   * *install* instala el paquete en el repositorio local
+   * *deploy* copia el proyecto en el repositorio remoto
 
 = Gestionando varios proyectos a la vez. =
+ * Lo habitual es que un proyecto esté compuesto por varios módulos o librerías.
+ * Con Maven podemos crear un POM para controlarlos a todos.
+ * Maven se encargará de compilarlos en el orden correcto para poder satisfacer las dependencias entre ellos.
+ * En Maven también existe la "herencia", de forma que las declaraciones que hagamos en el POM "padre" se heredarán por los POM "hijos".
+ * El `pom.xml` padre:
+{{{
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>es.cemi.app</groupId>
+  <artifactId>cemi-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>cemi-model</module>
+    <module>cemi-web</module>
+  </modules>
+</project>
+}}}
+ * El `pom.xml` hijo:
+{{{
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
+  <parent>
+    <groupId>com.autentia.demoapp</groupId>
+    <artifactId>autentia-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  ...
+</project>
+}}}
+
+== Dependency Management ==
+ * Algunas veces nos interesa controlar las versiones de la que dependen los “hijos” de mi proyecto desde el padre.
+ * Los hijos únicamente deberán indicar grupo y artefacto
+ * `pom.xml` del padre:
+{{{
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.acme</groupId>
+      <artifactId>tntexplosive</artifactId>
+      <version>1.0</version>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+}}}
+* `pom.xml` del hijo:
+{{{
+<dependencies>
+  <dependency>
+    <groupId>com.acme</groupId>
+    <artifactId>tntexplosive</artifactId>
+  </dependency>
+</dependencies>
+}}}
+
+== Eclipse IAM ==
+ * Integración de Maven en Eclipse:
+   * Q4E > IAM (incubation phase):
+   * http://code.google.com/p/q4e/ > http://www.eclipse.org/iam/
+ * http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?
+pagina=eclipseGanymede
+   * Importación directa de proyectos y creación en base a arquetipos.
+   * Gestión integrada de dependencias (descarga automática):
+ * JDT y WTP.
+ * Dependency analysis,
+ * Dependency graphing.
+   * POM editor.
+   * Ejecución de goals integrada.
 
 = Preparando una release. =
+ * En todo proceso de desarrollo se hacen "subidas" a producción de la aplicación en un estado determinado.
+ * Es fundamental marcar de alguna manera este "estado" para que sea recuperable.
+ * Es desaconsejable hacer estas tareas de forma manual.
+ * Maven se integra con el sistema de control de versiones y es capaz de gestionar estas tareas de forma automática.
+ * Además Maven hará un "deploy" de la release en nuestro repositorio remoto.
+ * Configurar el sistema de control de versiones:
+   * http://maven.apache.org/scm/scm-url-format.html
+{{{
+<project>
+  ...
+  <scm>
+    <connection>scm:svn:svn://servidor/test/trunk/autentia-parent</connection>
+    <developerConnection>
+      scm:svn:svn://serveridor/test/trunk/autentia-parent
+    </developerConnection>
+  </scm>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <username>${scm.username}</username>
+          <password>${scm.password}</password>
+          <tagBase>svn://servidor/test/tags</tagBase>
+        </configuration>
+      </plugin>
+    </plugins>
+    ...
+  </build>
+  ...
+</project>
+}}}
+ * Indicar el usuario y la clave:
+  * En línea de comandos: `$> mvn ... -Dscm.username=USUARIO -Dscm.password=CONTRASEÑA`
+  * En el fichero de configuración `%M2_HOME%/conf/settings.xml`
+{{{
+<settings>
+  ...
+  <profiles>
+  <profile>
+    <id>scmConfig</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
+      <scm.username>USUARIO</scm.username>
+      <scm.password>CONTRASEÑA</scm.password>
+    </properties>
+  </profile>
+</profiles>
+...
+</settings>
+}}}
+ * Configurar el repositorio remoto para hacer el *deploy*:
+{{{
+<project>
+  ...
+  <distributionManagement>
+    <repository>
+      <id>cemi-repository</id>
+      <name>CEMI Repository</name>
+      <url>scp://CEMISERVER/var/maven/repository</url>
+    </repository>
+  </distributionManagement>
+  ...
+<project>
+}}}
+ * Configurar el usuario y la clave para hacer el *deploy*.
+   * Modificando el fichero `%M2_HOME%/conf/settings.xml`
+{{{
+<settings>
+  ...
+  <servers>
+    <server>
+      <id>cemi-repository</id>
+      <username>miNombre</username>
+      <password>miClave</password>
+    </server>
+  </servers>
+  ...
+</settings>
+}}}
+
+ * Por último:
+`$ mvn release:prepare`
+`$ mvn release:perform`
 
 = Generando informes automáticos. =
 
+ * Cuando usamos Maven podemos documentar los proyectos a través de lo que Maven denomina “el site”.
+ * Maven es capaz de generar de forma automática numerosos informes en el site.
+ * Estos informes los podemos configurar a través del `site.xml`
+ * A continuación tenemos un ejemplo de este fichero y resaltado, como configurarlo para que genere los informes de forma automática al ejecutar:
+{{{
+$> mvn site
+}}}
 
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="CEMI ntjee application (ntjee)">
+  <bannerLeft>
+    <name>CEMI ntjee application</name>
+  </bannerLeft>
+  <body>
+    <menu ref="modules" />
+      <menu name="Sección 1">
+      <item name="Menú item 1.1" href="menu1_1.html" />
+    </menu>
+    <menu name="Sección 2">
+      <item name="Menú item 2.1" href="menu2_1.html" />
+    </menu>
+    <menu ref="reports" />
+  </body>
+</project>
+}}}
+
+ * Ejemplos de informes:
+   * Generar un histórico de cambios del proyecto: http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=mavenChangesPlugin
+   * Verificación de código con PMD: http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=maven_pmd_plugin
+   * ¿Cuánto código prueban nuestros tests?: http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=mavenCobertura
+   * JXR Plugin, publica el código fuente en el site: http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=maven_jxr_plugin
+
+= Otros temas =
+ * Creación de perfiles (profiles)
+ * Uso de filtros.
+ * Configuración y construcción de plugins
+ * Personalización del empaquetado (assembly)
+ * Construir sus propios arquetipos
 
 = ¿Cómo convertir un proyecto Maven en un proyecto Eclipse? =
 
