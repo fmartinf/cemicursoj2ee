@@ -1,7 +1,7 @@
  * [ApacheMaven2#Introducción]
  * [ApacheMaven2#Instalación]
  * [ApacheMaven2#Configuración]
- * [ApacheMaven2#Control_del_ciclo_de_desarrollo]
+ * [ApacheMaven2#Control_del_ciclo_de_desarrollo Control del ciclo de desarrollo]
  * ApacheMaven2#Comprendiendo el POM (Project Object Model)
  * ApacheMaven2#Gestión automática de dependencias
  * ApacheMaven2#El repositorio de Maven
