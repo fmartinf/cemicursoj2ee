@@ -65,15 +65,8 @@ Así que añadimos lo siguiente en dicho fichero, para unificar el emplazamiento
    * ...
  * Maven es una herramienta que facilita la automatización de todas estas tareas.
  * Maven se involucra totalmente en la *Gestión de la Configuración*. Según la Wikipedia, se entiende por "Gestión de la Configuración" a ..
-<span>
-Se denomina Gestión de la Configuración al conjunto de
-procesos destinados a asegurar la validez de todo producto
-obtenido durante cualquiera de las etapas del desarrollo de un
-Sistema de Información (S.I.), a través del estricto control de
-los cambios realizados sobre los mismos y de la disponibilidad
-constante de una versión estable de cada elemento para toda
-persona involucrada en el citado desarrollo.
-</span>
+
+_Se denomina *Gestión de la Configuración* al conjunto de procesos destinados a asegurar la validez de todo producto obtenido durante cualquiera de las etapas del desarrollo de un Sistema de Información (S.I.), a través del estricto control de los cambios realizados sobre los mismos y de la disponibilidad constante de una versión estable de cada elemento para toda persona involucrada en el citado desarrollo._
 
 = Comprendiendo el POM (Project Object Model). =
 
