@@ -221,7 +221,7 @@ gestión automática de las dependencias:
 
 = El repositorio de Maven. =
 
-== Comprendiendo el concepto de repositorio
+== Comprendiendo el concepto de repositorio ==
  * ¿Por que tenemos que gestionar manualmente las dependencias de los proyectos, si hay muchas que se repiten constantemente?
    * commons-logging, log4j
    * Hibernate
