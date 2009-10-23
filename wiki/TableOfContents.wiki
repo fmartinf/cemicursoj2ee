@@ -1,4 +1,4 @@
- *Curso J2EE CEMi*
+*Curso J2EE CEMi*
  * [ProgramaCursoBasico Programa del Curso Básico]
    * [Subversion Control de versiones Subversion]
  * [ProgramaCursoAvanzado Programa del Curso Avanzado]
