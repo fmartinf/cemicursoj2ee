@@ -8,4 +8,4 @@
    * [JSF Framework MVC JSF]
    * [JSFvsStruts Comparativa entre JSF y Struts2]
    
-_[http://cemicursoj2ee.googlecode.com/svn/trunk/ Repositorio SVN]_
+_[http://cemicursoj2ee.googlecode.com/svn/trunk/ Ejemplos]_
