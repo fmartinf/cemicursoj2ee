@@ -510,7 +510,7 @@ Path: `C:\CEMi_J2EE\apache-maven-2.2.1\repository`
 De esta forma Eclipse encontrará las referencias que hay establecidas en el fichero `.classpath` del proyecto.
 
 
-= ¿Cómo refrescar el build path de un proyecto Eclipse, despues de añadir una dependencia nueva en el `pom.xml`? =
+= Sincronización manual de dependencias Eclipse-Maven =
 
 En este caso, el `.classpath` no cuenta con este nuevo JAR en el _classpath_ del proyecto, con lo que deberemos regerar el proyecto Eclipse.
 
