@@ -234,4 +234,22 @@ Y modifica los siguientes:
 Recompilamos la aplicación. Ver [Struts2#Compilamos_el_proyecto_Maven Compilamos el proyecto Maven]
 
 Y volvemos a desplegar la aplicación a Tomcat. Ver [Struts2#Desplegamos_la_aplicaci&oacute;n_en_un_Servidor Desplegamos la aplicación en un Servidor]
+
+Si analizamos cualquier de las JSPs generadas, por ejemplo: `personList.jsp`. Rapidamente nos daremos cuenta de que no contamos con algunos archivos como de forma directa.
+ * `/common/taglibs.jsp` no se encuentra en nuestro workspace
+ * Etc
+
+La respuesta a la ausencia de estos archivos está en la existencia de una dependencia _WAR Overlay_ en nuestro POM. Ver [http://maven.apache.org/plugins/maven-war-plugin/overlays.html Maven WAR Plugin - Overlays]:
+
+{{{
+<dependency>
+  <groupId>org.appfuse</groupId>
+  <artifactId>appfuse-struts</artifactId>
+  <version>2.0.2</version>
+  <type>war</type>
+</dependency>
+}}}
+
+Dicha dependencia se encuentra localizada en nuestro repositorio local Maven:
+* `%M2_REPO%\org\appfuse\appfuse-struts\2.0.2\appfuse-struts-2.0.2.war`
  
