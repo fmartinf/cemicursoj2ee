@@ -19,3 +19,4 @@
  * [ApacheMaven2#Otros_temas Otros temas]
  * Convertir un proyecto Maven a Eclipse
  * [ApacheMaven2#Sincronizaci&oacute;n_manual_de_dependencias_Eclipse-Maven Sincronización manual de dependencias Eclipse-Maven]
+ * [ApacheMaven2#Par&aacute;metros_Adicionales Parámetros Adicionales]
