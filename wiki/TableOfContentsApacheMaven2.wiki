@@ -7,7 +7,7 @@
  * [ApacheMaven2#El_repositorio_de_Maven El repositorio de Maven]
    * [ApacheMaven2#Comprendiendo_el_concepto_de_repositorio Comprendiendo el concepto de repositorio]
    * [ApacheMaven2#Repositorios_oficiales Repositorios oficiales]
-   * [ApacheMaven2#¿C&oacute;mo_encontrar_la_dependencia_asociada_a_un_JAR_concreto? ¿Como encontrar la dependencia asociada a un JAR concreto?]
+   * ¿Como encontrar la dependencia asociada a un JAR concreto?
    * [ApacheMaven2#A&ntilde;adir_repositorios Añadir repositorios]
    * [ApacheMaven2#Creaci&oacute;n_de_repositorios_internos Creación de repositorios internos]
  * [ApacheMaven2#Compilando_y_empaquetando Compilando y empaquetando]
