@@ -88,12 +88,12 @@ _Se denomina *Gestión de la Configuración* al conjunto de procesos destinados 
 {{{
 $ mvn archetype:create \
 -DgroupId=es.cemi.app \
--DartifactId=autentia-model
+-DartifactId=cemi-model
 }}}
    * Para crear un proyecto web:
 {{{
 $ mvn archetype:create -DgroupId=es.cemi.app \
--DartifactId=autentia-web \
+-DartifactId=cemi-web \
 -DarchetypeArtifactId=maven-archetype-webapp
 }}}
  * La estructura de directorios estándar de Maven:
@@ -311,8 +311,8 @@ proyecto como para poder compilar.
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>com.autentia.demoapp</groupId>
-    <artifactId>autentia-parent</artifactId>
+    <groupId>es.cemi.app</groupId>
+    <artifactId>cemi-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   ...
@@ -370,9 +370,9 @@ pagina=eclipseGanymede
 <project>
   ...
   <scm>
-    <connection>scm:svn:svn://servidor/test/trunk/autentia-parent</connection>
+    <connection>scm:svn:svn://servidor/test/trunk/cemi-parent</connection>
     <developerConnection>
-      scm:svn:svn://serveridor/test/trunk/autentia-parent
+      scm:svn:svn://servidor/test/trunk/cemi-parent
     </developerConnection>
   </scm>
   ...
