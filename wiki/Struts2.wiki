@@ -73,6 +73,9 @@ A partir del ejemplo *Struts2ExampleFileUpload* crear un _action_ que permita ef
 
 http://cemicursoj2ee.googlecode.com/files/ejercicio1.JPG
 
+Este action deberá denominarse `FileDownloadAction` y deberá recibir el nombre del fichero `filename` que queremos descargas y el tipo-mime `fileContentType` para simplificar el establecimiento del _contentType_ de la _response_ resultante... `response.setContentType(fileContentType);`.
+La ruta por defecto de estos ficheros en el servidor deberá ser la misma que la usada en el [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleFileUpload/src/vaannila/FileUploadAction.java FileUploadAction] .. `private static final String  UPLOADS_DIRECTORY = "c:/uploads/";`
+
 = Ejemplo de aplicación Struts 2 básica de CRUDs de entidades =
 
 _NOTA: Para poder probar este ejemplo deberemos instalarnos ApacheMaven2 y MySQL 5.0_
