@@ -317,6 +317,6 @@ Para *Struts2*:
 }}}
 
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 2*:
-Si creamos una nueva persona, vemos que se permite que los campos sean vacios. Así que, crear un validador de esa página que evite que los campos puedan ser vacíos.
+Si creamos una nueva persona, vemos que se permite que los campos sean vacios. Crear un validador de esa página que evite que los campos puedan ser vacíos.
  
  
