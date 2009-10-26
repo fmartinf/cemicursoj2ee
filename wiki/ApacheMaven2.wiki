@@ -22,6 +22,7 @@
  * [ApacheMaven2#Preparando_una_release Preparando una release]
  * [ApacheMaven2#Generando_informes_autom&aacute;ticos Generando informes automáticos]
  * [ApacheMaven2#Plugins_interesantes Plugins interesantes]
+ * [ApacheMaven2#Arquetipos_Maven Arquetipos Maven]
  * [ApacheMaven2#Otros_temas Otros temas] 
  * Convertir un proyecto Maven a Eclipse
  * [ApacheMaven2#Sincronizaci&oacute;n_manual_de_dependencias_Eclipse-Maven Sincronización manual de dependencias Eclipse-Maven]
@@ -42,7 +43,9 @@ En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación d
  * Tutorial *Maven in 5 Minutes*: http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
 = Instalación =
-Vamos a utilizar archetipos [http://maven.apache.org Maven] para familiarizarnos rápidamente tanto con Struts 2 como con JSF.
+En algunos ejemplos de este curso usaremos [ApacheMaven2#Arquetipos_Maven Arquetipos Maven] para familiarizarnos rápidamente tanto con Struts 2 como con JSF.
+
+Es por ello que se hace imprescindible la instalación de Maven.
 
 Pasos:
 
@@ -525,13 +528,26 @@ $> mvn site
  * Java Web Start Maven Plugin: http://mojo.codehaus.org/webstart/webstart-maven-plugin/
  ..
 
+= Arquetipos Maven =
+
+Un arquetipo es un patrón o modelo original sobre el que pueden desarrollar todas aquellas cosas que son de un mismo tipo. Puede decirse que son plantillas, parametrizadas o configuradas para utilizar determinadas tecnologías, que los programadores utilizan como base para escribir y organizar el código de la aplicación.
+
+Que todos los proyectos que involucren ciertas tecnologías partan de una base (arquetipo, plantilla o esqueleto configurado) común, tiene ventajas evidentes:
+ * Consistencia entre distintos desarrollos cuyo punto en común son las mismas tecnologías o el entorno configurado sobre las que serán deplegados y ejecutados
+ * Reutilización y composición de unos arquetipos como suma de otros.
+ * Estandarización de los proyectos dentro de una organización. Los arquetipos son compartidos desde uno o más repositorios y todos los empleados tienen acceso a ellos.
+ * Se evitan tiempos muertos en el comienzo de la implementación al disponerse de un entorno ya correctamente configurado.
+ * La estructura del proyecto facilita las tareas de desarrollar, distribuir, portar y desplegar, al equipo de programadores.
+
+_Más info:_ http://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+_En español:_ http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=creararquetiposmaven
+
 = Otros temas =
  * Creación de perfiles (profiles)
    * http://maven.apache.org/guides/introduction/introduction-to-profiles.html
  * Uso de filtros.
  * Configuración y construcción de plugins
- * Personalización del empaquetado (assembly)
- * Construir sus propios arquetipos
+ * Personalización del empaquetado (`assembly`)
 
 = Convertir un proyecto Maven a Eclipse =
 
