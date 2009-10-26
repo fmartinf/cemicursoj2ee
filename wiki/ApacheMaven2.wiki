@@ -540,6 +540,7 @@ Que todos los proyectos que involucren ciertas tecnologías partan de una base (
  * La estructura del proyecto facilita las tareas de desarrollar, distribuir, portar y desplegar, al equipo de programadores.
 
 _Más info:_ http://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+
 _En español:_ http://www.adictosaltrabajo.com/tutoriales/tutoriales.php?pagina=creararquetiposmaven
 
 = Otros temas =
