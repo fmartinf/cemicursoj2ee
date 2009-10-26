@@ -9,9 +9,6 @@
 <input type="button" style="margin-right: 5px" class="button"
         onclick="location.href='<c:url value="/editPerson.html"/>'"
         value="<fmt:message key="button.add"/>"/>
-
-<input type="button" class="button" onclick="location.href='<c:url value="/mainMenu.html"/>'"
-        value="<fmt:message key="button.done"/>"/>
         
 <br/>
 
