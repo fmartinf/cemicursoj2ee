@@ -43,14 +43,34 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
 = Contenido =
 
  * Concepto de Struts
+   * Action Oriented Framework basado en el patrón MVC al igual que Struts 1
+   * MVC en partes:
+     * El *Modelo* es el _Action_
+       * Se trata del estado interno de la aplicación. Este estado se compone del modelo de datos (datos transferidos) y de la lógica de negocio (funcionalidades con esos datos).
+     * La *Vista* es el _Result_
+     * El *Controlador* es el _FilterDispatcher_
+       * Se trata de un _front-controller_ (es el primer componente que procesa una petición)
+       * A grandes rasgos la tarea del controlador es realizar la traducción de una petición HTTP a una instancia de un _action_.
+       * Esta tarea la realiza el _FilterDispatcher_. Se trata de un _servlet filter_ que inspecciona para cada petición entrante qué _action_ Struts2 debería procesar la petición.
+       * Hay dos formas de definir este mapeo `URL-action`:
+         * A través del fichero de configuración `struts.xml`
+         * A través de anotaciones Java 1.5
+   * Struts 2 no es sólo una nueva versión de Struts 1, es un framework completamente nuevo basado en la arquitectura de _OpenSymphony WebWork framework_
+   * Es un framework de desarrollo de aplicaciones web de segunda generación.
+   * Al igual que Struts 1, Struts 2  tiene un diseño robusto (utilización de patrones de diseño y buenas prácticas)
  * Componentes estándares de Struts
  * Flujo de Control en Struts
  * Procesamiento de Peticiones
  * Control de Errores
  * Manejo de Formularios
- * Librerías de Etiquetas
+ * Librerías de Etiquetas (_TagLibs_)
  * Internacionalización
  * Mejoras y ventajas respecto a la versión 1.3
+   * Inclusión de mecanismos como Interceptores
+   * Configuración basada en anotaciones (Java 1.5 Annotations)
+   * Inclusión de OGNL
+   * Un API de etiquetas que constitute un mini-MVC modificable y que permite reutilizar _UI Components_
+   * La migración de una aplicación `Struts1` a `Struts2` es directa. Es compatible hacia atrás.  
 
 = Ejemplos introductorios =
 
@@ -342,4 +362,9 @@ Para *Struts2*:
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 2*:
 Si creamos una nueva persona, vemos que se permite que los campos sean vacios. Crear un validador de esa página que evite que los campos puedan ser vacíos.
  
+http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 3*:
+Crear un interceptor de acceso seguro a cada página. Dicho interceptor deberá comprobar si existe en sesión el usuario logado, realizando dos posibles acciones:
+ * Redirigir a la página de _login_ si no existe el usuario en sesión 
+ * Permitir acceder a la página solicitada
  
+Será necesario crear una página `login.jsp` en la que podamos incluir la *Cuenta de E-Mail* del usuario y su *Contraseña*.
