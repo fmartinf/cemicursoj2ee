@@ -69,7 +69,9 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
  # Struts 2 Tiles Integration Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleTiles/ Struts2ExampleTiles]
 
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 1:*
-A partir del ejemplo *Struts2ExampleFileUpload* crear un _action_ que permita efectuar la descarga de archivos almacenados en disco.
+A partir del ejemplo *Struts2ExampleFileUpload* crear un _action_ que permita efectuar la descarga de archivos almacenados en disco. Será invocado a través de una JSP: `solicitarFichero.jsp`:
+
+http://cemicursoj2ee.googlecode.com/files/ejercicio1.JPG
 
 = Ejemplo de aplicación Struts 2 básica de CRUDs de entidades =
 
