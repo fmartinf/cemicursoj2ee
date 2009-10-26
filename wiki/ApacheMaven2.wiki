@@ -29,6 +29,12 @@
  * [ApacheMaven2#Enlaces_Interesantes Enlaces Interesantes]
 
 = Introducción =
+
+_*"Si no existiera, habría que inventarlo"*_
+
+*Maven* es una herramienta de software para la gestión y construcción de proyectos Java creada por Jason van Zyl, de Sonatype, en 2002. Es similar en funcionalidad a *Apache Ant* (y en menor medida a PEAR de PHP y CPAN de Perl), pero tiene un modelo de configuración de construcción más simple, basado en un formato XML.
+Maven utiliza un _Project Object Model_ (POM) para describir el proyecto de software a construir, sus dependencias de otros módulos y componentes externos, y el orden de construcción de los elementos. Viene con objetivos predefinidos para realizar ciertas tareas claramente definidas, como la compilación del código y su empaquetado.
+
 En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación de nuestras aplicaciones de ejemplo
 
  * Libro _online_ *Better Builds with Maven*: http://www.maestrodev.com/better-build-maven
