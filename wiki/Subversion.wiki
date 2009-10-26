@@ -7,6 +7,8 @@
 
 Sitio: http://subclipse.tigris.org/
 
+Subversion es un sistema de control de versiones *colaborativo* (cada usuario se descarga la copia, la modifica y, o bien el sistema mezcla automaticamente las modificaciones, o bien requiere resolver posibles conflictos de forma manual)
+
 Documentación oficial: [http://subclipse.tigris.org/files/documents/906/8847/file_8847.dat/subclipse%20-%20install%2c%20use%20and%20compile.pdf subclipse install use and compile.pdf]
 
 Libro oficial _online_: http://svnbook.red-bean.com/
@@ -43,15 +45,15 @@ http://tortoisesvn.tigris.org/images/Overlays.png
 
 http://subclipse.tigris.org/images/menu-ss.png
 
-* Actualizar: `Click-dcho > Team > Update`
+* Actualizar _(check out)_: `Click-dcho > Team > Update`
 
-* Publicar: `Click-dcho > Team > Commit`
+* Publicar _(check in)_: `Click-dcho > Team > Commit`
 
 * Deshacer cambios: `Click-dcho > Team > Revert`
 
-* Añadir al control de versiones: `Click-dcho > Team > Add to version control`.
+* Añadir fichero/s al control de versiones: `Click-dcho > Team > Add to version control`.
 
-* Ignorando control de versiones: `Click-dcho > Team > Add to svn:ignore`
+* Ignorar fichero del control de versiones: `Click-dcho > Team > Add to svn:ignore`
 
 * Resolviendo conflictos: `Click-dcho > Team > Synchronize with repository`
 
