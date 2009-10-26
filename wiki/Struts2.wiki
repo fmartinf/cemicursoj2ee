@@ -42,15 +42,15 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
 
 = Contenido =
 
-* Concepto de Struts
-* Componentes estándares de Struts
-* Flujo de Control en Struts
-* Procesamiento de Peticiones
-* Control de Errores
-* Manejo de Formularios
-* Librerías de Etiquetas
-* Internacionalización
-* Mejoras y ventajas respecto a la versión 1.3
+ * Concepto de Struts
+ * Componentes estándares de Struts
+ * Flujo de Control en Struts
+ * Procesamiento de Peticiones
+ * Control de Errores
+ * Manejo de Formularios
+ * Librerías de Etiquetas
+ * Internacionalización
+ * Mejoras y ventajas respecto a la versión 1.3
 
 = Ejemplos introductorios =
 
