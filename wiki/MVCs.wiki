@@ -1,14 +1,56 @@
-#summary Principales Frameworks MVC
+#summary Principales Frameworks MVC J2EE
 #sidebar TableOfContents
 
-= Introducción =
+= Modelos de desarrollo de aplicaciones web en Java =
 
-Add your content here.
+ * Los servlets son buenos ejecutando lógica de negocio, pero no son tan buenos presentando información
+ * JSPs son muy buenos presentando pero pésimos introduciendo lógica programática en ellos
+ * La combinación Servlet/JSPs es lo más común hoy en día en el desarrollo de aplicaciones web
+ * Dos arquitecturas:
+   * *Model-1*: JSPs para presentación y control y JavaBeans para la lógica   
+   * *Model-2*: Model-View-Controller = JavaBeans-JSPs-Servlets   
+     * MVC es tan común que se han desarrollado varias infraestructuras en torno a este patrón de diseño:    
+       * Apache Struts
+       * Java Server Faces
+       * Spring MVC 
+
+== Model-1 ==
+
+http://cemicursoj2ee.googlecode.com/files/model-1.JPG
+
+== Model-2 ==
+
+http://cemicursoj2ee.googlecode.com/files/model-2.JPG
+
+== MVC (Model View Controller) ==
+
+http://cemicursoj2ee.googlecode.com/files/model-mvc.JPG
+
+ * El *Controlador* _(Controller)_
+   * Servlet central recibe peticiones, procesa URL recibida y delega procesamiento a JavaBeans
+   * Servlet guarda resultado de procesamiento realizado por JavaBeans en el contexto de la petición, la sesión o la aplicación
+   * Servlet transfiere control a un JSP que lleva a cabo la presentación de resultados
+ * El *Modelo* _(Model)_
+   * JavaBeans (o EJBs para aplicaciones más escalables) desempeña el rol de modelo:
+     * Algunos beans ejecutan lógica
+     * Otros guardan datos
+   * Normalmente: 
+     # Servlet controlador invoca un método en bean lógico y éste devuelve un bean de datos
+     # Autor de JSP tiene acceso a bean de datos     
+ * La *Vista* _(View)_
+   * Rol ejecutado por JSPs
+   * Servlet Controlador transfiere control al JSP después de haber guardado en un contexto el resultado en forma de un bean de datos
+   * JSP usa `jsp:useBean` y `jsp:getProperty` para recuperar datos y formatear respuesta en HTML o XML
 
 
-= Detalles =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= Características generales de un Framework MVC en J2EE =
+
+= Principales Frameworks MVC J2EE =
+
+ * Struts 2
+ * JSF
+ * Spring MVC
+
+
+ * Tutoriales - AppFuse QuickStart - Español: http://appfuse.org/pages/viewpage.action?pageId=3866645
