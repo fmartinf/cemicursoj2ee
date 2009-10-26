@@ -43,8 +43,31 @@ http://cemicursoj2ee.googlecode.com/files/model-mvc.JPG
    * JSP usa `jsp:useBean` y `jsp:getProperty` para recuperar datos y formatear respuesta en HTML o XML
 
 
-
 = Características generales de un Framework MVC en J2EE =
+
+ * Los frameworks pueden ser vistos como implementaciones de patrones de diseño que facilitan la reutilización de diseño y código
+ * Dado que MVC ha sido utilizado en muchas aplicaciones web, el desarrollo de frameworks que den soporte a áreas comunes en todas las aplicaciones MVC es necesario
+ * Requisitos exigibles a un framework:
+   * Validación de campos
+   * Control de errores
+   * Internacionalización (mensajes _Locale_)
+   * Mecanismo de creación de _TagLibs_ (librerías de etiquetas)
+   * Listeners en el contexto del framework:
+   	 * _Interceptors_
+   	 * _Phase Listeners_
+   	 * etc.
+   * Plantillas:
+   	 * Mecanismo de integración con _Decoration Frameworks_ (plantillas o templates):
+       * Sitemesh http://www.opensymphony.com/sitemesh/
+         * Artículo: http://today.java.net/pub/a/today/2004/03/11/sitemesh.html
+     * Template engines:
+       * FreeMarker http://freemarker.org/
+       * Velocity http://velocity.apache.org/      
+   * Componentes de Interfaz de usuario _(UI Components)_
+     * Extensiones enriquecidas de elementos HTML: inputs, radios, selects
+     * Listados con paginación (`<display:table />`, `<t:dataTable />`)
+     * Pestañas
+     * AJAX
 
 = Principales Frameworks MVC J2EE =
 
