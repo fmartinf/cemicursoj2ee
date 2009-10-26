@@ -70,7 +70,7 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
    * Configuración basada en anotaciones (Java 1.5 Annotations)
    * Inclusión de OGNL
    * Un API de etiquetas que constitute un mini-MVC modificable y que permite reutilizar _UI Components_
-   * La migración de una aplicación `Struts1` a `Struts2` es directa. Es compatible hacia atrás.  
+   * Según la documentación oficial de Struts, la migración de una aplicación `Struts` a `Struts2` es directa. Es compatible hacia atrás. No obstante: http://www.infoq.com/articles/converting-struts-2-part1 
 
 = Ejemplos introductorios =
 

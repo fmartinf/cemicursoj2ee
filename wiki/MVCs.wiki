@@ -71,9 +71,14 @@ http://cemicursoj2ee.googlecode.com/files/model-mvc.JPG
 
 = Principales Frameworks MVC J2EE =
 
- * Struts 2
- * JSF
- * Spring MVC
+ * Struts 2: http://struts.apache.org/2.1.8/index.html
+ * JSF: http://java.sun.com/javaee/javaserverfaces/
+   * Implementaciones:
+     * ICEfaces: http://www.icefaces.org/main/home/
+     * Apache MyFaces Tomahawk: http://myfaces.apache.org/tomahawk/index.html
+     * Apache MyFaces Sandbox: http://myfaces.apache.org/sandbox/
+     * Prime Faces: http://primefaces.prime.com.tr/en/
+     * RichFaces: http://www.jboss.org/richfaces http://www.juntadeandalucia.es/xwiki/bin/view/MADEJA/RichFaces
+ * Spring MVC: http://static.springsource.org/spring/docs/2.5.x/reference/mvc.html
 
-
- * Tutoriales - AppFuse QuickStart - Español: http://appfuse.org/pages/viewpage.action?pageId=3866645
+Tutoriales - AppFuse QuickStart - Español: http://appfuse.org/pages/viewpage.action?pageId=3866645
