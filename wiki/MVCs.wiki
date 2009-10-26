@@ -80,6 +80,5 @@ http://cemicursoj2ee.googlecode.com/files/model-mvc.JPG
      * Prime Faces: http://primefaces.prime.com.tr/en/
      * RichFaces: http://www.jboss.org/richfaces http://www.juntadeandalucia.es/xwiki/bin/view/MADEJA/RichFaces
  * Spring MVC: http://static.springsource.org/spring/docs/2.5.x/reference/mvc.html
- * Tapestry
 
 Tutoriales - AppFuse QuickStart - Español: http://appfuse.org/pages/viewpage.action?pageId=3866645
