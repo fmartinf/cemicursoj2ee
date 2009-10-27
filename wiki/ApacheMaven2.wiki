@@ -601,29 +601,6 @@ En este punto debemos hacer un inciso. Los arquetipos generados con el plugin ma
 │           └───META-INF
 │               └───maven
 │                       archetype.xml
-│
-└───target
-    │   arquetipo-maven-1.0-SNAPSHOT.jar
-    │
-    ├───classes
-    │   ├───archetype-resources
-    │   │   │   pom.xml
-    │   │   │
-    │   │   └───src
-    │   │       ├───main
-    │   │       │   └───java
-    │   │       │           App.java
-    │   │       │
-    │   │       └───test
-    │   │           └───java
-    │   │                   AppTest.java
-    │   │
-    │   └───META-INF
-    │       └───maven
-    │               archetype.xml
-    │
-    └───maven-archiver
-            pom.properties
 }}}
 
 3. Compilamos el arquetipo
