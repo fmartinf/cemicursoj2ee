@@ -50,8 +50,9 @@ Es por ello que se hace imprescindible la instalación de Maven.
 Pasos:
 
  # Nos descargamos la última versión de Apache Maven: http://maven.apache.org/download.html
- # Descomprimimos el *apache-maven-2.2.1-bin.zip* en `C:\CEMi_J2EE\apache-maven-2.2.1`
+ # Descomprimimos el *apache-maven-2.2.1-bin.zip* en `C:\CEMi_J2EE\apache-maven-2.2.1
  # Creamos la _variable de entorno_ de *sistema* *M2_HOME*
+_Para acceder a las variables de entorno en entornos Windows: `Mi PC > Propiedades > Opciones Avanzadas > Variables de entorno`_
    * `M2_HOME=C:\CEMi_J2EE\apache-maven-2.2.1`
  # Creamos las _variables de entorno_ de *usuario* *M2* y *MAVEN_OPTS*
    * `M2=%M2_HOME%\bin`
