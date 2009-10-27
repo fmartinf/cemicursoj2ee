@@ -558,15 +558,19 @@ En este punto debemos hacer un inciso. Los arquetipos generados con el plugin ma
 
  * En `src/main/resouces/archetype-resources/src/main/java/App.java` y `src/main/resouces/archetype-resources/src/test/java/AppTest.java`, sustituir: `package $es.cemi;` por: `package $package;`
  * En `src/main/resouces/archetype-resources/pom.xml` cambiar:
-   `<groupId>$es.cemi</groupId`  
-   `<artifactId>$arquetipo-maven</artifactId>`
-   `<version>$1.0-SNAPSHOT</version>`
+ 	{{{
+   	<groupId>$es.cemi</groupId>  
+   	<artifactId>$arquetipo-maven</artifactId>
+   	<version>$1.0-SNAPSHOT</version>
+ 	}}}
 
    por
    
-   `<groupId>$groupId</groupId>`  
-   `<artifactId>$artifactId</artifactId>`  
-   `<version>$version</version>`
+   {{{
+   <groupId>$groupId</groupId>
+   <artifactId>$artifactId</artifactId>  
+   <version>$version</version>
+   }}}
    
 ----
 
