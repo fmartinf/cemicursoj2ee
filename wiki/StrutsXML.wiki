@@ -120,7 +120,9 @@ http://struts.apache.org/dtds/struts-2.0.dtd
 
 No obstante, lo iremos viendo paso a paso.
 
-== Etiqueta `<struts>`. Particionando en distintos ficheros mediante `<include />` ==
+== 1. Etiqueta `<struts>` ==
+
+=== 1.1 Etiqueta `<struts>`. Particionado en distintos ficheros mediante `<include />` ===
 
 Para evitar contar con un `struts.xml` muy grande, podemos particionar dicho fichero mediante la utilización de _includes_:
 
@@ -142,7 +144,15 @@ Para evitar contar con un `struts.xml` muy grande, podemos particionar dicho fic
    Cada _plugin_ en forma de JAR deberá contener un fichero `struts-plugin.xml` que será cargado durante el arranque del servidor.
    
 
-== Etiqueta `<struts>`. Definición de paquetes `<package />` ==
+=== 1.2 Etiqueta `<struts>`. Definición de paquetes `<package />` ===
+
+{{{
+<struts>
+  <package name="struts2" extends="struts-default" namespace="/struts2">
+  …
+  </package>
+</struts>
+}}}
 
  * La etiqueta `<package … />` es usada para agrupar atributos comunes de configuración tales como pilas de interceptores o URLs de espacios de nombres _(namespaces)_.
  * Esto puede ser útil para organizar de forma separada funcionalidades que puedan ser separadas en distintos ficheros de configuración.
@@ -154,11 +164,143 @@ Por ejemplo, si tenemos dos paquetes _(packages)_ diferentes con _namespaces_ "p
    * _abstract_ si es `true` entonces los _actions_ que se definan bajo este, sólo serán accesibles a través de paquetes que hereden de este.
 Un ejemplo de paquete abstracto, lo tenemos en `struts-default` (paquete del fichero de configuración `struts-default.xml`)
 
-== Etiqueta `<struts>`. Definición de _beans_  y de _constantes_ ==
+=== 1.3 Etiqueta `<struts>`. Definición de _beans_  y de _constantes_ ===
 
  * `<bean … />`
  * `<constant … />`
  
 Ambas etiquetas permiten redefinir parámetros del framework. Veámos algunos ejemplos:
+
+== 2. Actions ==
+
+=== 2.1 Actions de un único resultado ===
+
+{{{
+class MyAction {
+  public void String execute() throws Exception {
+    return "success";
+  }
+}
+}}}
+
+La forma más sencilla de definirlo sería:
+{{{
+<action name="my" class="com.fdar.infoq.MyAction" >
+  <result>view.jsp</result>
+</action>
+}}}
+
+=== 2.2 Actions de múltiples resultados ===
+
+{{{
+class MyAction {
+  public void String execute() throws Exception {
+    if( myLogicWorked() ) {
+      return "success";
+    } else {
+      return "error";
+    }
+  }
+}
+}}}
+
+{{{
+<action name="my" class="com.fdar.infoq.MyAction" >
+  <result>view.jsp</result>
+  <result name="error">error.jsp</result>
+</action>
+}}}
+
+=== 2.3 Actions. Tipos de resultados ===
+
+El tipo de un resultado se define mediante el atributo `type` en el nodo `<result />`:
+ * `dispatcher` es el valor por defecto
+ * `stream`
+ * etc.
+ 
+Más info: http://struts.apache.org/2.0.6/docs/result-types.html
+
+=== 2.4 Actions. Request y Form Data ===
+
+In order to make decisions about how the action should work,
+and to provide data for database persistent objects, the action
+may need to access values from the request string as well as the
+form data.
+
+
+Struts2 follows the JavaBean paradigm – if you want access to
+data, you provide a getter and/or setter for the field. Providing
+access to the request string and form values is no different. Each
+request string or form value is a simple name value pair, so to
+assign the value for a particular name, a setter is created on the
+action. For example, if a JSP makes a call
+“/home.action?framework=struts&version=2” the action would
+need to provide a setter “setFramework( String frameworkName
+)” as well as a setter “setVersion( int version )”.
+
+
+Notice in this example that the setter does not always need to be
+a String value. By default, Struts2 will convert from a String to
+the type on the action. This is done for all primitive types and
+basic object types, and can be configured for your own custom
+classes. Struts2 will also handle the navigation of the value into
+more complex object graphs, i.e. for a name on a form element
+name of “person.address.home.postcode” and a value of “2”,
+Struts2 will make the equivalent call
+“getPerson().getAddress().getHome().setPostcode(2)”.
+
+
+=== 2.5 Actions. Accediendo a servicios de la lógica de negocio desde el _action_ ===
+
+Up until now we have been concerned with the actions
+configuration, and how to control the rendering of a result back
+to the user for different result codes. This is an important part of
+what actions do but, before they return a result, some processing
+needs to be performed. For this, they need access to a variety of
+different objects – business objects, data access objects or other
+resources.
+
+To provide a loosely coupled system, Struts2 uses a technique
+called dependency injection, or inversion of controlv.
+Dependency injection can be implemented by constructor
+injection, interface injection and setter injection. Struts2 uses
+setter injection. This means that to have objects available to the
+action, you need only to provide a setter. The preferred
+dependency injection framework is the Spring Framework,
+which is configured via a plugin. Another option is Plexus, or if
+you prefer you can supply your own implementation.
+
+There are also objects that are not managed by the spring
+framework, such as the HttpServletRequest. These are
+handled by using a combination of setter injection and interface
+injection. For each of the non-business objects there is a
+corresponding interface (known as an “aware” interface) that the
+action is required to implement.
+
+With the necessary interfaces and setters in place, interceptors
+will manage the injection of the necessary objects.
+
+=== 2.6 Actions. Accediendo a datos desde el _action_ ===
+
+At some point there will be a need to view objects that have been
+modified by the action. There are several techniques that can be
+used.
+
+A familiar technique for most web developers is to place the
+object that needs to be accessed in the HttpServletRequest or
+the HttpSession. This can be achieved by implementing the
+“aware” interface (letting the dependency injection to do its
+work) and then setting the object to be accessed under the
+required name.
+
+If you intend to use the built-in tag libraries or the included
+JSTL support, accessing the data is much easier. Both of these
+are able to directly access the action via the Value Stack. The
+only additional work for developers is to provide getters on the
+action that allows access to the objects that need to be accessed.
+We will talk more about the Value Stack in a later section.
+
+== 3. Interceptores ==
+
 
 
