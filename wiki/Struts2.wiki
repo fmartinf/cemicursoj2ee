@@ -114,6 +114,9 @@ La ruta por defecto de estos ficheros en el servidor deberá ser la misma que la
 private static final String  UPLOADS_DIRECTORY = "c:/uploads/";
 }}}
 
+Pistas: 
+ * http://code.google.com/p/cemicursoj2ee/wiki/StrutsXML#5._Tipos_de_resultados
+
 = Ejemplo de aplicación Struts 2 básica de CRUDs de entidades =
 
 _NOTA: Para poder probar este ejemplo deberemos instalarnos ApacheMaven2 y MySQL 5.0_
