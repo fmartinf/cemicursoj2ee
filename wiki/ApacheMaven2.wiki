@@ -92,6 +92,9 @@ Así que añadimos lo siguiente en dicho fichero, para unificar el emplazamiento
 <localRepository>C:\CEMi_J2EE\apache-maven-2.2.1\repository</localRepository>
 }}}
 
+Si nos encontramos en una red protegida por un proxy, será necesario especificarlo en el `%M2_HOME%/bin/conf/settings.xml`, tal y como figura en la documentación oficial de Maven:
+[http://maven.apache.org/guides/mini/guide-proxies.html Maven - Guide to using proxies]
+
 = Control del ciclo de desarrollo =
 
  * Hasta ahora muchas fases de un proyecto Software eran gestionadas de una forma "pseudo-manual":
