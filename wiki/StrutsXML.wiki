@@ -608,6 +608,38 @@ Here’s what the action configuration looks like:
 </action>
 }}}
 
+Tipos de resultados de `struts-default`:
+
+*chain* Chains from the execution of one action to another configured action. 
+Copies all property values with getter methods from
+the initial action to corresponding setter
+methods on the target action.
+
+*dispatcher* Renders Java server pages. This is the
+default result type, and is used if no result
+type is configured in the action
+configuration.
+
+*freemarker* Renders Freemarker templates.
+
+*httpheader* Returns HTTP headers with user defined values.
+
+*redirect* Redirects to any arbitrary URL.
+
+*redirect-action* Redirect to a configured action. Can be
+used to provide redirect after post
+functionality.
+
+*stream* Streams data back to the browser. Used to
+stream PDF, Microsoft Word, images, or
+other data.
+
+*velocity* Renders Velocity templates.
+
+*xslt* Uses an XSLT to format the properties
+from the action that has been previously
+executed.
+
 === 5.1 Tipos de resultados: Configuración ===
 
 Result types are configured within the <package … /> tag. The

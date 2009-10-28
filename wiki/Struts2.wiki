@@ -368,3 +368,82 @@ Crear un interceptor de acceso seguro a cada página. Dicho interceptor deberá 
  * Permitir acceder a la página solicitada
  
 Será necesario crear una página `login.jsp` en la que podamos incluir la *Cuenta de E-Mail* del usuario y su *Contraseña*.
+
+= Mecanismo para crear operaciones de tipo CRUD en el mismo _Action_ =
+struts.xml
+{{{
+<action name="*/*" method="{2}" class="es.cemi.sample.{1}Action">
+  <result type="redirect">/{1}/view.action</result>
+  <result name="view">/{1}/view.jsp</result>
+  <result name="input">/{1}/edit.jsp</result>
+  <result name="home">/{1}/home.jsp</result>
+</action>
+}}}
+
+Para una entidad `User`, su _Action_ quedaría de la siguiente forma:
+
+{{{
+public class UserAction extends ActionSupport implements ModelDriven, Preparable {
+  private User user;
+  private int id;
+  private UserService service; // user business service
+  …
+  
+  public void setId(int id) {
+    this.id = id;
+  }
+  
+  /**
+    create a new user if none exists, otherwise
+    load the user with the specified id
+   */
+  public void prepare() throws Exception {
+    if( id==0 ) {
+      user = new User();
+    } else {
+      user = service.findUserById(id);
+    }
+  }
+  
+  public Object getModel() {
+    return user;
+  }
+  
+  /**
+    create or update the user and then
+    view the created user
+   */
+  public String update() {
+    if( id==0 ) {
+      service.create(user);
+    } else {
+      service.update(user);
+    }
+    return "redirect";
+  }
+  
+  /**
+    delete the user and go to a default home page
+   */
+  public String delete() {
+    service.deleteById(id);
+    return "home";
+  }
+  
+  /**
+    show the page allowing the user to
+    view the existing data
+   */
+  public String view() {
+    return "view";
+  }
+  
+  /**
+    show the page allowing the user to view
+    the existing data and change the values
+   */
+  public String edit() {
+    return "input";
+  }
+}
+}}}
