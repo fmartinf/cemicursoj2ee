@@ -300,7 +300,339 @@ only additional work for developers is to provide getters on the
 action that allows access to the objects that need to be accessed.
 We will talk more about the Value Stack in a later section.
 
+=== 2.7 Action. Utilizando _wildcards_ (*) para definir _actions_ dinámicos
+
+_Ejemplo 1:_
+{{{
+<action name="*Register" method="{1}" class="vaannila.RegisterAction">
+  <result name="populate">/register.jsp</result>
+  <result name="success">/success.jsp</result>
+</action>
+}}}
+
+Este action comtempla todas referencias a actions que acaben en "Register". De este modo, las siguientes invocaciones casarían con esta definición de action:
+`populateRegister`
+`Register`
+
+Los parámetros `{1}`, `{2}`, `{3}`, etc corresponden a la cadena del `*`, de izqda a dcha.
+
+De este modo cuando se trata de "casar" el _action_ `populateRegister`, este casaría con `*Register`, siendo `{1}` igual a `populate`.
+Este _action_ populateRegister, tendría como resultado la ejecución del método `populate()` en la clase `vaannila.RegisterAction`.
+
+Para el caso del _action_ `Register`, también correspondería a `*Register`, pero en este caso `{1}` sería la cadena vacía, con lo que el método que
+se ejecutaría sería `execute()`.
+
+_Ejemplo 2:_ Supongamos un CRUD de entidades, en el que realizamos la siguiente estructura de _actions_:
+
+ * `/admin/User/list.action`
+ * `/admin/User/add.action`
+ * `/admin/User/edit.action`
+
+Una posible definición de _action_ sería:
+{{{
+<action name="*/*/*" method="{3}" class="com.infoq.actions.{1}.{2}Action">
+  <result name="view">/{1}/update{2}.jsp</result>
+  <result name="list">/{1}/list.jsp</result>
+</action>
+}}}
+
+Para los tres actions del CRUD de User, equivaldría a definir el siguiente conjunto de _actions_:
+{{{
+<action name="/admin/User/list" method="list" class="com.infoq.actions.admin.UserAction">
+  <result name="view">/admin/updateUser.jsp</result>
+  <result name="list">/admin/list.jsp</result>
+</action>
+
+<action name="/admin/User/add" method="add" class="com.infoq.actions.admin.UserAction">
+  <result name="view">/admin/updateUser.jsp</result>
+  <result name="list">/admin/list.jsp</result>
+</action>
+
+<action name="/admin/User/edit" method="edit" class="com.infoq.actions.admin.UserAction">
+  <result name="view">/admin/updateUser.jsp</result>
+  <result name="list">/admin/list.jsp</result>
+</action>
+}}}
+
 == 3. Interceptores ==
 
+Many of the features provided in the Struts2 framework are
+implemented using interceptors; examples include exception
+handling, file uploading, lifecycle callbacks and validation.
+Interceptors are conceptually the same as servlet filters or the
+JDKs Proxy class. They provide a way to supply pre-processing
+and post-processing around the action. Similar to servlet filters,
+interceptors can be layered and ordered. They have access to the
+action being executed, as well as all environmental variables and
+execution properties.
 
+Let’s start our discussion of interceptors with dependency
+injection. Injecting dependencies into the action, as we have
+already seen, can happen in a couple of different ways. Here are
+the implementing interceptors for those we have already
+mentioned:
 
+ * Spring Framework – the ActionAutowiringInterceptor interceptor.
+ * Request String and Form Values – the ParametersInterceptor interceptor.
+ * Servlet-based objects – the ServletConfigInterceptor interceptor.
+ 
+The first two interceptors work independently, with no
+requirements from the action, but the last interceptor is different.
+It works with the assistance of the following interfaces:
+ *  SessionAware – to provide access to all the session
+attributes via a Map
+ *  ServletRequestAware – to provide access to the
+HttpServletRequest object
+ *  RequestAware – to provide access to all the request
+attributes via a Map
+ *  ApplicationAware – to provide access to all the
+application attributes via a Map
+ *  ServletResponseAware – to provide access to the
+HttpServletResponse object
+ *  ParameterAware – to provide access to all the request
+string and form values attributes via a Map
+ *  PrincipalAware – to provide access to the
+PrincipleProxy object; this object implements the
+principle and role methods of the HttpServletRequest
+object in implementation, but by providing a proxy,
+allows for implementation independence in the action
+ *  ServletContextAware – to provide access to the ServletContext object
+ 
+For the correct data to be injected into an action, it will need to
+implement the necessary interface.
+
+=== 3.1 Interceptores. Configuración ===
+
+If we want to enable dependency injection (or any other type of
+functionality provided by an interceptor) on our action we need
+to provide configuration. Like other elements, many
+interceptors have been preconfigured for you. Just make sure
+that the package your actions are in extends the “struts-default”
+package.
+
+To configure a new interceptor, we first need to define the
+interceptor. The <interceptors … /> and <interceptor …/> tags 
+are placed directly under the <package> tag. For the
+above mentioned Spring Framework interceptor, the
+configuration is as follows:
+
+{{{
+<interceptors>
+  …
+  <interceptor name="autowiring" class="interceptor.ActionAutowiringInterceptor"/>
+</interceptors>
+}}}
+
+We also need to ensure that the interceptor is applied to the
+action that requires it. This can be achieved in two ways. The
+first is to assign the interceptor to each action individually:
+
+{{{
+<action name="my" class="com.fdar.infoq.MyAction" >
+  <result>view.jsp</result>
+  <interceptor-ref name="autowiring"/>
+</action>
+}}}
+
+Using this configuration there is no limitation on the number of
+interceptors you can apply to an action. What is required, is that
+the interceptors are listed in the order that they are to be
+executed.
+The second way is to assign a default interceptor for the current
+package:
+
+{{{
+<default-interceptor-ref name="autowiring"/>
+}}}
+
+This declaration is made directly under the <package … /> tag,
+and only one interceptor can be assigned as the default.
+Now that the interceptor has been configured for a particular
+action mapping, it will be executed on each and every request to
+the mapped URL. But this is very limiting, as most of the time
+we require more than one interceptor to be assigned to an action.
+
+In fact, as Struts2 bases much of its functionality on interceptors,
+it is not unlikely to have 7 or 8 interceptors assigned per action.
+As you can imagine, having to configure every interceptor for
+each action would quickly become extremely unmanageable.
+For this reason, interceptors are managed with interceptor stacks.
+Here is an example, directly from the struts-default.xml file:
+
+{{{
+<interceptor-stack name="basicStack">
+  <interceptor-ref name="exception"/>
+  <interceptor-ref name="servlet-config"/>
+  <interceptor-ref name="prepare"/>
+  <interceptor-ref name="checkbox"/>
+  <interceptor-ref name="params"/>
+  <interceptor-ref name="conversionError"/>
+</interceptor-stack>
+}}}
+
+This configuration node is placed under the <package … />
+node. Each <interceptor-ref … /> tag references either an
+interceptor or an interceptor stack that has been configured
+before the current interceptor stack.
+We have already seen how to apply interceptor to the action,
+applying interceptor stacks is no different. In fact, we use
+exactly the same tag:
+
+<action name="my" class="com.fdar.infoq.MyAction" >
+<result>view.jsp</result>
+<interceptor-ref name="basicStack"/>
+</action>
+
+The same holds true for the configuration of the default
+interceptor – simply use an interceptor stack configuration name
+rather than an individual interceptor name.
+<default-interceptor-ref name="basicStack"/>
+It is therefore very important to ensure that the name is unique
+across all interceptor and interceptor stack configurations when
+configuring the initial interceptors and interceptor stacks.
+
+=== 3.2 Interceptores. Implementando nuevos interceptores ===
+
+Using custom interceptors in your application is an elegant way
+to provide cross-cutting application features. The interface that
+needs implementing is simple, and comes from the XWork
+framework. It has only 3 methods:
+public interface Interceptor extends Serializable {
+void destroy();
+void init();
+String intercept(ActionInvocation invocation)
+throws Exception;
+}
+In fact, if there is no initialization or cleanup required, there is an
+AbstractInterceptor class that can be extended instead. This
+class provides a default no-op implementation of both the
+“destroy” and “init” methods.
+The ActionInvocation object provides access to the runtime
+environment. It allows access to the action itself; the context
+(which for a web application includes the request parameters,
+session parameters, the users locale, etc.); the result of the
+actions execution; and methods to invoke the action and
+determine whether the action has already been invoked.
+We have already seen how to configure interceptors, and
+configuring custom interceptors is exactly the same. If you do
+create your own interceptors, you will also want to consider
+creating custom interceptor stacks. In this manner you will
+ensure consistent application of the new interceptor across all
+actions that require it.
+
+== 4. Value Stack / OGNL ==
+
+This section covers two ideas that are closely related. The value
+stack is exactly what it says it is – a stack of objects. OGNL
+stands for Object Graph Navigational Language, and provides
+the unified way to access objects within the value stack.
+
+The value stack consists of the following objects in the provided
+order:
+1. Temporary Objects – during execution temporary objects
+are created and placed onto the value stack; an example
+of this would be the current iteration value for a
+collection being looped over in a JSP tag
+2. The Model Object – if model objects are being used, the
+current model object is placed before the action on the
+value stack
+3. The Action Object – the action being executed
+4. Named Objects – these objects include #application,
+#session, #request, #attr and #parameters and refer
+to the corresponding servlet scopes
+
+Accessing the value stack can be achieved in many different
+ways. The most common way is via the tags provided for JSP,
+Velocity and Freemarker. HTML tags are commonly used to
+access properties of objects from the value stack; control tags
+(such as if, elseif and iterator) are used with expressions; and
+data tags are available to manipulate the stack itself (via set and
+push).
+
+When using the value stack there is no need to keep track of
+which scope the target object is in. If you want the attribute
+“name”, then you query the value stack for this attribute. Each
+stack element, in the provided order, is asked whether it has the
+property. If it does, then the value is returned and we are done.
+If not, then the next element down is queried. This continues
+until the end of the stack is reached. This is a great feature, as
+you don’t care where the value is – the action, the model, or the
+HTTP request – you just know that if the value exists it will be
+returned.
+
+There is a downside. If the property is common (for example
+“id”) and you want the value from a specific object (say the
+action) that is not the first object encountered with this property
+on the value stack, the value returned may not be what you
+expect. What will be returned is an “id” value, but it may be
+from a JSP tag, interim object, or a value from the model object.
+OGNL is more than just a means to access the properties of
+objects, and we can use this to our advantage here. If we know
+the depth in the stack of the action, we could use “[2].id” instead
+of an expression of “id”.
+
+In fact, OGNL is a fully featured expression language. As well
+as using dot notation to navigate object graphs (i.e. using
+“person.address” instead of “getPerson().getAddress()” as the
+expression), OGNL supports features such as type conversion,
+calling methods, collection manipulation and generation,
+projection across collections, expression evaluation and lambda
+expressions . The complete language guide can be found at
+http://www.ognl.org/2.6.9/Documentation/html/LanguageGuide/index.html.
+
+== 5. Tipos de resultados ==
+
+So far we have shown action configurations that result in a JSP
+being rendered to the user. This is one case, but not the only
+one. In fact, Struts2 supports many types of results. These can
+be visual, or they can be interactions with the environment.
+To configure an action to execute a result of a specific type, the
+“type” attribute is used. If the attribute is not supplied, the
+default type “dispatcher” is used – this will render a JSP result.
+Here’s what the action configuration looks like:
+
+{{{
+<action name="my" class="com.fdar.infoq.MyAction" >
+  <result type="dispatcher">view.jsp</result>
+</action>
+}}}
+
+=== 5.1 Tipos de resultados: Configuración ===
+
+Result types are configured within the <package … /> tag. The
+configuration is similar to interceptor configuration. A “name”
+attribute provides a unique identifier for the result type, and the
+“class” attribute provides the implementation class. There is a
+third attribute “default” – this allows the default result type to be
+modified. If a web application was to be based on Velocity
+rather than JSP, modifying the default would save time when
+entering configuration information.
+
+{{{
+<result-types>
+  <result-type name="dispatcher" default="true" class="….dispatcher.ServletDispatcherResult"/>
+  <result-type name="redirect" class="….dispatcher.ServletRedirectResult"/>
+  …
+</result-types>
+}}}
+
+=== 5.2 Tipos de resultados: Implementación ===
+
+Similar to interceptors, it is possible to create your own result
+types and configure them in your web application. Many
+common result types already exist so, before creating your own,
+you should check to see if the type you want already exists.
+To create a new result type, implement the Result interface.
+
+{{{
+public interface Result extends Serializable {
+  public void execute(ActionInvocation invocation) throws Exception;
+}
+}}}
+
+The ActionInvocation object provides access to the runtime
+environment, allowing the new result type to access information
+from the action that was just executed, as well as the context in
+which the action was executed. The context includes the
+HttpServletRequest object, which provides access to the
+output stream for the current request.
