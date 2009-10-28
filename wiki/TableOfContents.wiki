@@ -6,6 +6,7 @@
    * [MySQL Instalando MySQL]
    * [MVCs Frameworks MVC]
    * [Struts2 Framework MVC Struts2]
+     * [StrutsXML El fichero `struts.xml` en profundidad]
    * [JSF Framework MVC JSF]
    * [JSFvsStruts Comparativa entre JSF y Struts2]
    

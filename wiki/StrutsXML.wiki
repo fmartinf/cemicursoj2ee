@@ -1,0 +1,164 @@
+#summary El fichero `struts.xml` en profundidad
+#sidebar TableOfContents
+
+= El fichero `struts.xml` en profundidad =
+
+El fichero "struts.xml" contiene toda la información de configuración de nuestra aplicación Struts2. Entre ella se incluyen las definiciones de: 
+ # _actions_
+ # 
+
+Si queremos ser estrictos, la "biblia" de este fichero se encuentra en su DTD:
+
+http://struts.apache.org/dtds/struts-2.0.dtd
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT struts (package|include|bean|constant)*>
+
+<!ELEMENT package (result-types?, interceptors?, default-interceptor-ref?, default-action-ref?, default-class-ref?, global-results?, global-exception-mappings?, action*)>
+<!ATTLIST package
+    name CDATA #REQUIRED
+    extends CDATA #IMPLIED
+    namespace CDATA #IMPLIED
+    abstract CDATA #IMPLIED
+    externalReferenceResolver NMTOKEN #IMPLIED
+>
+
+<!ELEMENT result-types (result-type+)>
+
+<!ELEMENT result-type (param*)>
+<!ATTLIST result-type
+    name CDATA #REQUIRED
+    class CDATA #REQUIRED
+    default (true|false) "false"
+>
+
+<!ELEMENT interceptors (interceptor|interceptor-stack)+>
+
+<!ELEMENT interceptor (param*)>
+<!ATTLIST interceptor
+    name CDATA #REQUIRED
+    class CDATA #REQUIRED
+>
+
+<!ELEMENT interceptor-stack (interceptor-ref*)>
+<!ATTLIST interceptor-stack
+    name CDATA #REQUIRED
+>
+
+<!ELEMENT interceptor-ref (param*)>
+<!ATTLIST interceptor-ref
+    name CDATA #REQUIRED
+>
+
+<!ELEMENT default-interceptor-ref (#PCDATA)>
+<!ATTLIST default-interceptor-ref
+    name CDATA #REQUIRED
+>
+
+<!ELEMENT default-action-ref (#PCDATA)>
+<!ATTLIST default-action-ref
+    name CDATA #REQUIRED
+>
+
+<!ELEMENT default-class-ref (#PCDATA)>
+<!ATTLIST default-class-ref
+    class CDATA #REQUIRED
+>
+
+<!ELEMENT global-results (result+)>
+
+<!ELEMENT global-exception-mappings (exception-mapping+)>
+
+<!ELEMENT action (param|result|interceptor-ref|exception-mapping)*>
+<!ATTLIST action
+    name CDATA #REQUIRED
+    class CDATA #IMPLIED
+    method CDATA #IMPLIED
+    converter CDATA #IMPLIED
+>
+
+<!ELEMENT param (#PCDATA)>
+<!ATTLIST param
+    name CDATA #REQUIRED
+>
+
+<!ELEMENT result (#PCDATA|param)*>
+<!ATTLIST result
+    name CDATA #IMPLIED
+    type CDATA #IMPLIED
+>
+
+<!ELEMENT exception-mapping (#PCDATA|param)*>
+<!ATTLIST exception-mapping
+    name CDATA #IMPLIED
+    exception CDATA #REQUIRED
+    result CDATA #REQUIRED
+>
+
+<!ELEMENT include (#PCDATA)>
+<!ATTLIST include
+    file CDATA #REQUIRED
+>
+
+<!ELEMENT bean (#PCDATA)>
+<!ATTLIST bean
+    type CDATA #IMPLIED
+    name CDATA #IMPLIED
+    class CDATA #REQUIRED
+    scope CDATA #IMPLIED
+    static CDATA #IMPLIED
+    optional CDATA #IMPLIED
+>
+
+<!ELEMENT constant (#PCDATA)>
+<!ATTLIST constant
+    name CDATA #REQUIRED
+    value CDATA #REQUIRED    
+>
+}}}
+
+No obstante, lo iremos viendo paso a paso.
+
+== Etiqueta `<struts>`. Particionando en distintos ficheros mediante `<include />` ==
+
+Para evitar contar con un `struts.xml` muy grande, podemos particionar dicho fichero mediante la utilización de _includes_:
+
+{{{
+<struts>
+  <include file="billing-config.xml" />
+  <include file="admin-config.xml" />
+  <include file="reports-config.xml" />
+  ...
+</struts>
+}}}
+
+ * El orden de los includes importa, ya que si en `admin-config.xml` usamos un tag definido en
+`billing-config.xml` y cambiamos el orden de los includes, subiendo `admin-config.xml`, dicho tag ya no será resuelto correctamente.
+
+ * Del mismo modo que nosotros podemos incluir nuevos _Struts XMLs_, automaticamente, ya se estan incluyendo los siguientes ficheros:
+   * `struts-default.xml` _ofrece la configuración del corazón de Struts2_
+   * `struts-plugin.xml` _ofrece la configuración necesaria para un plugin particular_
+   Cada _plugin_ en forma de JAR deberá contener un fichero `struts-plugin.xml` que será cargado durante el arranque del servidor.
+   
+
+== Etiqueta `<struts>`. Definición de paquetes `<package />` ==
+
+ * La etiqueta `<package … />` es usada para agrupar atributos comunes de configuración tales como pilas de interceptores o URLs de espacios de nombres _(namespaces)_.
+ * Esto puede ser útil para organizar de forma separada funcionalidades que puedan ser separadas en distintos ficheros de configuración.
+ * Los atributos de esta etiqueta pueden ser:
+   * _name_ nombre identificativo que deberemos indicarle. Debe ser único.
+   * _extends_ nombre del paquete que estamos heredando (todos sus parámetros de configuración, incluyendo los _actions_).
+   * _namespace_ el _espacio de nombres_ proporciona una relación _[URL, package]_. 
+Por ejemplo, si tenemos dos paquetes _(packages)_ diferentes con _namespaces_ "paquete1" y "paquete2", respectivamente, las URLs deberán ser algo parecido a `/miApp/paquete1/mi.action` y `/miApp/paquete2/mi.action`.
+   * _abstract_ si es `true` entonces los _actions_ que se definan bajo este, sólo serán accesibles a través de paquetes que hereden de este.
+Un ejemplo de paquete abstracto, lo tenemos en `struts-default` (paquete del fichero de configuración `struts-default.xml`)
+
+== Etiqueta `<struts>`. Definición de _beans_  y de _constantes_ ==
+
+ * `<bean … />`
+ * `<constant … />`
+ 
+Ambas etiquetas permiten redefinir parámetros del framework. Veámos algunos ejemplos:
+
+
