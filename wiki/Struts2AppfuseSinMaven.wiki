@@ -60,13 +60,3 @@ Para *Struts2*:
   - personList.jsp
   - personForm.jsp
 }}}
-
-http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 2*:
-Si creamos una nueva persona, vemos que se permite que los campos sean vacios. Crear un validador de esa página que evite que los campos puedan ser vacíos.
-
-http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 3*:
-Crear un interceptor de acceso seguro a cada página. Dicho interceptor deberá comprobar si existe en sesión el usuario logado, realizando dos posibles acciones:
- * Redirigir a la página de _login_ si no existe el usuario en sesión 
- * Permitir acceder a la página solicitada
- 
-Será necesario crear una página `login.jsp` en la que podamos incluir la *Cuenta de E-Mail* del usuario y su *Contraseña*.
