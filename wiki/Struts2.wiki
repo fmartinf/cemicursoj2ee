@@ -105,10 +105,6 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
  # Struts 2 Tiles Integration Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleTiles/ Struts2ExampleTiles]
 
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 1:*
-Crear un validador "client-side" siguiendo las pautas de:
-http://struts.apache.org/2.x/docs/client-validation.html
-
-http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 2:*
 A partir del ejemplo *Struts2ExampleFileUpload* crear un _action_ que permita efectuar la descarga de archivos almacenados en disco. Será invocado a través de una JSP: `solicitarFichero.jsp`:
 
 http://cemicursoj2ee.googlecode.com/files/ejercicio1.JPG
@@ -123,6 +119,87 @@ private static final String  UPLOADS_DIRECTORY = "c:/uploads/";
 
 Pistas: 
  * http://code.google.com/p/cemicursoj2ee/wiki/StrutsXML#5._Tipos_de_resultados
+ 
+http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 2:*
+Crear un proyecto nuevo y que llamaremos *Struts2ExampleCRUD*
+
+Esta aplicación tendrá una página de _login_: `login.jsp`. Esta página constará de:
+ * un formulario
+ * dos campos de tipo texto: *usuario* y *password*. Ambos campos son obligatorios (deberemos hacer tanto validaciones en el cliente como en el servidor).
+ * un botón *Acceder*
+
+Cuando pulsemos *Acceder*, nuestra aplicación deberá almacenar en sesión un parametro de nombre "UsuarioLogado" de tipo `java.util.HashMap` de la siguiente estructura:
+ * *(KEY, VALUE)*
+ * ("usuario", _valor del campo usuario introducido en `login.jsp`_)
+ * ("password", _valor del campo password introducido en `login.jsp`_)
+ * ("ultimoAcceso", _fecha y hora actual_)
+
+_Por ejemplo:_ si se ha _logado_ un *usuario* "benito" de *password* "perez", deberemos guardar en sesión lo siguiente:
+ * `HashMap hashMapUsuarioLogado;`
+ * Nombre de parámetro en sesión: "UsuarioLogado"
+ * Valor de este parámetro de tipo `HashMap`:
+   * ("usuario", "benito")
+   * ("password", "perez")
+   * ("ultimoAcceso", "2009/10/29 20:30")
+
+Una vez, el usuario se ha logado y el execute() de ese action ha almacenado en sesión toda esa información, deberemos acceder a un página menu.jsp que mostrará los siguientes enlaces:
+ * "Ir a google.com", me deberá redireccionar a http://www.google.es. Este enlace deberá tener un _tool-tip_ o _title_ "Buscar".
+ * "Mostrar ayuda", me debe redireccinar a una página "ayuda.jsp" que deberá mostrar:
+   * Un texto "Ayuda" multi-idioma ("en" y "es") en la cabecera y una encuesta.
+   * La encuesta deberá ser la pregunta que nosotros queramos utilizando un _radio button_ para las respuestas.
+   * Un botón enviar datos que invocará a una página en la que se mostrará la respuesta seleccionada. 
+ * "Cerrar sesión", deberá eliminar de sesión el parámetro de nombre "UsuarioLogado.benito" y retornar a la página de _login_
+   
+ * Pistas:
+   * La fecha y la hora actual, la podemos obtener a partir de este método:
+{{{
+import java.util.Calendar;
+import java.util.Date;
+
+/**
+ * Método que calcula la fecha y hora actual
+ * 
+ * @return la fecha y hora actual
+ */
+public static Date getCurrentDate() {
+  return Calendar.getInstance().getTime();
+}
+}}}
+
+  * Para trabajar con el objeto `HttpSession` en Struts 2, utilizaremos la siguiente sentencia:
+{{{
+import javax.servlet.http.HttpSession;
+import org.apache.struts2.ServletActionContext;
+
+HttpSession session = ServletActionContext.getRequest().getSession()
+
+// 1. si queremos guardar un parámetro en sesión:
+session.setAttribute("UsuarioLogado",hashMapUsuarioLogado);
+
+// 2. si queremos obtener el valor de un parámetro
+Object sessionObjUsuarioLogado = session.getAttribute("UsuarioLogado");
+
+HashMap sessionUsuarioLogado = null;
+if (sessionUsuarioLogado instanceof HashMap) {
+  sessionUsuarioLogado = (HashMap) sessionObjUsuarioLogado;
+}
+
+// 3. si queremos eliminar un parámetro de sesión
+session.remove("UsuarioLogado");
+}}}
+
+http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 3:*
+Crear un interceptor de control de acceso a las páginas de la aplicación creada en el ejercicio 2.
+
+Este interceptor deberá obtener de sesión el parámetro "UsuarioLogado".
+{{{
+if (existe dicho parámetro) && (la fecha y hora del último acceso corresponde al día de hoy) {
+  [el interceptor permitirá acceder a la página solicitada]
+} else {
+  [el interceptor nos redirigirá a la página de login]
+}
+}}}
+
 
 = Ejemplo de aplicación Struts 2 básica de CRUDs de entidades =
 

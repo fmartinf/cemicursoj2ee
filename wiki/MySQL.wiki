@@ -3,7 +3,7 @@
 
 [http://dev.mysql.com/ http://dev.mysql.com/common/logos/logo_mysql_sun_a.gif]
 
-= Instalación de MySQL _(installer version)_ =
+= Instalación de MySQL _(version con instalador)_ =
 
  # Nos descargamos la versión *MySQL Community Server 5.0* de http://dev.mysql.com/downloads/mysql/5.0.html (installer version)
  # Nos descargamos el cliente de MySQL *Navicat* _Non-commercial (Free) - Lite version_: http://www.navicat.com/en/products/navicat_mysql/mysql_overview.html
@@ -13,7 +13,7 @@
    * `Include BIN directory in Windows Path`
    * Deshabilitamos `Modify root settings` para que el usuario `root` no tenga contraseña.
 
- = Instalación de MySQL _(without installer version)_ =
+ = Instalación de MySQL _(versión sin instalador)_ =
  
  # Nos descargamos la versión *MySQL Community Server 5.0* de http://dev.mysql.com/downloads/mysql/5.0.html (without-installer version)
  
