@@ -121,7 +121,7 @@ Pistas:
  * http://code.google.com/p/cemicursoj2ee/wiki/StrutsXML#5._Tipos_de_resultados
  
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 2:*
-Crear un proyecto nuevo y que llamaremos *Struts2ExampleCRUD*
+Crear un proyecto nuevo y que llamaremos *Struts2AppFinal*
 
 Esta aplicación tendrá una página de _login_: `login.jsp`. Esta página constará de:
  * un formulario
