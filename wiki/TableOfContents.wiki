@@ -7,6 +7,8 @@
    * [MVCs Frameworks MVC]
    * [Struts2 Framework MVC Struts2]
      * [StrutsXML El fichero `struts.xml` en profundidad]
+     * [Struts2Appfuse Ejemplo de CRUD basado en Appfuse]
+     * [Struts2AppfuseSinMaven Ejemplo de CRUD sin Maven y sin WAR Overlays]
    * [JSF Framework MVC JSF]
    * [JSFvsStruts Comparativa entre JSF y Struts2]
    
