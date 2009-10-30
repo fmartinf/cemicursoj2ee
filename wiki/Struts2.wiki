@@ -207,9 +207,9 @@ http://struts.apache.org/2.0.9/docs/i18n.html
 Struts 2 por defecto buscaría la property 'casa' en los ficheros de properties:
 
 {{{
-foo/bar/customBundle.properties // idioma por defecto
-foo/bar/customBundle_es.properties // esPAÑOL
-foo/bar/customBundle_en.properties // enGLISH
+myCustomBundle.properties // idioma por defecto
+myCustomBundle_es.properties // esPAÑOL
+myCustomBundle_en.properties // enGLISH
 ...
 }}}
 
@@ -217,6 +217,12 @@ Si queremos cambiar el emplazamiento de nuestras properties multi-idioma _(por e
 
 {{{
 <constant name="struts.custom.i18n.resources" value="messages"/>
+}}}
+
+y podremos mostrar los mensajes de la siguiente forma:
+
+{{{
+<s:property value="text('casa')" />
 }}}
 
 Ya que estamos para evitar el problema típico del encoding de los acentos y asegurar la compatibilidad con cualquier Sist.Operativo, utilizaremos `UTF-8`:
