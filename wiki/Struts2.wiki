@@ -262,6 +262,8 @@ http://struts.apache.org/2.0.9/docs/url.html
 </s:url>
 }}}
 
+5.4 Si queremos crear un enlace que apunte a una URL externa a la aplicación:
+<a href="http://www.google.es" title="Buscar">Ir a google.es</a>
 
 
 ----
