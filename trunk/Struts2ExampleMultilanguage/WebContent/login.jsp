@@ -18,8 +18,12 @@
     	<s:text name="texto.multidioma" />
     
         <s:form action="LoginAction" method="post" validate="true">
-            <s:textfield name="userName" label="User Name" />
-            <s:password name="password" label="Password" />
+            <s:textfield name="userName">
+            	<s:label key="username" />
+            </s:textfield>
+            <s:password name="password">
+            	<s:label key="password" />
+            </s:password>
             <s:submit value="Login" />
         </s:form>
         
