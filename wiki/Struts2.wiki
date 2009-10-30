@@ -127,34 +127,34 @@ Pistas:
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 2:*
 Crear un proyecto nuevo y que llamaremos *Struts2AppFinal*
 
-Esta aplicación tendrá una página de _login_: `login.jsp`. Esta página constará de:
+Esta aplicación tendrá una página de _login_: *login.jsp*. Esta página constará de:
  * un formulario
- * dos campos de tipo texto: *usuario* y *password*. Ambos campos son obligatorios (deberemos hacer tanto validaciones en el cliente como en el servidor).
+ * dos campos de tipo texto: *email* y *password*. Ambos campos son obligatorios y el email debe estar _bien-formado_ (deberemos hacer tanto validaciones en el cliente como en el servidor).
  * un botón *Acceder*
 
-Cuando pulsemos *Acceder*, nuestra aplicación deberá almacenar en sesión un parametro de nombre "UsuarioLogado" de tipo `java.util.HashMap` de la siguiente estructura:
+Cuando pulsemos *Acceder*, nuestra aplicación deberá almacenar en sesión un parametro de nombre ´UsuarioLogado` de tipo `java.util.HashMap` con las siguientes claves:
  * *(KEY, VALUE)*
- * ("usuario", _valor del campo usuario introducido en `login.jsp`_)
+ * ("email", _valor del campo email introducido en `login.jsp`_)
  * ("password", _valor del campo password introducido en `login.jsp`_)
  * ("ultimoAcceso", _fecha y hora actual_)
 
-_Por ejemplo:_ si se ha _logado_ un *usuario* "benito" de *password* "perez", deberemos guardar en sesión lo siguiente:
+_Por ejemplo:_ si se ha _logado_ un usuario de email "benito@gmail.com" y de *password* "perez", deberemos guardar en sesión lo siguiente:
  * `HashMap hashMapUsuarioLogado;`
  * Nombre de parámetro en sesión: "UsuarioLogado"
  * Valor de este parámetro de tipo `HashMap`:
-   * ("usuario", "benito")
+   * ("email", "benito@gmail.com")
    * ("password", "perez")
-   * ("ultimoAcceso", "2009/10/29 20:30")
+   * ("ultimoAcceso", "20091029 20:30")
 
-Una vez, el usuario se ha logado y el execute() de ese action ha almacenado en sesión toda esa información, deberemos acceder a un página menu.jsp que mostrará los siguientes enlaces:
+Una vez, el usuario se ha logado y el execute() de ese action ha almacenado en sesión toda esa información, deberemos acceder a un págin *menu.jsp* que mostrará los siguientes enlaces:
  * "Ir a google.com", me deberá redireccionar a http://www.google.es. Este enlace deberá tener un _tool-tip_ o _title_ "Buscar".
- * "Mostrar ayuda", me debe redireccinar a una página "ayuda.jsp" que deberá mostrar:
-   * Un texto "Ayuda" multi-idioma ("en" y "es") en la cabecera y una encuesta.
-   * La encuesta deberá ser la pregunta que nosotros queramos utilizando un _radio button_ para las respuestas.
-   * Un botón enviar datos que invocará a una página en la que se mostrará la respuesta seleccionada. 
- * "Cerrar sesión", deberá eliminar de sesión el parámetro de nombre "UsuarioLogado.benito" y retornar a la página de _login_
+ * "FAQ", me debe redireccinar a una página *faq.jsp* que deberá mostrar:
+   * Un texto "Preguntas frecuentes" multi-idioma ("en" y "es") en la cabecera y una encuesta.
+   * La encuesta deberá una pregunta que nosotros elijamos utilizando un _radio button_ para las respuestas.
+   * Un botón *enviar datos* que invocará a una página *resultado.jsp* en la que se mostrará la respuesta seleccionada. 
+ * "Cerrar sesión", deberá eliminar de sesión el parámetro de nombre *UsuarioLogado* y retornar a la página de _login_
    
- * Pistas:
+ * PISTAS:
    * La fecha y la hora actual, la podemos obtener a partir de este método:
 {{{
 import java.util.Calendar;

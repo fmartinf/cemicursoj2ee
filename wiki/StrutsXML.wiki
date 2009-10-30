@@ -615,6 +615,29 @@ Copies all property values with getter methods from
 the initial action to corresponding setter
 methods on the target action.
 
+Por ejemplo:
+
+{{{
+
+// solicitud.jsp tiene un <s:form action="solicitud" />
+
+<action name="solicitud" class="com.fdar.infoq.MyAction" >
+  <result name="success" type="chain">resultado.action</result>
+</action>
+
+// si la instancia `solicitudAction` de MyAction al ejecutar `execute()` devuelve "success",
+// se devolverá el control a `resultadoAction` transifieriendo todas las propertiees de `get*()` a `set*()`
+
+// resultado.jsp muestra los mismos campos, pero sólo a nivel informativo
+
+<action name="resultado" class="com.fdar.infoq.MyAction" >
+  <result name="salir" type="redirect">http://www.google.es</result>
+</action>
+}}}
+
+Más info: http://struts.apache.org/2.0.14/docs/chain-result.html
+
+
 *dispatcher* Renders Java server pages. This is the
 default result type, and is used if no result
 type is configured in the action
@@ -629,6 +652,10 @@ configuration.
 *redirect-action* Redirect to a configured action. Can be
 used to provide redirect after post
 functionality.
+
+/*
+ * Este action se parece a chain, en que no realiza la transferencia de properties de un action a otro.
+ */
 
 *stream* Streams data back to the browser. Used to
 stream PDF, Microsoft Word, images, or
