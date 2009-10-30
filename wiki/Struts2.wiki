@@ -155,7 +155,8 @@ Una vez, el usuario se ha logado y el execute() de ese action ha almacenado en s
  * "Cerrar sesión", deberá eliminar de sesión el parámetro de nombre *UsuarioLogado* y retornar a la página de _login_
    
  * `PISTAS:
-   * La fecha y la hora actual, la podemos obtener a partir de este método:
+
+*1.* La fecha y la hora actual, la podemos obtener a partir de este método:
 {{{
 import java.util.Calendar;
 import java.util.Date;
@@ -170,7 +171,7 @@ public static Date getCurrentDate() {
 }
 }}}
 
-  * Para trabajar con el objeto `HttpSession` en Struts 2, utilizaremos la siguiente sentencia:
+*2.* Para trabajar con el objeto `HttpSession` en Struts 2, utilizaremos la siguiente sentencia:
 {{{
 import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
@@ -192,7 +193,7 @@ if (sessionUsuarioLogado instanceof HashMap) {
 session.remove("UsuarioLogado");
 }}}
 
- * Para mostrar un texto multi-idioma en una página JSP:
+*3.* Para mostrar un texto multi-idioma en una página JSP:
 
 http://struts.apache.org/2.0.9/docs/i18n.html
 
@@ -215,6 +216,12 @@ Si queremos cambiar el emplazamiento de nuestras properties multi-idioma _(por e
 
 {{{
 <constant name="struts.custom.i18n.resources" value="messages"/>
+}}}
+
+Ya que estamos para evitar el problema típico del encoding de los acentos y asegurar la compatibilidad con cualquier Sist.Operativo, utilizaremos `UTF-8`:
+
+{{{
+<constant name="struts.i18n.encoding" value="UTF-8"/>
 }}}
 
 ----
