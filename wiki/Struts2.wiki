@@ -80,6 +80,7 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
  # Struts 2 Hello World Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2HelloWorld1/ Struts2HelloWorld1]
  # Struts 2 UI Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example7/ Struts2ExampleUITags]
    * http://struts.apache.org/2.0.11.1/docs/ui-tags.html
+   * http://struts.apache.org/2.0.9/docs/tag-reference.html
    * Ver StrutsXML > "2.7 Action. Utilizando _wildcards_ (`*`) para definir _actions_ dinámicos"
  # Struts 2 Data Tags Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example11/ Struts2ExampleDataTags]
  # Struts 2 Bean Tag Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2Example12/ Struts2ExampleBeanTag]
@@ -250,7 +251,7 @@ http://struts.apache.org/2.0.9/docs/url.html
 
 5.3 Si necesitamos pasar un parámetro al action
 {{{
-<s:url value="personList.action" method="list">
+<s:url value="personEdit.action" method="list">
   <s:param name="id" value="%{'22'}" />
 </s:url>
 }}}
