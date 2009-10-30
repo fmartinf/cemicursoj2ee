@@ -5,12 +5,13 @@
 package vaannila;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.Validateable;
 
 /**
  *
  * @author Meyyappan Muthuraman
  */
-public class Login extends ActionSupport {
+public class Login extends ActionSupport implements Validateable {
 
     private String userName;
     private String password;
