@@ -224,6 +224,16 @@ Ya que estamos para evitar el problema típico del encoding de los acentos y ase
 <constant name="struts.i18n.encoding" value="UTF-8"/>
 }}}
 
+*4.* Utilización del validador de email que incluye Struts 2 por defecto:
+
+{{{
+<field name="myEmail">
+   <field-validator type="email">
+      <message>Must provide a valid email</message>
+   </field-validator>
+</field>
+}}}
+
 ----
 
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 3:*
