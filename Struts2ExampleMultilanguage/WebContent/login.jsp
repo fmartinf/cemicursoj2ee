@@ -22,5 +22,22 @@
             <s:password name="password" label="Password" />
             <s:submit value="Login" />
         </s:form>
+        
+<h3>Languages</h3>
+<ul>
+    <li>
+        <s:url id="url" action="LoginAction">
+            <s:param name="request_locale">en</s:param>
+        </s:url>
+        <s:a href="%{url}">English</s:a>
+    </li>
+    <li>
+        <s:url id="url" action="LoginAction">
+            <s:param name="request_locale">es</s:param>
+        </s:url>
+        <s:a href="%{url}">Espanol</s:a>
+    </li>
+</ul>
+        
     </body>
 </html>
