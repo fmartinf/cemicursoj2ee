@@ -234,6 +234,29 @@ Ya que estamos para evitar el problema típico del encoding de los acentos y ase
 </field>
 }}}
 
+*5.* Etiquetas Struts 2 para URLs
+
+http://struts.apache.org/2.0.9/docs/url.html
+
+5.1 Si queremos ejecutar un action concreto
+{{{
+<s:url value="personList.action" />
+}}}
+
+5.2 Si queremos ejecutar un action y un método concreto
+{{{
+<s:url value="personList.action" method="list" />
+}}}
+
+5.3 Si necesitamos pasar un parámetro al action
+{{{
+<s:url value="personList.action" method="list">
+  <s:param name="id" value="%{'22'}" />
+</s:url>
+}}}
+
+
+
 ----
 
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 3:*
