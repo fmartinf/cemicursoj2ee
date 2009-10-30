@@ -154,7 +154,7 @@ Una vez, el usuario se ha logado y el execute() de ese action ha almacenado en s
    * Un botón *enviar datos* que invocará a una página *resultado.jsp* en la que se mostrará la respuesta seleccionada. 
  * "Cerrar sesión", deberá eliminar de sesión el parámetro de nombre *UsuarioLogado* y retornar a la página de _login_
    
- * PISTAS:
+ * `PISTAS:
    * La fecha y la hora actual, la podemos obtener a partir de este método:
 {{{
 import java.util.Calendar;
@@ -190,6 +190,31 @@ if (sessionUsuarioLogado instanceof HashMap) {
 
 // 3. si queremos eliminar un parámetro de sesión
 session.remove("UsuarioLogado");
+}}}
+
+ * Para mostrar un texto multi-idioma en una página JSP:
+
+http://struts.apache.org/2.0.9/docs/i18n.html
+
+{{{
+<s:i18n name="myCustomBundle">
+   La palabra "casa" se dice en idioma: <s:property value="text('casa')" />
+</s:i18n>
+}}}
+
+Struts 2 por defecto buscaría la property 'casa' en los ficheros de properties:
+
+{{{
+foo/bar/customBundle.properties // idioma por defecto
+foo/bar/customBundle_es.properties // esPAÑOL
+foo/bar/customBundle_en.properties // enGLISH
+...
+}}}
+
+Si queremos cambiar el emplazamiento de nuestras properties multi-idioma _(por ejemplo: `messages.properties` en el raíz del classpath)_, deberemos configurar nuestro `struts.xml` de la siguiente forma:
+
+{{{
+<constant name="struts.custom.i18n.resources" value="messages"/>
 }}}
 
 ----
