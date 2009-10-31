@@ -99,6 +99,7 @@ Tutorial: http://www.vaannila.com/struts-2/struts-2-tutorial/struts-2-tutorial.h
    * http://struts.apache.org/2.1.8/docs/validation.html
  # Struts 2 Validation _client-side_ [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleValidation3/ Struts2ExampleValidation3]
    * http://struts.apache.org/2.1.8/docs/client-validation.html
+ # Struts 2 Multilanguage [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleMultilanguage/ Struts2ExampleMultilanguage]
  # Domain Object as JavaBeans Property Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleDomainObject/ Struts2ExampleDomainObject]
  # Struts 2 ModelDriven Action Tutorial [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleModelDriven/ Struts2ExampleModelDriven]
    * http://struts.apache.org/2.1.8/docs/model-driven.html
@@ -200,7 +201,7 @@ http://struts.apache.org/2.0.9/docs/i18n.html
 
 {{{
 <s:i18n name="myCustomBundle">
-   La palabra "casa" se dice en idioma: <s:property value="text('casa')" />
+   La palabra "casa" se dice en idioma: <s:text value="casa" />
 </s:i18n>
 }}}
 
@@ -222,7 +223,7 @@ Si queremos cambiar el emplazamiento de nuestras properties multi-idioma _(por e
 y podremos mostrar los mensajes de la siguiente forma:
 
 {{{
-<s:property value="text('casa')" />
+<s:text value="casa" />
 }}}
 
 Ya que estamos para evitar el problema típico del encoding de los acentos y asegurar la compatibilidad con cualquier Sist.Operativo, utilizaremos `UTF-8`:
