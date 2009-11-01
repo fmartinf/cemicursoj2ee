@@ -1,0 +1,173 @@
+/* Define your own styles here. */
+
+/* A more compact menu */
+.iceMnuBarItem a, .iceMnuBarItem span, .iceMnuBarItem a:hover {
+	padding: 1px;
+}
+
+/* As the presentation is not dynamic we have to adapt the
+   width to get clean presentation with the German texts */
+.iceMnuBarSubMenu, .iceMnuBarVrtSubMenu {
+	width: 200px;	
+	background-color: #65B7E6;	
+}
+
+/* Collapsible panels with visual opener or closer */
+.icePnlClpsblColpsdHdr  {
+	background-color: #F2F2F2;
+	background-image: url( "css-images/PnlHdr_collapsed.gif" );
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-top: 2px;
+	padding-left: 25px;
+    cursor: pointer;
+}
+
+.icePnlClpsblHdr  {
+	background-color: #F2F2F2;
+	background-image: url( "css-images/PnlHdr_down.gif" );
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-top: 2px;
+	padding-left: 25px;
+	cursor: pointer;
+}
+
+/* Dialog management standards */
+.icePnlPop {
+    color: #000000;
+    background: #ffffff;
+    padding: 0px;
+    z-index: 2000;
+	position: absolute;    
+    width: auto;
+    border: 1px solid #000000;
+}
+
+.icePnlPopHdr, .icePnlTlTipHdr {
+    background: #eeeeee;
+    color: #000000;
+    height: 0px;
+    padding: 1px;
+}
+
+.icePnlPopHdr .iceOutTxt, .icePnlTlTipHdr .iceOutTxt {
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 11pt;
+    color: #000000;
+}
+
+.icePnlPopBody {
+    background-color: #ffffff;
+    padding: 1px;
+}
+
+.icePanelPopupImage {
+	vertical-align: top;
+}
+
+.icePanelPopupText {
+	vertical-align: top;
+	width: auto;
+	max-width: 400px;
+}
+
+.icePanelPopupTextError {
+	vertical-align: top;
+	width: auto;
+}
+
+.icePanelPopupButtons {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2px;
+}
+
+.icePanelPopupButton {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+/* Connection status not shown in normal status */
+.iceOutConStatInactv {
+    background: none;
+}
+
+/* PanelTooltip (Hint) */
+.icePnlTlTip {
+    width: auto;
+    max-width: 200px;
+}
+
+.icePnlTlTipBody {
+	padding: 1px;
+}
+
+/* More visible links */
+.iceCmdLnk, .iceOutLnk {
+	text-decoration: underline;
+}
+
+/* Drag and Drop Management */
+.dadSelector {
+	border: 1px solid #000000; 
+	vertical-align: top;
+	text-align: center;
+}
+
+.dadSelectorDrop {
+	width: 200px;
+	height: 200px;
+}
+
+.dadSelectorDrag, dadSelectorDrop {
+}
+
+.dadSelectorText {
+	max-width: 50px;
+}
+
+.dadSelectorDrop {
+}
+
+.dadSelectorDragColumn, .dadSelectorDropColumn {
+	text-align: center;
+	vertical-align: text-top;
+	background-color: #eeeeee;
+	width: 200px;
+	padding: 10px; 
+}
+
+.dadSelectorDragColumnHeader, .dadSelectorDropColumnHeader {
+	font-weight: bold;
+	vertical-align: text-top;
+}
+
+.dadSelectorDragEntity {
+	text-align: center;
+	cursor: move;
+}
+
+.dadSelectorDragEntityImage, .dadSelectorDropEntityImage {
+}
+
+.dadSelectorDragEntityText, .dadSelectorDropEntityText {
+	text-align: center;
+	width: 100%;
+	min-height: 40px;
+	background-color: #dddddd;	
+}
+
+/* Tree */
+.selectedNodetrue span{
+    font-weight:bold;
+}
+.iceTree a:hover .iceOutTxt {
+    color: #318496;
+}
+
+/* Google Maps */
+.iceGmpMapTd div.gmap {
+	width: 750px;
+	height: 400px;
+} 

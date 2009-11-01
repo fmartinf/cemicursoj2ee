@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:flow="http://www.springframework.org/schema/webflow-config" 
+	xmlns:jee="http://www.springframework.org/schema/jee" 
+	xmlns:lang="http://www.springframework.org/schema/lang" 
+	xmlns:osgi="http://www.springframework.org/schema/osgi" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:util="http://www.springframework.org/schema/util" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-1.0.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+	<context:annotation-config /> 
+	
+	<bean id="iceFusionConsts" class="com.googlecode.icefusion.ui.commons.constant.ICEfusionConsts" scope="session"> 
+	    <aop:scoped-proxy/> 
+	</bean>
+	<bean id="context" class="com.googlecode.icefusion.ui.commons.constant.Context" scope="session">
+	 	<aop:scoped-proxy/>
+	</bean> 
+
+	<bean id="dynamicMenu" class="com.googlecode.icefusion.ui.commons.navigation.DynamicMenu" scope="session"> 
+	    <aop:scoped-proxy/> 
+	</bean>
+	<bean id="menu" class="com.googlecode.icefusion.ui.commons.navigation.Menu" scope="session"> 
+	    <aop:scoped-proxy/> 
+	</bean>
+    <bean id="menuIcons" class="com.googlecode.icefusion.ui.commons.navigation.MenuIcons" scope="session"> 
+        <aop:scoped-proxy/> 
+    </bean>
+
+	<bean id="messageDialog" class="com.googlecode.icefusion.ui.commons.dialog.MessageDialog" scope="session"> 
+	    <aop:scoped-proxy/> 
+	</bean>
+	<bean id="errorDialog" class="com.googlecode.icefusion.ui.commons.dialog.ErrorDialog" scope="session"> 
+	    <aop:scoped-proxy/> 
+	</bean>
+	<bean id="questionDialog" class="com.googlecode.icefusion.ui.commons.dialog.QuestionDialog" scope="session"> 
+	    <aop:scoped-proxy/> 
+	</bean>
+
+	<bean id="completer" class="com.googlecode.icefusion.ui.commons.form.Completer" scope="session">
+	 	<aop:scoped-proxy/>
+	</bean> 
+
+	<bean id="dadSelector" class="com.googlecode.icefusion.ui.commons.form.DadSelector" scope="session">
+	 	<aop:scoped-proxy/>
+	</bean> 
+
+	<bean id="table" class="com.googlecode.icefusion.ui.commons.form.Table" scope="session">
+	 	<aop:scoped-proxy/>
+	</bean> 
+
+	<bean id="login" class="com.googlecode.icefusion.ui.commons.form.Login" scope="session">
+	 	<aop:scoped-proxy/>
+	</bean> 
+
+    <bean id="settings" class="com.googlecode.icefusion.ui.commons.extra.Settings" scope="session">
+        <aop:scoped-proxy/>
+    </bean> 
+
+    <bean id="progressDialog" class="com.googlecode.icefusion.ui.commons.push.ProgressDialog" scope="session">
+        <aop:scoped-proxy/>
+    </bean>
+</beans>

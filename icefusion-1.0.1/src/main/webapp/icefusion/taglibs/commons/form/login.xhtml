@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+
+		<icefusion:login eventBean="#{action_handler_for_login}" />
+
+		"eventBean" implements ILogin for management of the login input
+		Using com.googlecode.icefusion.ui.commons.form.Login
+-->
+
+<ui:component>
+	<!-- Manage eventBean as parameter for backing bean  -->
+ 	<ice:dataTable style="visibility:hidden;" binding="#{login.parameters}" 
+ 	  value="#{eventBean}"/>
+
+ 	<ice:form>
+		<ice:panelGrid>
+			<ice:panelGrid columns="2">
+				<ice:outputText value="#{icefusion['application.login.language']}" />
+			 	<ice:selectOneMenu value="#{login.locale}" partialSubmit="true">
+				 	<f:selectItems value="#{login.locales}"/>
+				</ice:selectOneMenu>
+				<ice:outputText value="#{icefusion['application.login.username']}" />
+				<ice:inputText value="#{login.username}"/>
+				<ice:outputText value="#{icefusion['application.login.password']}" />
+				<ice:inputSecret value="#{login.password}"/>
+				<ice:commandButton value="#{icefusion['application.login.button']}" 
+				    action="#{login.login}" />
+			</ice:panelGrid>
+		</ice:panelGrid>
+	</ice:form>
+	
+	<icefusion:validationDialog eventBean="#{login}"/>
+</ui:component>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<ui:composition template="#{iceFusionConsts.templatePage}">
+	<ui:define name="title">
+		#{icefusion['application.menu.extra.about']}
+	</ui:define>
+	<ui:define name="content">
+        <center>
+            <h2>#{iceFusionConsts.application}</h2>
+            <h4>#{iceFusionConsts.release}</h4>
+            #{icefusion['application.menu.extra.about.text']}
+            <br />
+            <br />
+            <br />
+            <br />
+        </center>
+   	</ui:define>
+</ui:composition>
+</body>
+</html>

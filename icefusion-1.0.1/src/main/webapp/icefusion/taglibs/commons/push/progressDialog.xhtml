@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+		<icefusion:progressDialog title="my_title" text="my_text" />
+		using 
+		com.googlecode.icefusion.ui.commons.push.progressDialog	
+-->
+<ui:component>
+	<ice:form>
+		<ice:panelPopup autoCentre="false" draggable="false" modal="true"
+			rendered="#{progressDialog.show}" visible="#{progressDialog.show}">
+			<f:facet name="header">
+				<ice:panelGrid>
+					<ice:outputText value="#{(not empty title) ? title : ((not empty progressDialog.title) ? progressDialog.title : icefusion['application.dialog.progress.title'])}"/>
+				</ice:panelGrid>
+			</f:facet>
+			<f:facet name="body">
+				<ice:panelGrid>
+					<ice:outputProgress value="#{progressDialog.progress}" indeterminate="false"/>
+					<ice:panelGrid columns="1" styleClass="icePanelPopupButtons">
+						<ice:commandButton value="#{icefusion['application.dialog.progress.button.cancel']}" 
+							action="#{progressDialog.buttonCancel}" styleClass="icePanelPopupButton" rendered="#{!progressDialog.ready}"/>
+						<ice:commandButton value="    #{icefusion['application.dialog.progress.button.ok']}    " 
+							action="#{progressDialog.buttonOk}" styleClass="icePanelPopupButton" rendered="#{progressDialog.ready}"/>
+					</ice:panelGrid>
+				</ice:panelGrid>
+			</f:facet>
+		</ice:panelPopup>
+	</ice:form>
+</ui:component>
+</body>
+</html>

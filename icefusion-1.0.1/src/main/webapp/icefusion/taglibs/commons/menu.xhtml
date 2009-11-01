@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<ui:component>
+	<ice:form>
+		<ice:menuBar noIcons="true">
+			
+			<!-- Add your menu items here -->
+			
+			<!-- ICEfusion standard entries -->	
+			<ice:menuItem value="#{icefusion['application.menu.extra']}">
+				<ice:menuItem value="#{icefusion['application.menu.extra.settings']}"
+					action="settings"/>
+				<ice:menuItem value="#{icefusion['application.menu.extra.about']}"
+					action="about"/>
+			</ice:menuItem>
+		</ice:menuBar>
+	</ice:form>
+</ui:component>
+</body>
+</html>

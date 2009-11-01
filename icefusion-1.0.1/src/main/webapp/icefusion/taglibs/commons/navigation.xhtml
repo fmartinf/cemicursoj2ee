@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<ui:component>
+	<c:if test="#{context.dynamicMenu}">
+		<icefusion:dynamicMenu/>
+	</c:if>
+	<c:if test="#{!context.dynamicMenu}">
+		<icefusion:menu/>
+	</c:if>
+	<icefusion:menuIcons />
+</ui:component>
+</body>
+</html>

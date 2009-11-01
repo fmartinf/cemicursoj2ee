@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+
+		<icefusion:errorDialog title="my_title" text="my_text" contact="my_support_contact"
+			rendered="true|false" eventBean="#{my_button_event_bean}" />
+
+		"title"/"text" for textual output.
+		"contact" can be defined in html.
+		"eventBean" implements IMessageDialog for individual button management. 
+		Using com.googlecode.icefusion.ui.commons.dialog.ErrorDialog	
+-->
+<ui:component>
+	<ice:form>
+		<ice:panelPopup autoCentre="false" draggable="false" modal="true"
+			rendered="#{(not empty rendered) ? rendered : errorDialog.show}" 
+			visible="#{(not empty rendered) ? rendered : errorDialog.show}">
+			<f:facet name="header">
+				<ice:panelGrid>
+					<ice:outputText value="#{(not empty title) ? title : ((not empty errorDialog.title) ? errorDialog.title : icefusion['application.dialog.error.title'])}"/>
+				</ice:panelGrid>
+			</f:facet>
+			<f:facet name="body">
+				<ice:panelGrid>
+					<ice:panelGrid columns="2" columnClasses="icePanelPopupImage icePanelPopupTextError">
+						<ice:graphicImage url="#{iceFusionConsts.skinBase}/#{context.skin}/images/errorDialog.png" />
+						<ice:panelGrid>
+							<ice:outputText value="#{(not empty text) ? text : ((not empty errorDialog.text) ? errorDialog.text : icefusion['application.dialog.error.text'])}" />
+							<ice:panelCollapsible rendered="#{not empty contact}" expanded="false"
+								toggleOnClick="true">
+								<f:facet name="header">
+									<ice:outputText value="#{icefusion['application.dialog.error.contact.title']}" />
+								</f:facet>
+								<ice:outputHtml>#{contact}</ice:outputHtml>
+							</ice:panelCollapsible>
+							<ice:panelCollapsible rendered="#{errorDialog.exception ne null}" expanded="false"
+								toggleOnClick="true">
+								<f:facet name="header">
+									<ice:outputText value="#{icefusion['application.dialog.error.exception.title']}" />
+								</f:facet>
+								<ice:outputText value="#{errorDialog.stackTrace}" />
+							</ice:panelCollapsible>
+						</ice:panelGrid>
+					</ice:panelGrid>
+					<ice:panelGrid columns="1" styleClass="icePanelPopupButtons">
+						<c:if test="#{not empty eventBean}">
+							<ice:commandButton value="    #{icefusion['application.dialog.error.button.ok']}    " 
+								action="#{eventBean.errorDialogButtonOk}" styleClass="icePanelPopupButton"/>
+						</c:if>
+						<c:if test="#{empty eventBean}">
+							<ice:commandButton value="    #{icefusion['application.dialog.error.button.ok']}    " 
+								action="#{errorDialog.errorDialogButtonOk}" styleClass="icePanelPopupButton"/>
+						</c:if>
+					</ice:panelGrid>
+				</ice:panelGrid>
+			</f:facet>
+		</ice:panelPopup>
+	</ice:form>
+</ui:component>
+</body>
+</html>

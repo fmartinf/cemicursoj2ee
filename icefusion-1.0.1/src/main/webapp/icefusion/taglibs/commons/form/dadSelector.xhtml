@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+
+		<icefusion:dadSelector 
+			title="my_title" text="my_description_of_the_list_entries_use"
+			valueBean="#{my_source_and_selected_list_manager}" />
+
+		"Title" is used for naming the edit field
+		"Text" description of the list entries to use for selection plus introduction how
+			to use the selector
+		"ValueBean" implements IDadSelector for management of the source and selected lists
+		You have to add <ice:form>. 
+		Using com.googlecode.icefusion.ui.commons.form.dadSelector
+-->
+<ui:component>
+	<ice:panelGrid styleClass="dadSelector">
+		<ice:outputText value="#{(not empty title) ? title : icefusion['application.dadSelector.title']}"/>
+		<ice:panelGrid columns="3">
+			<ice:panelGrid styleClass="dadSelectorDragColumn">
+				<ice:outputText value="#{icefusion['application.dadSelector.drag.title']}" 
+					styleClass="dadSelectorDragColumnHeader"/>
+				<ice:panelGroup styleClass="dadSelectorDrag">	
+					<ice:panelSeries var="source" value="#{valueBean.dadSelectorSourceList}">
+						<ice:panelGroup draggable="true" dragOptions="dragGhost" 
+							dragMask="dragging,drag_cancel,hover_start,hover_end"
+			                dropMask="dragging,drag_cancel,hover_start,hover_end"
+							dragListener="#{dadSelector.dragListener}" dragValue="#{source}">
+							<ice:panelGrid styleClass="dadSelectorDragEntity">
+								<ice:graphicImage url="#{source.imageUrl}" alt="#{source.imageAlt}" 
+									title="#{source.imageAlt}" style="dadSelectorDragEntityImage" 
+									rendered="#{source.imageUrl ne null}"/>
+								<ice:outputText value="#{source.label}" styleClass="dadSelectorDragEntityText" 
+									rendered="#{source.label ne null}"/>
+							</ice:panelGrid>
+						</ice:panelGroup>
+					</ice:panelSeries>
+				</ice:panelGroup>
+			</ice:panelGrid>
+			<ice:outputText value="#{(not empty text) ? text : icefusion['application.dadSelector.text']}"
+				 styleClass="dadSelectorText"/>
+			<ice:panelGrid styleClass="dadSelectorDropColumn">
+				<ice:outputText value="#{icefusion['application.dadSelector.drop.title']}" 
+					styleClass="dadSelectorDropColumnHeader" />
+		 		<ice:panelGroup styleClass="dadSelectorDrop" dropTarget="true" >
+				 	<ice:panelSeries var="selected" value="#{valueBean.dadSelectorSelectedList}">
+						<ice:panelGroup>
+							<ice:panelGrid styleClass="dadSelectorDropEntity">
+								<ice:graphicImage url="#{selected.imageUrl}" alt="#{selected.imageAlt}" 
+									title="#{selected.imageAlt}" styleClass="dadSelectorDropEntityImage" 
+									rendered="#{selected.imageUrl ne null}"/>
+								<ice:outputText value="#{selected.label}" styleClass="dadSelectorDropEntityText" 
+									rendered="#{selected.label ne null}"/>
+							</ice:panelGrid>
+						</ice:panelGroup>
+					</ice:panelSeries>
+		 		</ice:panelGroup>
+		 	</ice:panelGrid>
+		</ice:panelGrid>
+	</ice:panelGrid>
+	
+	<!-- Manage valueBean source list as parameter for backing bean -->
+	<ice:selectInputText visible="false" binding="#{dadSelector.sourceList}"
+		listValue="#{valueBean.dadSelectorSourceList}" />
+	<!-- Manage valueBean selected list as parameter for backing bean -->
+	<ice:selectInputText visible="false" binding="#{dadSelector.selectedList}"
+		listValue="#{valueBean.dadSelectorSelectedList}" />
+</ui:component>
+</body>
+</html>

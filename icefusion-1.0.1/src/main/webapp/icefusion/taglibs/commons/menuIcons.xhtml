@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<ui:component>
+	<div class="menuIcons">
+		<ice:form>
+			<ice:panelGroup columns="2">
+				<ice:commandLink action="#{menuIcons.switchToEn}">
+					<ice:graphicImage url="#{iceFusionConsts.skinBase}/#{menuIcons.skin}/images/locale/en.png" />
+				</ice:commandLink>
+				<ice:commandLink action="#{menuIcons.switchToDe}">
+					<ice:graphicImage url="#{iceFusionConsts.skinBase}/#{menuIcons.skin}/images/locale/de.png" />
+				</ice:commandLink>
+			</ice:panelGroup>
+		</ice:form>
+	</div>
+</ui:component>
+</body>
+</html>

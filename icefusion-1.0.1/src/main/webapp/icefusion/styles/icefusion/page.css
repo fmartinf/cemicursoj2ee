@@ -1,0 +1,41 @@
+/* Define the page layout here. */
+
+html,body {
+	margin: 0px;
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 11pt;
+	height: 100%;
+}
+
+.layout {
+	border: 1px solid;
+    border-color: #91D4E6;	
+	width: 952px;
+}
+
+.header {
+	height: 180px;
+}
+
+.navigation {
+}
+
+.menuIcons {
+	float: right;
+    /* padding-top: 0px; */
+    vertical-align: top;
+}
+
+.content {
+	padding: 5px;
+}
+
+.footer {
+	text-align: center;
+	font-size: 9pt;
+	height: 46px;
+	padding: 3px;
+	background-color: #91D4E6;
+}

@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+
+		<icefusion:questionDialog title="my_title" text="my_text" 
+			yes="my_yesButton_text" no="my_noButton_text" 
+			rendered="true|false" eventBean="#{my_button_event_bean}"/>
+
+		"title"/"text" for textual output.
+		"yes"/"no" for button texts.
+		"eventBean" implements IQestionDialog for individual button management.
+		Using com.googlecode.icefusion.ui.commons.dialog.questionDialog	
+-->
+<ui:component>
+	<ice:form>
+		<ice:panelPopup autoCentre="false" draggable="false" modal="true"
+			rendered="#{(not empty rendered) ? rendered : questionDialog.show}" 
+			visible="#{(not empty rendered) ? rendered : questionDialog.show}">
+			<f:facet name="header">
+				<ice:panelGrid>
+					<ice:outputText value="#{(not empty title) ? title : ((not empty questionDialog.title) ? questionDialog.title : icefusion['application.dialog.question.title'])}"/>
+				</ice:panelGrid>
+			</f:facet>
+			<f:facet name="body">
+				<ice:panelGrid>
+					<ice:panelGrid columns="2" columnClasses="icePanelPopupImage icePanelPopupText">
+						<ice:graphicImage url="#{iceFusionConsts.skinBase}/#{context.skin}/images/questionDialog.png" />
+						<ice:outputText value="#{(not empty text) ? text : ((not empty questionDialog.text) ? questionDialog.text : icefusion['application.dialog.question.text'])}" 
+							/>
+					</ice:panelGrid>
+					<ice:panelGrid columns="2" styleClass="icePanelPopupButtons">
+						<c:if test="#{not empty eventBean}">
+							<ice:commandButton value="#{(not empty yes) ? yes : ((not empty questionDialog.yes) ? questionDialog.yes : icefusion['application.dialog.question.button.yes'])}"
+								action="#{eventBean.questionDialogButtonYes}"
+								styleClass="icePanelPopupButton"/>
+							<ice:commandButton value="#{(not empty no) ? no : ((not empty questionDialog.no) ? questionDialog.no : icefusion['application.dialog.question.button.no'])}"
+								action="#{eventBean.questionDialogButtonNo}" 
+								styleClass="icePanelPopupButton"/>
+						</c:if>
+						<c:if test="#{empty eventBean}">
+							<ice:commandButton value="#{(not empty yes) ? yes : ((not empty questionDialog.yes) ? questionDialog.yes : icefusion['application.dialog.question.button.yes'])}"
+								action="#{questionDialog.questionDialogButtonYes}"
+								styleClass="icePanelPopupButton"/>
+							<ice:commandButton value="#{(not empty no) ? no : ((not empty questionDialog.no) ? questionDialog.no : icefusion['application.dialog.question.button.no'])}"
+								action="#{questionDialog.questionDialogButtonNo}" 
+								styleClass="icePanelPopupButton"/>
+						</c:if>
+					</ice:panelGrid>
+				</ice:panelGrid>
+			</f:facet>
+		</ice:panelPopup>
+	</ice:form>
+</ui:component>
+</body>
+</html>

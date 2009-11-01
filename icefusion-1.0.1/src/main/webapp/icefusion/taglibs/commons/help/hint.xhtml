@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+
+		<icefusion:hint title="my_title" text="my_text" panel="my_panel_context" />
+
+		"title"/"text" for textual output.
+		"panel" defines the reference to a panelGroup or if empty shows a hint graphic
+		Using no backing bean
+-->
+<ui:component>
+	<ice:panelTooltip hideOn="mouseout" hoverDelay="200" id="#{(not empty panel) ? panel : 'hintIcon'}">
+		<c:if test="#{not empty title}">
+			<f:facet name="header">
+				<ice:outputText value="#{title}"/>
+			</f:facet>
+		</c:if>
+		<f:facet name="body">
+			<ice:outputText value="#{(not empty text) ? text : icefusion['application.hint.none']}"/>
+		</f:facet>
+	</ice:panelTooltip>
+
+	<ice:panelGroup panelTooltip="hintIcon" rendered="#{empty panel}">
+		<ice:graphicImage url="#{iceFusionConsts.skinBase}/#{context.skin}/images/hint.png" />
+	</ice:panelGroup>
+</ui:component>
+</body>
+</html>

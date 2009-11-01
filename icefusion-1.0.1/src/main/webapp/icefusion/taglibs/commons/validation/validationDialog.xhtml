@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+
+		<icefusion:validationDialog eventBean="#{my_validation_processor_bean}" />
+
+		"eventBean" implements IValidatorProcessing for message key management.
+		Using no backing bean	
+-->
+<ui:component>
+	<ice:form>
+		<ice:panelPopup autoCentre="false" draggable="false" modal="true"
+			rendered="#{eventBean.validationErrorStatus}" 
+			visible="#{eventBean.validationErrorStatus}">
+			<f:facet name="header">
+				<ice:panelGrid>
+					<ice:outputText value="#{icefusion[eventBean.validationField]}"/>
+				</ice:panelGrid>
+			</f:facet>
+			<f:facet name="body">
+				<ice:panelGrid>
+					<ice:panelGrid columns="2" columnClasses="icePanelPopupImage icePanelPopupText">
+						<ice:graphicImage url="#{iceFusionConsts.skinBase}/#{context.skin}/images/validationDialog.png" />
+						<ice:panelGrid>
+							<c:forEach var="message" items="#{eventBean.validationMessages}">
+								<ice:outputText value="#{icefusion[message]}"/>
+							</c:forEach>
+						</ice:panelGrid>	
+					</ice:panelGrid>
+					<ice:panelGrid columns="1" styleClass="icePanelPopupButtons">
+						<ice:commandButton value="    #{icefusion['application.validation.message.button.ok']}    " 
+							action="#{eventBean.validationDialogButtonOk}" styleClass="icePanelPopupButton"/>
+					</ice:panelGrid>
+				</ice:panelGrid>
+			</f:facet>
+		</ice:panelPopup>
+	</ice:form>
+</ui:component>
+</body>
+</html>

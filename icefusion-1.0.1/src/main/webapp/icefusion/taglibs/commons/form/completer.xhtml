@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+
+		<icefusion:completer title="my_title" 
+			hintTitle="my_hint_title" hintText="my_hint_text"
+			 valueBean="#{my_value_and_baseList_manager}"
+			 rows="my_number_for_entries_in_hit_list" />
+
+		"Title" is used for naming the edit field
+		"hint*" follows the parameters for the hint component
+		"ValueBean" implements ICompleter for management of the edit field value and the
+			base list to search in after input
+		"rows" defines how long will be the hitlist
+		You have to add <ice:form>. 
+		Using com.googlecode.icefusion.ui.commons.form.Completer
+-->
+<ui:component>
+	<ice:panelGrid columns="3">
+		<ice:outputText value="#{(not empty title) ? title : icefusion['application.completer.none']}"/>
+
+		<ice:selectInputText value="#{valueBean.completerValue}"
+			valueChangeListener="#{completer.listener}" rows="#{(not empty rows) ? rows : completer.rows}">
+				<f:selectItems value="#{completer.resultList}" />
+		</ice:selectInputText>
+            
+		<c:if test="#{(not empty hintText)}">
+			<c:if test="#{(not empty hintTitle)}">
+				<icefusion:hint title="#{hintTitle}" text="#{hintText}"/>
+			</c:if>
+			<c:if test="#{(empty hintTitle)}">
+				<!-- Facelets need this empty attribute, else it would use 
+					title from the completer -->
+				<icefusion:hint title="" text="#{hintText}"/>
+			</c:if>
+		</c:if>
+	</ice:panelGrid>
+	
+	<!-- Manage valueBean list as parameter for backing bean -->
+	<ice:selectInputText visible="false" binding="#{completer.baseList}"
+		listValue="#{valueBean.completerBaseList}" />
+</ui:component>
+</body>
+</html>
