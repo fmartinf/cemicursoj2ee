@@ -7,15 +7,7 @@
  * [Struts2#Contenido Contenido]
  * [Struts2#Ejemplos_introductorios Ejemplos introductorios]
  * [Struts2#Ejercicios Ejercicios]
- * [Struts2Appfuse Ejemplo de aplicación Struts 2 básica de CRUDs de entidades]
-   * [Struts2Appfuse#Creamos_la_estructura_a_partir_de_un_archetipo_Maven Creamos la estructura a partir de un archetipo Maven]
-   * [Struts2Appfuse#Compilamos_el_proyecto_Maven Compilamos el proyecto Maven]
-   * [Struts2Appfuse#Desplegamos_la_aplicaci&oacute;n_en_un_Servidor Desplegamos la aplicación en un Servidor]
-   * [Struts2Appfuse#Ejecutamos_la_aplicaci&oacute;n Ejecutamos la aplicación]
-   * [Struts2Appfuse#Importamos_a_Eclipse_el_proyecto_Maven Importamos a Eclipse el proyecto Maven]
-   * [Struts2Appfuse#Creamos_una_nueva_Entidad Creamos una nueva Entidad]
- * [Struts2ApfuseSinMaven Ejemplo de aplicación Struts 2 básica de CRUDs de entidades sin Appfuse]
- * [Struts2#Mecanismo_para_crear_operaciones_de_tipo_CRUD_en_el-mismo__Action_ Mecanismo para crear operaciones de tipo CRUD en el mismo _Action_]
+ * [Struts2#Mecanismo_para_crear_operaciones_de_tipo_CRUD_en_el_mismo__Action_ Mecanismo para crear operaciones de tipo CRUD en el mismo _Action_]
 
 = Introducción =
 
