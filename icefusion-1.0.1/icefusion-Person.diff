@@ -1,0 +1,598 @@
+Index: src/main/java/com/googlecode/icefusion/model/Person.java
+===================================================================
+--- src/main/java/com/googlecode/icefusion/model/Person.java	(revision 0)
++++ src/main/java/com/googlecode/icefusion/model/Person.java	(revision 0)
+@@ -0,0 +1,71 @@
++package com.googlecode.icefusion.model;
++
++import org.appfuse.model.BaseObject;
++
++import javax.persistence.Entity;
++import javax.persistence.GenerationType;
++import javax.persistence.Id;
++import javax.persistence.GeneratedValue;
++import javax.persistence.Column;
++
++@Entity
++public class Person extends BaseObject {
++
++	/**
++	 * 
++	 */
++	private static final long serialVersionUID = 1L;
++	
++	private Long id;
++	private String firstName;
++	private String lastName;
++	
++	
++	@Id @GeneratedValue(strategy = GenerationType.AUTO) 
++	public Long getId() {
++		return id;
++	}
++	
++	public void setId(Long id) {
++		this.id = id;
++	}
++	
++	@Column(name="first_name", length=50)
++	public String getFirstName() {
++		return firstName;
++	}
++	
++	public void setFirstName(String firstName) {
++		this.firstName = firstName;
++	}
++	
++	@Column(name="last_name", length=50)
++	public String getLastName() {
++		return lastName;
++	}
++	
++	public void setLastName(String lastName) {
++		this.lastName = lastName;
++	}
++	
++	@Override
++	public boolean equals(Object o) {
++		// TODO Auto-generated method stub
++		return false;
++	}
++	
++	@Override
++	public int hashCode() {
++		// TODO Auto-generated method stub
++		return 0;
++	}
++	
++	@Override
++	public String toString() {
++		// TODO Auto-generated method stub
++		
++		return null;
++	}
++	
++	
++}
+Index: src/main/java/com/googlecode/icefusion/webapp/action/PersonForm.java
+===================================================================
+--- src/main/java/com/googlecode/icefusion/webapp/action/PersonForm.java	(revision 0)
++++ src/main/java/com/googlecode/icefusion/webapp/action/PersonForm.java	(revision 0)
+@@ -0,0 +1,61 @@
++package com.googlecode.icefusion.webapp.action;
++
++import java.io.Serializable;
++
++import com.googlecode.icefusion.model.Person;
++import org.appfuse.webapp.action.BasePage;
++import org.appfuse.service.GenericManager;
++
++public class PersonForm extends BasePage implements Serializable {
++    private GenericManager<Person, Long> personManager;
++    private Person person = new Person();
++    private Long id;
++
++    public void setPersonManager(GenericManager<Person, Long> personManager) {
++        this.personManager = personManager;
++    }
++
++    public Person getPerson() {
++        return person;
++    }
++
++    public void setPerson(Person person) {
++        this.person = person;
++    }
++
++    public void setId(Long id) {
++        this.id = id;
++    }
++
++    public String delete() {
++        personManager.remove(person.getId());
++        addMessage("person.deleted");
++
++        return "list";
++    }
++
++    public String edit() {
++        // Comparison to zero (vs. null) is required with MyFaces 1.2.2, not with previous versions
++        if (id != null && id != 0) {
++            person = personManager.get(id);
++        } else {
++            person = new Person();
++        }
++
++        return "edit";
++    }
++
++    public String save() {
++        boolean isNew = (person.getId() == null || person.getId() == 0);
++        personManager.save(person);
++
++        String key = (isNew) ? "person.added" : "person.updated";
++        addMessage(key);
++
++        if (isNew) {
++            return "list";
++        } else {
++            return "edit";
++        }
++    }
++} 
+\ No newline at end of file
+Index: src/main/java/com/googlecode/icefusion/webapp/action/PersonList.java
+===================================================================
+--- src/main/java/com/googlecode/icefusion/webapp/action/PersonList.java	(revision 0)
++++ src/main/java/com/googlecode/icefusion/webapp/action/PersonList.java	(revision 0)
+@@ -0,0 +1,25 @@
++package com.googlecode.icefusion.webapp.action;
++
++import java.io.Serializable;
++import java.util.List;
++
++import org.appfuse.webapp.action.BasePage;
++import com.googlecode.icefusion.model.Person;
++import org.appfuse.service.GenericManager;
++
++public class PersonList extends BasePage implements Serializable {
++    private GenericManager<Person, Long> personManager;
++
++    public void setPersonManager(GenericManager<Person, Long> personManager) {
++        this.personManager = personManager;
++    }
++
++    public PersonList() {
++        setSortColumn("id"); // sets the default sort column
++    }
++
++    public List getPersons() {
++        return sort(personManager.getAll());
++    }
++}
++
+Index: src/main/resources/ApplicationResources.properties
+===================================================================
+--- src/main/resources/ApplicationResources.properties	(revision 319)
++++ src/main/resources/ApplicationResources.properties	(working copy)
+@@ -193,3 +193,23 @@
+ # JSF-only messages, remove if not using JSF
+ javax.faces.component.UIInput.REQUIRED=This is a required field.
+ activeUsers.summary={0} User(s) found, displaying {1} user(s), from {2} to {3}. Page {4} / {5}
++
++# -- Person-START
++person.id=Id
++person.firstName=First Name
++person.lastName=Last Name
++
++person.added=Person has been added successfully.
++person.updated=Person has been updated successfully.
++person.deleted=Person has been deleted successfully.
++
++# -- person list page --
++personList.title=Person List
++personList.heading=Persons
++personList.person=person
++personList.persons=persons
++
++# -- person detail page --
++personDetail.title=Person Detail
++personDetail.heading=Person Information
++# -- Person-END
+\ No newline at end of file
+Index: src/main/resources/hibernate.cfg.xml
+===================================================================
+--- src/main/resources/hibernate.cfg.xml	(revision 319)
++++ src/main/resources/hibernate.cfg.xml	(working copy)
+@@ -6,5 +6,6 @@
+         <mapping class="org.appfuse.model.User"/>
+         <mapping class="org.appfuse.model.Role"/>
+     
++        <mapping class="com.googlecode.icefusion.model.Person"/>
+     </session-factory>
+ </hibernate-configuration>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/applicationContext.xml
+===================================================================
+--- src/main/webapp/WEB-INF/applicationContext.xml	(revision 319)
++++ src/main/webapp/WEB-INF/applicationContext.xml	(working copy)
+@@ -7,5 +7,16 @@
+ 
+     
+ 
++    <!--PersonManager-START-->
++    <bean id="personManager" class="org.appfuse.service.impl.GenericManagerImpl">
++        <constructor-arg>
++            <bean class="org.appfuse.dao.hibernate.GenericDaoHibernate">
++                <constructor-arg value="com.googlecode.icefusion.model.Person"/>
++                <property name="sessionFactory" ref="sessionFactory"/>
++            </bean>
++        </constructor-arg>
++    </bean>
++    <!--PersonManager-END-->
++
+     <!-- Add new Managers here -->
+ </beans>
+\ No newline at end of file
+Index: src/main/webapp/WEB-INF/faces-config.xml
+===================================================================
+--- src/main/webapp/WEB-INF/faces-config.xml	(revision 319)
++++ src/main/webapp/WEB-INF/faces-config.xml	(working copy)
+@@ -95,6 +95,32 @@
+         </navigation-case>
+     </navigation-rule>
+     
++    <!--Person-nav-START-->
++    <navigation-rule>
++        <from-view-id>/persons.xhtml</from-view-id>
++        <navigation-case>
++            <from-outcome>add</from-outcome>
++            <to-view-id>/personForm.xhtml</to-view-id>
++        </navigation-case>
++        <navigation-case>
++            <from-outcome>edit</from-outcome>
++            <to-view-id>/personForm.xhtml</to-view-id>
++        </navigation-case>
++    </navigation-rule>
++    <navigation-rule>
++        <from-view-id>/personForm.xhtml</from-view-id>
++        <navigation-case>
++            <from-outcome>cancel</from-outcome>
++            <to-view-id>/persons.xhtml</to-view-id>
++            <redirect/>
++        </navigation-case>
++        <navigation-case>
++            <from-outcome>list</from-outcome>
++            <to-view-id>/persons.xhtml</to-view-id>
++            <redirect/>
++        </navigation-case>
++    </navigation-rule>
++    <!--Person-nav-END-->
+     <!-- Add additional rules here -->
+ 
+     <managed-bean>
+@@ -215,6 +241,32 @@
+ 
+     
+ 
++    <!--Person-beans-START-->
++    <managed-bean>
++        <managed-bean-name>personList</managed-bean-name>
++        <managed-bean-class>com.googlecode.icefusion.webapp.action.PersonList</managed-bean-class>
++        <managed-bean-scope>request</managed-bean-scope>
++        <managed-property>
++            <property-name>personManager</property-name>
++            <value>#{personManager}</value>
++        </managed-property>
++    </managed-bean>
++
++    <managed-bean>
++        <managed-bean-name>personForm</managed-bean-name>
++        <managed-bean-class>com.googlecode.icefusion.webapp.action.PersonForm</managed-bean-class>
++        <managed-bean-scope>request</managed-bean-scope>
++        <managed-property>
++            <property-name>id</property-name>
++            <value>#{param.id}</value>
++        </managed-property>
++        <managed-property>
++            <property-name>personManager</property-name>
++            <value>#{personManager}</value>
++        </managed-property>
++    </managed-bean>
++    <!--Person-beans-END-->
++
+     <!-- Add additional beans here -->
+ 
+     <render-kit>
+Index: src/main/webapp/WEB-INF/menu-config.xml
+===================================================================
+--- src/main/webapp/WEB-INF/menu-config.xml	(revision 319)
++++ src/main/webapp/WEB-INF/menu-config.xml	(working copy)
+@@ -16,5 +16,8 @@
+         </Menu>
+         <Menu name="Logout" title="user.logout" page="/logout.jsp" roles="ROLE_ADMIN,ROLE_USER"/>
+         
++        <!--Person-START-->
++        <Menu name="PersonMenu" title="personList.title" page="/persons.html"/>
++        <!--Person-END-->
+     </Menus>
+ </MenuConfig>
+Index: src/main/webapp/common/menu.jsp
+===================================================================
+--- src/main/webapp/common/menu.jsp	(revision 319)
++++ src/main/webapp/common/menu.jsp	(working copy)
+@@ -9,5 +9,8 @@
+     <menu:displayMenu name="AdminMenu"/>
+     <menu:displayMenu name="Logout"/>
+     
++    <!--Person-START-->
++    <menu:displayMenu name="PersonMenu"/>
++    <!--Person-END-->
+ </ul>
+ </menu:useMenuDisplayer>
+\ No newline at end of file
+Index: src/test/java/com/googlecode/icefusion/webapp/action/PersonFormTest.java
+===================================================================
+--- src/test/java/com/googlecode/icefusion/webapp/action/PersonFormTest.java	(revision 0)
++++ src/test/java/com/googlecode/icefusion/webapp/action/PersonFormTest.java	(revision 0)
+@@ -0,0 +1,71 @@
++package com.googlecode.icefusion.webapp.action;
++
++import org.appfuse.service.GenericManager;
++import com.googlecode.icefusion.model.Person;
++import org.appfuse.webapp.action.BasePageTestCase;
++
++public class PersonFormTest extends BasePageTestCase {
++    private PersonForm bean;
++    private GenericManager<Person, Long> personManager;
++        
++    public void setPersonManager(GenericManager<Person, Long> personManager) {
++        this.personManager = personManager;
++    }
++
++    @Override
++    protected void onSetUp() throws Exception {
++        super.onSetUp();
++        bean = new PersonForm();
++        bean.setPersonManager(personManager);
++    }
++
++    @Override
++    protected void onTearDown() throws Exception {
++        super.onTearDown();
++        bean = null;
++    }
++
++    public void testAdd() throws Exception {
++        Person person = new Person();
++
++        // enter all required fields
++        bean.setPerson(person);
++
++        assertEquals("list", bean.save());
++        assertFalse(bean.hasErrors());
++    }
++
++    public void testEdit() throws Exception {
++        log.debug("testing edit...");
++        bean.setId(-1L);
++
++        assertEquals("edit", bean.edit());
++        assertNotNull(bean.getPerson());
++        assertFalse(bean.hasErrors());
++    }
++
++    public void testSave() {
++        log.debug("testing save...");
++        bean.setId(-1L);
++
++        assertEquals("edit", bean.edit());
++        assertNotNull(bean.getPerson());
++        Person person = bean.getPerson();
++
++        // update required fields
++        bean.setPerson(person);
++
++        assertEquals("edit", bean.save());
++        assertFalse(bean.hasErrors());
++    }
++
++    public void testRemove() throws Exception {
++        log.debug("testing remove...");
++        Person person = new Person();
++        person.setId(-2L);
++        bean.setPerson(person);
++
++        assertEquals("list", bean.delete());
++        assertFalse(bean.hasErrors());
++    }
++}
+\ No newline at end of file
+Index: src/test/java/com/googlecode/icefusion/webapp/action/PersonListTest.java
+===================================================================
+--- src/test/java/com/googlecode/icefusion/webapp/action/PersonListTest.java	(revision 0)
++++ src/test/java/com/googlecode/icefusion/webapp/action/PersonListTest.java	(revision 0)
+@@ -0,0 +1,39 @@
++package com.googlecode.icefusion.webapp.action;
++
++import org.appfuse.webapp.action.BasePageTestCase;
++import org.appfuse.service.GenericManager;
++import com.googlecode.icefusion.model.Person;
++
++public class PersonListTest extends BasePageTestCase {
++    private PersonList bean;
++    private GenericManager<Person, Long> personManager;
++
++    public void setPersonManager(GenericManager<Person, Long> personManager) {
++        this.personManager = personManager;
++    }
++        
++    @Override @SuppressWarnings("unchecked")
++    protected void onSetUp() throws Exception {
++        super.onSetUp();
++        bean = new PersonList();
++        bean.setPersonManager(personManager);
++        
++        // add a test person to the database
++        Person person = new Person();
++
++        // enter all required fields
++
++        personManager.save(person);
++    }
++
++    @Override
++    protected void onTearDown() throws Exception {
++        super.onTearDown();
++        bean = null;
++    }
++
++    public void testSearch() throws Exception {
++        assertTrue(bean.getPersons().size() >= 1);
++        assertFalse(bean.hasErrors());
++    }
++}
+\ No newline at end of file
+Index: src/test/resources/sample-data.xml
+===================================================================
+--- src/test/resources/sample-data.xml	(revision 319)
++++ src/test/resources/sample-data.xml	(working copy)
+@@ -91,4 +91,27 @@
+         </row>
+     </table>
+     
++    <!--Person-START-->
++    <table name="Person">
++        <column>id</column>
++        <column>first_name</column>
++        <column>last_name</column>
++    <row>
++        <value description="id">-1</value>
++        <value description="first_name">HiLmGeLqEmWvUlKzXcAhWyLnHnOoFeDfHrBdXqEzEwIzJjRjMe</value>
++        <value description="last_name">NaYlEsIeBrGcWfEbKfAxTiOzRqZfYbKuRxKaCjBbCgMdNhFfVj</value>
++    </row>
++    <row>
++        <value description="id">-2</value>
++        <value description="first_name">ElZxEdMkWsQtDpShMcHiVfEiXxKmFiLcGgFsXcHrAsDiMlMbYn</value>
++        <value description="last_name">EjFoOkTfBaYqOdNsIvKuSaPoGyGgFjKmHjUnSfEdFpRnRkYpTq</value>
++    </row>
++    <row>
++        <value description="id">-3</value>
++        <value description="first_name">KiAeAoXnVbPkSpUwQnOnLcGaWnKbBhYlXjQgExBjFjYyWgXsTa</value>
++        <value description="last_name">NuCiNwPyCyObAlClFbSlBdFqRlXgOgXiOjRlQpPlFzPeOuBxTr</value>
++    </row>
++    </table>
++    <!--Person-END-->
+ </dataset>
++
+Index: src/test/resources/web-tests.xml
+===================================================================
+--- src/test/resources/web-tests.xml	(revision 319)
++++ src/test/resources/web-tests.xml	(working copy)
+@@ -9,7 +9,7 @@
+ 
+     <!-- runs all targets -->
+     <target name="run-all-tests" 
+-        depends="Login,Logout,PasswordHint,Signup,UserTests,FlushCache,FileUpload"
++        depends="Login,Logout,PasswordHint,Signup,UserTests,FlushCache,FileUpload,PersonTests"
+         description="Call and executes all test cases (targets)"/>
+     
+     <!-- runs user-related tests -->
+@@ -211,4 +211,97 @@
+         </webtest>
+     </target>
+     
++    <!--Person-START-->
++    <!-- runs person-related tests -->
++    <target name="PersonTests"
++        depends="SearchPersons,EditPerson,SavePerson,AddPerson,DeletePerson"
++        description="Call and executes all person test cases (targets)">
++        <echo>Successfully ran all Person UI tests!</echo>
++    </target>
++
++    <!-- Verify the persons list screen displays without errors -->
++    <target name="SearchPersons" description="Tests search for and displaying all people">
++        <webtest name="searchPersons">
++            &config;
++            <steps>
++                &login;
++                <invoke description="click View Person link" url="/persons.html"/>
++                <verifytitle description="we should see the personList title"
++                    text=".*${personList.title}.*" regex="true"/>
++            </steps>
++        </webtest>
++    </target>
++
++    <!-- Verify the edit person screen displays without errors -->
++    <target name="EditPerson" description="Tests editing an existing Person's information">
++        <webtest name="editPerson">
++            &config;
++            <steps>
++                &login;
++                <invoke description="View Person List" url="/persons.html"/>
++                <clicklink label="-1"/>
++                <verifytitle description="we should see the personDetail title"
++                    text=".*${personDetail.title}.*" regex="true"/>
++            </steps>
++        </webtest>
++    </target>
++
++    <!-- Edit a person and then save -->
++    <target name="SavePerson" description="Tests editing and saving a person">
++        <webtest name="savePerson">
++            &config;
++            <steps>
++                &login;
++                <invoke description="View Person List" url="/persons.html"/>
++                <clicklink label="-1"/>
++                <verifytitle description="we should see the personDetail title"
++                    text=".*${personDetail.title}.*" regex="true"/>
++
++                <!-- update some of the required fields -->
++
++                <clickbutton label="${button.save}" description="Click Save"/>
++                <verifytitle description="Page re-appears if save successful"
++                    text=".*${personDetail.title}.*" regex="true"/>
++                <verifytext description="verify success message" text="${person.updated}"/>
++            </steps>
++        </webtest>
++    </target>
++
++    <!-- Add a new Person -->
++    <target name="AddPerson" description="Adds a new Person">
++        <webtest name="addPerson">
++            &config;
++            <steps>
++                &login;
++                <invoke description="View Person Form" url="/personForm.html"/>
++                <verifytitle description="we should see the personDetail title"
++                    text=".*${personDetail.title}.*" regex="true"/>
++
++                <!-- enter required fields -->
++
++                <clickbutton label="${button.save}" description="Click button 'Save'"/>
++                <verifytitle description="Person List appears if save successful"
++                    text=".*${personList.title}.*" regex="true"/>
++                <verifytext description="verify success message" text="${person.added}"/>
++            </steps>
++        </webtest>
++    </target>
++
++    <!-- Delete existing person -->
++    <target name="DeletePerson" description="Deletes existing Person">
++        <webtest name="deletePerson">
++            &config;
++            <steps>
++                &login;
++                <invoke description="View Person List" url="/persons.html"/>
++                <clicklink label="2"/>
++                <prepareDialogResponse description="Confirm delete" dialogType="confirm" response="true"/>
++                <clickbutton label="${button.delete}" description="Click button 'Delete'"/>
++                <verifyNoDialogResponses/>
++                <verifytitle description="display Person List" text=".*${personList.title}.*" regex="true"/>
++                <verifytext description="verify success message" text="${person.deleted}"/>
++            </steps>
++        </webtest>
++    </target>
++    <!--Person-END-->
+ </project>
