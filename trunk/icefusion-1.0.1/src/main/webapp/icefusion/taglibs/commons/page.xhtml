@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<f:view locale="#{context.locale}">
+<ice:loadBundle basename="icefusion.icefusion" var="icefusion"/>
+<head>
+	<ice:outputStyle href="#{iceFusionConsts.skinBase}/#{context.skin}/page.css" /> 
+	<ice:outputStyle href="#{iceFusionConsts.skinBase}/#{context.skin}/icefaces.css" />
+	<ice:outputStyle href="#{iceFusionConsts.skinBase}/#{context.skin}/style.css" />
+	<script type="text/javascript" src="#{iceFusionConsts.contextPath}#{iceFusionConsts.scriptBase}/connectionStatus.js" >
+	/***********************************************
+	* Floating Menu script- (c) Dynamic Drive (http://www.dynamicdrive.com)
+	* This notice MUST stay intact for legal use
+	* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+	***********************************************/
+	</script>
+	<script type="text/javascript" src="#{iceFusionConsts.contextPath}#{iceFusionConsts.scriptBase}/icefusion.js" />
+	<link rel="shortcut icon" href="#{iceFusionConsts.contextPath}#{iceFusionConsts.skinBase}/#{context.skin}/images/page.ico"/> 
+	<title>#{iceFusionConsts.application} #{iceFusionConsts.release} - <ui:insert name="title">This page has no title.</ui:insert></title>
+</head>
+<body>
+ 	<icefusion:connectionStatus />
+	<table align="center" cellpadding="0" cellspacing="0" class="layout">
+		<tr><td class="header">
+			<ui:insert name="header"><icefusion:header/></ui:insert>
+		</td></tr>
+		<tr><td class="navigation">
+			<ui:insert name="navigation"><icefusion:navigation/></ui:insert>
+		</td></tr>
+		<tr><td class="content">
+			<ui:insert name="content">This page has no content.</ui:insert>
+		</td></tr>
+		<tr><td class="footer">
+			<ui:insert name="footer"><icefusion:footer/></ui:insert>
+		</td></tr>
+	</table>
+	<ui:debug/>
+</body>
+</f:view>
+</html>

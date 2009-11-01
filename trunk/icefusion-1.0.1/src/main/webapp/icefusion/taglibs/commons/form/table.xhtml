@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<!--
+	 	Implements 
+
+		<icefusion:table valueBean="#{bean_that_implements_ITable}" 
+			 resizable="true|false" rows="number_of_rows_to_show"/>
+
+		"ValueBean" implements ITable for management of rows to show and
+			columns for attribute selection
+		"resizable" defines if the columns can be resized, default = false
+		"rows" defines the number of rows to show, default = 10
+		Using com.googlecode.icefusion.ui.commons.form.Table
+-->
+
+<ui:component>
+	<!-- Manage valueBean stuff as parameter for backing bean  -->
+ 	<ice:dataTable style="visibility:hidden;" binding="#{table.parameters}" value="#{valueBean}"/>
+	<ice:outputText value="#{table.initializer}" />
+
+	<ice:panelGrid>
+		<ice:panelGrid columns="2" rendered="false">
+			<ice:dataExporter for="iceFusionTable" label="xls" type="xls" clickToCreateFileText="excel"/>
+			<ice:dataExporter for="iceFusionTable" label="csv" type="csv" clickToCreateFileText="csv"/>
+		</ice:panelGrid>	
+		<ice:dataTable id="iceFusionTable" var="iceFusionTableRows" value="#{table.rows}" 			
+			rows="#{not empty rows ? rows : 10}" resizable="#{not empty resizable ? resizable : false}"
+			binding="#{table.dataTable}" scrollable="false"
+			sortAscending="#{table.sortAscending}" sortColumn="#{table.sortColumn}">
+		</ice:dataTable>
+		<ice:dataPaginator for="iceFusionTable" rendered="#{table.showPaginator}">
+			<f:facet name="first">
+				<ice:graphicImage style="border:none;"
+					url="#{iceFusionConsts.skinBase}/#{context.skin}/css-images/arrow-first.gif"></ice:graphicImage>
+			</f:facet>
+			<f:facet name="last">
+				<ice:graphicImage style="border:none;"
+					url="#{iceFusionConsts.skinBase}/#{context.skin}/css-images/arrow-last.gif"></ice:graphicImage>
+			</f:facet>
+			<f:facet name="previous">
+				<ice:graphicImage style="border:none;"
+					url="#{iceFusionConsts.skinBase}/#{context.skin}/css-images/arrow-previous.gif"></ice:graphicImage>
+			</f:facet>
+			<f:facet name="next">
+				<ice:graphicImage style="border:none;"
+					url="#{iceFusionConsts.skinBase}/#{context.skin}/css-images/arrow-next.gif"></ice:graphicImage>
+			</f:facet>
+			<f:facet name="fastforward">
+				<ice:graphicImage style="border:none;"
+					url="#{iceFusionConsts.skinBase}/#{context.skin}/css-images/arrow-ff.gif"></ice:graphicImage>
+			</f:facet>
+			<f:facet name="fastrewind">
+				<ice:graphicImage style="border:none;"
+					url="#{iceFusionConsts.skinBase}/#{context.skin}/css-images/arrow-fr.gif"></ice:graphicImage>
+			</f:facet>
+		</ice:dataPaginator>
+	</ice:panelGrid>
+</ui:component>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE facelet-taglib PUBLIC "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+    "http://java.sun.com/dtd/facelet-taglib_1_0.dtd">
+<facelet-taglib>
+	<namespace>http://icefusion.googlecode.com/icefusion</namespace>
+
+	<tag>
+		<tag-name>header</tag-name>
+		<source>commons/header.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>navigation</tag-name>
+		<source>commons/navigation.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>connectionStatus</tag-name>
+		<source>commons/connectionStatus.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>menu</tag-name>
+		<source>commons/menu.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>menuIcons</tag-name>
+		<source>commons/menuIcons.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>dynamicMenu</tag-name>
+		<source>commons/dynamicMenu.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>footer</tag-name>
+		<source>commons/footer.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>messageDialog</tag-name>
+		<source>commons/dialog/messageDialog.xhtml</source>
+	</tag>
+	
+	<tag>
+		<tag-name>errorDialog</tag-name>
+		<source>commons/dialog/errorDialog.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>questionDialog</tag-name>
+		<source>commons/dialog/questionDialog.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>hint</tag-name>
+		<source>commons/help/hint.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>completer</tag-name>
+		<source>commons/form/completer.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>dadSelector</tag-name>
+		<source>commons/form/dadSelector.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>table</tag-name>
+		<source>commons/form/table.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>login</tag-name>
+		<source>commons/form/login.xhtml</source>
+	</tag>
+
+	<tag>
+		<tag-name>validationDialog</tag-name>
+		<source>commons/validation/validationDialog.xhtml</source>
+	</tag>
+
+    <tag>
+        <tag-name>progressDialog</tag-name>
+        <source>commons/push/progressDialog.xhtml</source>
+    </tag>
+</facelet-taglib>

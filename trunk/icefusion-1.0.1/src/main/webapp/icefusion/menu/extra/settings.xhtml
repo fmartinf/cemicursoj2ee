@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ice="http://www.icesoft.com/icefaces/component"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:t="http://myfaces.apache.org/tomahawk"
+	xmlns:icefusion="http://icefusion.googlecode.com/icefusion">
+<body>
+<ui:composition template="#{iceFusionConsts.templatePage}">
+	<ui:define name="title">
+		#{icefusion['application.menu.extra.settings']}
+	</ui:define>
+	<ui:define name="content">
+		#{icefusion['application.menu.extra.settings.text']}
+	 	<ice:form>
+        <ice:panelGrid>
+            <ice:panelGrid columns="2">
+                <ice:outputText value="#{icefusion['application.settings.language']}" />
+                <ice:selectOneMenu value="#{settings.locale}">
+                    <f:selectItems value="#{settings.locales}"/>
+                </ice:selectOneMenu>
+                <ice:outputText value="#{icefusion['application.settings.skin']}" />
+                <ice:selectOneMenu value="#{settings.skin}">
+                    <f:selectItems value="#{settings.skins}"/>
+                </ice:selectOneMenu>
+                <ice:commandButton value="#{icefusion['application.settings.button']}" 
+                    action="#{settings.change}" />
+            </ice:panelGrid>
+        </ice:panelGrid>
+		</ice:form>
+   	</ui:define>
+</ui:composition>
+</body>
+</html>
