@@ -1,0 +1,31 @@
+#summary Creando una aplicación ICEfases basada en AppFuse
+
+Sitio: http://code.google.com/p/icefusion/
+
+= Configuración =
+
+ # Nos descargamos la última versión: [http://icefusion.googlecode.com/files/icefusion-1.0.1.zip icefusion-1.0.1.zip] 
+ # Descomprimimos este ZIP en `C:\CEMi_J2EE`
+ # Editamos el `C:\CEMi_J2EE\icefusion-1.0.1\pom.xml` y vaciamos la property del password de base de datos:
+{{{
+    ...
+    <jdbc.password></jdbc.password>
+  </properties>
+</project>
+}}}
+ # Compilamos la aplicación a partir del BAT: `first-time-run.bat`. Posiblemente dé algún fallo en los web-test. Pero no nos preocupamos por eso.
+ # Ejecutamos el servidor Jetty a través del BAT: `run.bat`
+ # Probamos la generación de esqueletos de entidades, partir de un POJO `Person`
+{{{
+C:\CEMi_J2EE\icefusion-1.0.1> mvn appfuse:gen -Dentity=Person
+}}}
+
+Add your content here.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
