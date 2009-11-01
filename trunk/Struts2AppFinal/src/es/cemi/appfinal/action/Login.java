@@ -16,10 +16,12 @@ import es.cemi.appfinal.util.Constants;
 import es.cemi.appfinal.util.Utils;
 
 /**
- * 
- * @author Meyyappan Muthuraman
+ * @author cyague
  */
 public class Login extends ActionSupport {
+	
+	public static final String EMAIL_REQUEST_PARAM    = "email";
+	public static final String PASSWORD_REQUEST_PARAM = "password";
 
 	private String email;
 	private String password;
