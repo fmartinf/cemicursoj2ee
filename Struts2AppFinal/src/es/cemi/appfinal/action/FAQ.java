@@ -5,18 +5,8 @@
 package es.cemi.appfinal.action;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-
-import javax.servlet.http.HttpSession;
-
-import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
-
-import es.cemi.appfinal.util.Constants;
-import es.cemi.appfinal.util.Utils;
 
 /**
  * 
