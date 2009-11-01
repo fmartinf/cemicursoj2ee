@@ -13,8 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import es.cemi.appfinal.util.Constants;
 
 /**
- * 
- * @author Meyyappan Muthuraman
+ * @author cyague
  */
 public class Logout extends ActionSupport {
 
