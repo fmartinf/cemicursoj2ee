@@ -269,6 +269,8 @@ Una URL en Struts 2 se considera como un tipo de datos. Para generar un dato de 
 Para construir un enlace en Struts 2 podemos usar el ancla estándar html: `<a href="url_enlace">texto_enlace</a>` como el ancla de Struts2:
 `<s:a href="%{url_enlace}">texto_enlace</s:a>`
 
+*Solución:* [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2AppFinal Struts2AppFinal]
+
 ----
 
 http://cemicursoj2ee.googlecode.com/files/ejercicio.GIF *Ejercicio 3:*
