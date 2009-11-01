@@ -12,7 +12,9 @@ ICEfaces ofrece en el área de descargas de su página oficial un plugin para Ec
 
 = Crear un proyecto web ICEfaces desde cero =
 
-Seguimos los pasos de [http://cemicursoj2ee.googlecode.com/files/ICEfaces_Plugins_Guide.html ICEfaces_Plugins_Guide]
+Seguimos los pasos del aptdo *Create new project with ICEfaces capabilities*  [http://cemicursoj2ee.googlecode.com/files/ICEfaces%20docs.rar ICEfaces docs.rar]:
+
+
 
 
 = Details =
