@@ -15,17 +15,13 @@ Sitio: http://code.google.com/p/icefusion/
 }}}
  # Compilamos la aplicación a partir del BAT: `first-time-run.bat`. Posiblemente dé algún fallo en los web-test. Pero no nos preocupamos por eso.
  # Ejecutamos el servidor Jetty a través del BAT: `run.bat`
- # Probamos la generación de esqueletos de entidades, partir de un POJO `Person`
+ # Convertimos el proyecto Maven en un proyecto Eclipse:
+{{{
+C:\CEMi_J2EE\icefusion-1.0.1> mvn eclipse:eclipse
+}}}
+ # El resultado de todos estos pasos correspondería a: [http://cemicursoj2ee.googlecode.com/svn/trunk/icefusion-1.0.1/ icefusion-1.0.1]
+ # Probamos la generación de esqueletos de entidades, a partir de un POJO `Person`:
 {{{
 C:\CEMi_J2EE\icefusion-1.0.1> mvn appfuse:gen -Dentity=Person
 }}}
-
-Add your content here.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+ # El resultado de ejecutar este comando equivale al siguiente parche SVN: [http://cemicursoj2ee.googlecode.com/svn/trunk/icefusion-1.0.1/icefusion-Person.diff icefusion-Person.diff]
