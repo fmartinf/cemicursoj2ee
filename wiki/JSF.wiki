@@ -12,7 +12,13 @@ Creamos una aplicación *jsfapp* a partir del archetipo Maven *JSF Basic*:
 Nos abrimos una consola de comandos y nos situamos en el directorio de nuestro workspace de Eclipse `C:\CEMi_J2EE`:
 
 {{{
-C:\CEMi_J2EE> mvn archetype:create -DarchetypeGroupId=org.appfuse.archetypes -DarchetypeArtifactId=appfuse-basic-jsf -DremoteRepositories=http://static.appfuse.org/releases -DarchetypeVersion=2.0.2 -DgroupId=es.cemi.samples -DartifactId=jsfapp
+C:\CEMi_J2EE> mvn archetype:create /
+ -DarchetypeGroupId=org.appfuse.archetypes /
+ -DarchetypeArtifactId=appfuse-basic-jsf /
+ -DremoteRepositories=http://static.appfuse.org/releases /
+ -DarchetypeVersion=2.0.2 /
+ -DgroupId=es.cemi.samples /
+ -DartifactId=jsfapp
 }}}
 
 A continuación realizamos la primera compilación del ejemplo. Dicha compilación con Maven tiene asociada una descarga importante de JARs que puede tardar mucho tiempo. Para acelerar este proceso, contamos en el aptdo. de descargas con un *repository.rar* que podremos descomprimir en nuestro repositorio Maven: `%M2_HOME%\repository`
