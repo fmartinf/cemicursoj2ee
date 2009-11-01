@@ -7,7 +7,7 @@
  * [Struts2#Contenido Contenido]
  * [Struts2#Ejemplos_introductorios Ejemplos introductorios]
  * [Struts2#Ejercicios Ejercicios]
- * [Struts2#Mecanismo_para_crear_operaciones_de_tipo_CRUD_en_el_mismo__Action_ Mecanismo para crear operaciones de tipo CRUD en el mismo _Action_]
+ * [Struts2#Mecanismo_para_crear_operaciones_de_tipo_CRUD_en_el_mismo__Action_ Mecanismo para crear operaciones de tipo CRUD en el mismo Action]
 
 = Introducción =
 
@@ -289,7 +289,7 @@ if (existe dicho parámetro) && (la fecha y hora del último acceso corresponde 
 
 ----
 
-= Mecanismo para crear operaciones de tipo CRUD en el mismo _Action_ =
+= Mecanismo para crear operaciones de tipo CRUD en el mismo Action =
 struts.xml
 {{{
 <action name="*/*" method="{2}" class="es.cemi.sample.{1}Action">
