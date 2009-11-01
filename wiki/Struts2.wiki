@@ -125,6 +125,8 @@ private static final String  UPLOADS_DIRECTORY = "c:/uploads/";
 
 Pistas: 
  * http://code.google.com/p/cemicursoj2ee/wiki/StrutsXML#5._Tipos_de_resultados
+
+*Solución (parche SVN)*: [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2ExampleFileUpload/solucion.diff solucion.diff]
  
 ----
  
@@ -288,6 +290,8 @@ if (existe dicho parámetro) && (la fecha y hora del último acceso corresponde 
   [el interceptor nos redirigirá a la página de login]
 }
 }}}
+
+*Solución (parche SVN)*: [http://cemicursoj2ee.googlecode.com/svn/trunk/Struts2AppFinal/solucion.diff solucion.diff]
 
 ----
 
