@@ -11,6 +11,7 @@
      * [Struts2AppfuseSinMaven Ejemplo de CRUD sin Maven y sin WAR Overlays]
    * [JSF Framework MVC JSF]
      * [IcefacesEclipse Instalación plugin de ICEfaces para Eclipse 3.5]
+     * [ICEfusion Creando una aplicación ICEfusion basada en AppFuse]
    * [JSFvsStruts Comparativa entre JSF y Struts2]
    
 _[http://cemicursoj2ee.googlecode.com/svn/trunk/ Ejemplos]_
