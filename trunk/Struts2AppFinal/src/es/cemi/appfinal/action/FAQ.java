@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * 
- * @author Meyyappan Muthuraman
+ * @author cyague
  */
 public class FAQ extends ActionSupport {
 	
