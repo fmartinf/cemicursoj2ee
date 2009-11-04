@@ -14,24 +14,24 @@ Curso Avanzado de programación en Java orientado a las futuras necesidades de s
 
 *Impartido por:* `teresa`
 
- # Colecciones
+ # Colecciones (.)
  # Acceso a rutinas natural desde Java
    * Mediante EntireX
    * Vía conector de JCAPS para Natural/Adabas
  # i18n
  # JavaMail
- # XML (Schema, DTD) y JAXP (DOM y SAX)
+ # XML (Schema, DTD) y JAXP (DOM y SAX) (.)
  # Documentación de código (javadoc)
  # Pruebas: JUnit, JMeter,...
  # Introducción a los siguientes conceptos
    * Applets
-   * Concurrencia
-   * Networking
-   * Swing
-   * RMI
-   * Serialización y reflexión
+   * Concurrencia (.)
+   * Networking (. - ejemplo)
+   * Swing (. - ejemplo)
+   * RMI (.)
+   * Serialización y reflexión (.)
    * XSLT y XPath
-   * Ajax
+   * Ajax 
  # Documentación y tutoriales online
  # Buenas prácticas
  # Ejemplo práctico (10h)
