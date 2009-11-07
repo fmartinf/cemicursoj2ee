@@ -1,4 +1,5 @@
 #summary Creando una aplicación ICEfases basada en AppFuse
+#sidebar TableOfContents
 
 Sitio: http://code.google.com/p/icefusion/
 
