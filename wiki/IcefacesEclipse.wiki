@@ -1,6 +1,8 @@
 #summary Instalación del plugin de ICEfaces para Eclipse
 #sidebar TableOfContents
 
+http://www.icefaces.org/main/css/images/top_logo.jpg
+
 ICEfaces ofrece en el área de descargas de su página oficial un plugin para Eclipse Galileo (v3.5).
 
 = Instalación =
