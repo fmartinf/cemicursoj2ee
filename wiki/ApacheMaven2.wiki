@@ -1,4 +1,5 @@
 #summary Guía de Apache Maven 2
+#labels Featured
 #sidebar TableOfContents
 
 [http://maven.apache.org http://maven.apache.org/images/maven-logo-2.gif]
