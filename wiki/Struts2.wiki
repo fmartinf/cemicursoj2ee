@@ -1,4 +1,5 @@
 #summary Guía introductoria a Struts 2
+#labels Featured
 #sidebar TableOfContents
 
 [http://struts.apache.org/2.1.8/index.html http://struts.apache.org/2.1.8/images/struts2.png]
