@@ -43,6 +43,8 @@ En los ejemplos del curso vamos a utilizar Maven 2 como mecanismo de creación d
  
  * Tutorial *Maven in 5 Minutes*: http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
+ * Chuletario de Maven: http://cemicursoj2ee.googlecode.com/files/MavenQuickReferenceCard.pdf
+
 = Instalación =
 En algunos ejemplos de este curso usaremos [ApacheMaven2#Arquetipos_Maven Arquetipos Maven] para familiarizarnos rápidamente tanto con Struts 2 como con JSF.
 
