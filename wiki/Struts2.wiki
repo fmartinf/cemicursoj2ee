@@ -184,7 +184,7 @@ session.setAttribute("UsuarioLogado",hashMapUsuarioLogado);
 Object sessionObjUsuarioLogado = session.getAttribute("UsuarioLogado");
 
 HashMap sessionUsuarioLogado = null;
-if (sessionUsuarioLogado instanceof HashMap) {
+if (sessionObjUsuarioLogado instanceof HashMap) {
   sessionUsuarioLogado = (HashMap) sessionObjUsuarioLogado;
 }
 
