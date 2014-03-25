@@ -74,8 +74,8 @@ Posibilidades:
 
 Si tu proyecto ya contiene carpetas [.svn] te avisará que si continuas se borraran. Marca `"Continue and have Subclipse just remove those folders for you"`
 
-`Create a new repository location` > http://svnserver/svnrepo > `Use specified folder name` > Select > [trunk] (la carpeta final debe ser trunk/[nombre_proyecto])
+`Create a new repository location` > http://svnserver/svnrepo > `Use specified folder name` > Select > `trunk` (la carpeta final debe ser `trunk/nombre_proyecto`
 
 Si se requiere autenticarse, será necesario introducir las credenciales username/password > Save password
 
-Por último: Finish
+Por último: `Finish`
