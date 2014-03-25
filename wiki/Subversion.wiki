@@ -20,7 +20,7 @@ Libro oficial _online_: http://svnbook.red-bean.com/
 
 `Work with:` http://subclipse.tigris.org/update_1.10.x
 
-Seleccionamos los tres componentes y pulsamos `Next` y continuamos con la instalación hasta el final.
+Seleccionamos los dos componentes (Subclipse y SVNKit) y pulsamos `Next` y continuamos con la instalación hasta el final.
 
 Cuando finalice la instalación, deberemos reiniciar Eclipse.
 
