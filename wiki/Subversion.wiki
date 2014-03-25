@@ -67,3 +67,15 @@ Posibilidades:
 - gris: versión local coincidente con la del servidor y el fichero local se encuentra modificado. Precisa _commit_
 
 - rojo: la versión local es anterior a la remota y dicho fichero se encuentra modificado. Precisa _merge_ o _revert_.
+
+= Compartir proyectos en un repositorio SVN =
+
+`Eclipse > [proyecto] click dcho > Team > Share project... > SVN > Checkout Projects from SVN`
+
+Si tu proyecto ya contiene carpetas [.svn] te avisará que si continuas se borraran. Marca `"Continue and have Subclipse just remove those folders for you"`
+
+`Create a new repository location` > http://svnserver/svnrepo > `Use specified folder name` > Select > [trunk] (la carpeta final debe ser trunk/[nombre_proyecto])
+
+Si se requiere autenticarse, será necesario introducir las credenciales username/password > Save password
+
+Por último: Finish
