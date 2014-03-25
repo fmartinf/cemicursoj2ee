@@ -18,7 +18,7 @@ Libro oficial _online_: http://svnbook.red-bean.com/
 
 `Eclipse > Help > Install new software`
 
-`Work with:` http://subclipse.tigris.org/update_1.6.x
+`Work with:` http://subclipse.tigris.org/update_1.10.x
 
 Seleccionamos los tres componentes y pulsamos `Next` y continuamos con la instalación hasta el final.
 
